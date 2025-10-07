@@ -13,6 +13,8 @@ progress_bar_corners = top-left,bottom-right
 offset = (15, 25)
 gap_size = 5
 format = "<b>󰁕 %a</b>\n%s\n<i>%b</i>"
+font = JetBrainsMono 12
+width = 400
 
 [urgency_low]
 foreground = "#a6e3a1"
