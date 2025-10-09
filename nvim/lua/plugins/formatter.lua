@@ -23,7 +23,7 @@ return {
 				-- to be reviewed
 				markdown = { "prettier" },
 				json = { "prettier" },
-				jsonc = { "prettier" },
+				jsonc = { "prettier_jsonc" },
 				lua = { "stylua" },
 				-- TODO: add the rest of ft
 			},
@@ -36,6 +36,16 @@ return {
 				},
 				prettier = {
 					append_args = { "--tab-width", "4" },
+				},
+				prettier_jsonc = {
+					command = "prettier",
+					append_args = { "--tab-width", "4" },
+					args = {
+						"--stdin-filepath",
+						"$FILENAME",
+						"--trailing-comma",
+						"none",
+					},
 				},
 			},
 		})

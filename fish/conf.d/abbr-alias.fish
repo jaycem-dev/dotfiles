@@ -10,3 +10,4 @@ abbr --add h helix
 abbr --add ll ls -lA
 abbr --add ss paru -Ss 
 abbr --add syu paru -Syu 
+abbr --add rns paru -Rns
