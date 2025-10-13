@@ -17,8 +17,6 @@
     "bluetooth",
     "pulseaudio",
     // "backlight",
-    "memory",
-    "cpu",
     "clock"
   ],
   "hyprland/workspaces": {
@@ -35,21 +33,15 @@
   },
   "custom/lock": {
     "format": "  ",
-    "on-click": "hyprlock",
-    "tooltip": true,
-    "tooltip-format": "锁屏"
+    "on-click": "hyprlock"
   },
   "custom/reboot": {
     "format": "  ",
-    "on-click": "~/.config/scripts/closeall.sh reboot",
-    "tooltip": true,
-    "tooltip-format": "重启"
+    "on-click": "systemctl reboot"
   },
   "custom/power": {
     "format": "  ",
-    "on-click": "~/.config/scripts/closeall.sh",
-    "tooltip": true,
-    "tooltip-format": "关机"
+    "on-click": "systemctl poweroff"
   },
   "network": {
     "format-wifi": "  {essid} ",
@@ -83,25 +75,12 @@
       "car": "  ",
       "default": ["  ", "  ", "   "]
     },
-    "on-click-right": "pavucontrol -t 3",
-    "on-click": "pactl -- set-sink-mute 0 toggle",
-    "tooltip": true,
-    "tooltip-format": "当前系统声音: {volume}%"
-  },
-  "memory": {
-    "format": "  {used:0.1f}G/{total:0.1f}G ",
-    "tooltip": true,
-    "tooltip-format": "当前内存占比: {used:0.2f}G/{total:0.2f}G"
-  },
-  "cpu": {
-    "format": "  {usage}% ",
-    "tooltip": true
+    "on-click": "pavucontrol -t 3",
+    "on-click-right": "pactl -- set-sink-mute 0 toggle"
   },
   "clock": {
     "interval": 1,
-    "format": "  {:%H:%M} ",
-    "tooltip": true,
-    "tooltip-format": "{:L%Y 年 %m 月 %d 日, %A}"
+    "format": "  {:%A, %b %d  %H:%M} "
   },
   "tray": {
     "icon-size": 12,
@@ -110,8 +89,6 @@
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon}{percent}% ",
-    "tooltip": true,
-    "tooltip-format": "当前屏幕亮度: {percent}%",
     "format-icons": [" 󰃞 ", " 󰃝 ", " 󰃟 ", " 󰃠 "]
   },
   "bluetooth": {
