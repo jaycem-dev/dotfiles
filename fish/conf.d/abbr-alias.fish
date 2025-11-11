@@ -9,5 +9,5 @@ abbr --add n nvim
 abbr --add h helix
 abbr --add ll ls -lA
 abbr --add ss paru -Ss 
-abbr --add syu paru -Syu 
+abbr --add s paru -S
 abbr --add rns paru -Rns
