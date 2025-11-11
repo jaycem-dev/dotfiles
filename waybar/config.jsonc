@@ -3,13 +3,7 @@
   "position": "bottom",
   // "height": 10,
   "spacing": 0,
-  "modules-left": [
-    "hyprland/workspaces",
-    "tray",
-    "custom/lock",
-    "custom/reboot",
-    "custom/power"
-  ],
+  "modules-left": ["hyprland/workspaces", "tray", "custom/power"],
   "modules-center": ["hyprland/window"],
   "modules-right": [
     "network",
@@ -26,22 +20,14 @@
     "on-click": "activate",
     "persistent-workspaces": {
       "*": [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    },
-    "format-icons": {
-      "default": ""
     }
-  },
-  "custom/lock": {
-    "format": "  ",
-    "on-click": "hyprlock"
-  },
-  "custom/reboot": {
-    "format": "  ",
-    "on-click": "systemctl reboot"
+    // "format-icons": {
+    //   "default": ""
+    // }
   },
   "custom/power": {
     "format": "  ",
-    "on-click": "systemctl poweroff"
+    "on-click": "$HOME/.config/scripts/rofi/power.sh"
   },
   "network": {
     "format-wifi": "  {essid} ",
@@ -50,7 +36,8 @@
     "format-linked": " 󱘖 {ifname} (No IP) ",
     "format-disconnected": "  Disconnected ",
     "format-alt": " 󰤨 {signalStrength}% ",
-    "interval": 1
+    "interval": 1,
+    "on-click": "$HOME/.config/scripts/rofi/wifi.sh"
   },
   "battery": {
     "states": {

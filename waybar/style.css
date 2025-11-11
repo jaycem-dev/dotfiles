@@ -1,51 +1,24 @@
 * {
-  font-family: "JetBrains Mono", "Font Awesome 6 Free", "Font Awesome 6 Free Solid";
-  font-weight: bold;
-  font-size: 12px;
-  color: white;
+    font-family:
+        "JetBrains Mono", "Font Awesome 6 Free", "Font Awesome 6 Free Solid";
+    font-weight: bold;
+    font-size: 12px;
+    color: #edecee;
 }
 
 #waybar {
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  box-shadow: none;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    box-shadow: none;
 }
 
 #workspaces,
 #window,
-#tray{
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 2px 6px; 
-  /* margin-top: 4px;  */
-  margin-bottom: 4px;
-  margin-left: 6px;
-  margin-right: 6px;
-  border-radius: 10px;
-  border-width: 0px;
-}
-
+#tray,
 #clock,
-#custom-power{
-  background-color: rgba(0, 0, 0, 0.7);
-  /* margin-top: 4px;  */
-  margin-right: 6px;
-  margin-bottom: 4px;
-  padding: 2px 2px; 
-  border-radius: 0 10px 10px 0;
-  border-width: 0px;
-}
-
 #network,
-#custom-lock{
-  background-color: rgba(0, 0, 0, 0.7);
-  /* margin-top: 4px;  */
-  margin-left: 6px;
-  margin-bottom: 4px;
-  padding: 2px 2px; 
-  border-radius: 10px 0 0 10px;
-  border-width: 0px;
-}
-
+#custom-lock,
+#custom-power,
 #custom-reboot,
 #bluetooth,
 #battery,
@@ -53,18 +26,20 @@
 #backlight,
 #custom-temperature,
 #memory,
-#cpu{
-  background-color: rgba(0, 0, 0, 0.7);
-  /* margin-top: 4px;  */
-  margin-bottom: 4px;
-  padding: 2px 2px;
-  border-width: 0px;
+#cpu {
+    background-color: black;
+    padding: 2px 6px;
+    /* margin-top: 4px;  */
+    margin-bottom: 4px;
+    margin-left: 6px;
+    margin-right: 6px;
+    border-radius: 10px;
+    border-width: 0px;
 }
 
 #custpm-temperature.critical,
 #pulseaudio.muted {
-  color: #FF0000;
-  padding-top: 0;
+    color: #ff6767;
 }
 
 #bluetooth:hover,
@@ -82,32 +57,24 @@
 #custom-power:hover,
 /*#workspaces:hover,*/
 #window:hover {
-  background-color: rgba(70, 75, 90, 0.9);
-}
-
-#workspaces button:hover{
-  background-color: rgba(97, 175, 239, 0.2);
-  padding: 2px 8px;
-  margin: 0 2px;
-  border-radius: 10px;
+    background-color: #29263c;
 }
 
 #workspaces button.active {
-  background-color: rgba(97, 175, 239, 0.2);
-  padding: 2px 8px;
-  margin: 0 2px;
-  border-radius: 10px;
+    background-color: #29263c;
+    padding: 2px 8px;
+    margin: 0 2px;
+    border-radius: 10px;
 }
 
 #workspaces button {
-  background: transparent;
-  border: none;
-  padding: 2px 8px;
-  margin: 0 2px;
-  font-weight: bold;
+    background: transparent;
+    border: none;
+    padding: 2px 8px;
+    margin: 0 2px;
+    font-weight: bold;
 }
 
 #window {
-  font-weight: 500;
-  font-style: italic;
+    font-weight: 500;
 }
