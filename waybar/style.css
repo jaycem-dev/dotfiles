@@ -1,15 +1,12 @@
 * {
     font-family:
         "JetBrains Mono", "Font Awesome 6 Free", "Font Awesome 6 Free Solid";
-    font-weight: bold;
     font-size: 12px;
     color: #edecee;
 }
 
 #waybar {
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
-    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0); /* Transparent bar */
 }
 
 #workspaces,
@@ -17,62 +14,39 @@
 #tray,
 #clock,
 #network,
-#custom-lock,
-#custom-power,
-#custom-reboot,
+#systray,
+#pc,
+#resources,
 #bluetooth,
 #battery,
 #pulseaudio,
 #backlight,
 #custom-temperature,
 #memory,
+#custom-power,
+#idle_inhibitor,
+#cpu,
+#memory,
 #cpu {
-    background-color: black;
-    padding: 2px 6px;
-    /* margin-top: 4px;  */
-    margin-bottom: 4px;
-    margin-left: 6px;
-    margin-right: 6px;
     border-radius: 10px;
-    border-width: 0px;
+    margin: 0 8px;
+}
+
+#workspaces,
+#window,
+#clock,
+#systray,
+#pc,
+#resources,
+#bluetooth {
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 8px;
 }
 
 #custpm-temperature.critical,
-#pulseaudio.muted {
+#pulseaudio.muted,
+#network.disconnected {
     color: #ff6767;
-}
-
-#bluetooth:hover,
-#network:hover,
-/*#tray:hover,*/
-#backlight:hover,
-#battery:hover,
-#pulseaudio:hover,
-#custom-temperature:hover,
-#memory:hover,
-#cpu:hover,
-#clock:hover,
-#custom-lock:hover,
-#custom-reboot:hover,
-#custom-power:hover,
-/*#workspaces:hover,*/
-#window:hover {
-    background-color: #29263c;
-}
-
-#workspaces button.active {
-    background-color: #29263c;
-    padding: 2px 8px;
-    margin: 0 2px;
-    border-radius: 10px;
-}
-
-#workspaces button {
-    background: transparent;
-    border: none;
-    padding: 2px 8px;
-    margin: 0 2px;
-    font-weight: bold;
 }
 
 #window {

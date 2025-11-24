@@ -1,57 +1,88 @@
 {
-  "layer": "bottom",
+  "layer": "top",
   "position": "bottom",
-  // "height": 10,
-  "spacing": 0,
-  "modules-left": ["hyprland/workspaces", "tray", "custom/power"],
-  "modules-center": ["hyprland/window"],
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-right": [
-    "network",
-    "battery",
-    "bluetooth",
-    "pulseaudio",
-    // "backlight",
+    "group/systray",
+    "group/pc",
+    // "hyprland/language", # not updating on change from qwerty to colemak_dh_iso
+    "group/resources",
     "clock"
   ],
+  "group/systray": {
+    "orientation": "inherit",
+    "modules": ["custom/power", "idle_inhibitor", "tray"]
+  },
+  "group/resources": {
+    "orientation": "inherit",
+    "modules": ["cpu", "memory"]
+  },
+  "group/pc": {
+    "orientation": "inherit",
+    "modules": ["network", "pulseaudio", "bluetooth"]
+  },
   "hyprland/workspaces": {
-    "disable-scroll": false,
-    "all-outputs": true,
     "format": "{icon}",
-    "on-click": "activate",
+    "format-icons": {
+      "active": "<span color='#61ffca'></span>",
+      "persistent": "",
+      "empty": ""
+    },
     "persistent-workspaces": {
-      "*": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      "*": 5
     }
-    // "format-icons": {
-    //   "default": ""
-    // }
   },
   "custom/power": {
     "format": "  ",
     "on-click": "$HOME/.config/scripts/rofi/power.sh"
   },
   "network": {
-    "format-wifi": "  {essid} ",
-    "format-ethernet": "  Wired ",
-    "tooltip-format": " 󰅧 {bandwidthUpBytes}   󰅢 {bandwidthDownBytes}",
-    "format-linked": " 󱘖 {ifname} (No IP) ",
-    "format-disconnected": "  Disconnected ",
-    "format-alt": " 󰤨 {signalStrength}% ",
-    "interval": 1,
+    "format-wifi": "  ",
+    "format-ethernet": " Wired",
+    "tooltip-format": "{essid} 󰅧 {bandwidthUpBytes} 󰅢 {bandwidthDownBytes}",
+    "format-linked": "󱘖 {ifname} (No IP)",
+    "format-disconnected": " Disconnected",
+    "interval": 3,
     "on-click": "$HOME/.config/scripts/rofi/wifi.sh"
+  },
+  "hyprland/language": {
+    "format": "{long}",
+    // "format-en": "AMERICA, HELL YEAH!",
+    "keyboard-name": "at-translated-set-2-keyboard"
+  },
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 50,
+    "icon": true,
+    "icon-size": 16
   },
   "battery": {
     "states": {
       "warning": 30,
       "critical": 15
     },
-    "format": " {icon} {capacity}% ",
-    "format-charging": "  {capacity}%",
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
     "interval": 1,
     "format-icons": ["", "", "", "", ""],
     "tooltip": true
   },
+  "cpu": {
+    "format": "{icon} {usage}%",
+    "format-icons": [""],
+    "interval": 10,
+    "tooltip": true,
+    "on-click": "kitty -e btop"
+  },
+  "memory": {
+    "format": "{icon} {percentage}%",
+    "format-icons": [""],
+    "interval": 10,
+    "tooltip": true,
+    "on-click": "kitty -e btop"
+  },
   "pulseaudio": {
-    "format": "{icon}{volume}% ",
+    "format": "{icon}{volume}%",
     "format-muted": " 󰖁 0% ",
     "format-icons": {
       "headphone": "  ",
@@ -64,6 +95,13 @@
     },
     "on-click": "pavucontrol -t 3",
     "on-click-right": "pactl -- set-sink-mute 0 toggle"
+  },
+  "idle_inhibitor": {
+    "format": " {icon} ",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
   },
   "clock": {
     "interval": 1,
@@ -79,10 +117,10 @@
     "format-icons": [" 󰃞 ", " 󰃝 ", " 󰃟 ", " 󰃠 "]
   },
   "bluetooth": {
-    "format": "  {status} ",
+    "format": " {status}",
     "format-no-controller": "",
-    "format-connected": "  {device_alias} ",
-    "format-connected-battery": "  {device_alias}{device_battery_percentage}% ",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias}{device_battery_percentage}%",
     "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
