@@ -1,7 +1,6 @@
 -- native nvim package manager
 
 vim.pack.add({
-
 	{
 		src = "https://github.com/ibhagwan/fzf-lua",
 		version = vim.version.range("*"),
@@ -16,7 +15,7 @@ vim.pack.add({
 	},
 	{
 		src = "https://github.com/nvim-treesitter/nvim-treesitter",
-		version = vim.version.range("*"),
+		version = "main"
 	},
 	{
 		src = "https://github.com/stevearc/conform.nvim",
