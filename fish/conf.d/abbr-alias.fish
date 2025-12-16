@@ -8,6 +8,6 @@ abbr --add v nvim
 abbr --add n nvim
 abbr --add h helix
 abbr --add ll ls -lA
-abbr --add ss paru -Ss 
-abbr --add s paru -S
-abbr --add rns paru -Rns
+abbr --add ss yay -Ss 
+abbr --add s yay -S
+abbr --add rns yay -Rns
