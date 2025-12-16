@@ -1,6 +1,5 @@
 * {
-    font-family:
-        "JetBrains Mono", "Font Awesome 6 Free", "Font Awesome 6 Free Solid";
+    font-family: "SF Pro", "Font Awesome";
     font-size: 12px;
     color: #edecee;
 }
@@ -29,7 +28,7 @@
 #memory,
 #cpu {
     border-radius: 10px;
-    margin: 0 8px;
+    margin: 0 5px;
 }
 
 #workspaces,
@@ -39,11 +38,10 @@
 #pc,
 #resources,
 #bluetooth {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
     margin-bottom: 8px;
 }
 
-#custpm-temperature.critical,
 #pulseaudio.muted,
 #network.disconnected {
     color: #ff6767;

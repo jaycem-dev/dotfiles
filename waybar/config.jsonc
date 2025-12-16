@@ -1,21 +1,16 @@
 {
-  "layer": "top",
+  "layer": "bottom",
   "position": "bottom",
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-right": [
     "group/systray",
     "group/pc",
     // "hyprland/language", # not updating on change from qwerty to colemak_dh_iso
-    "group/resources",
     "clock"
   ],
   "group/systray": {
     "orientation": "inherit",
     "modules": ["custom/power", "idle_inhibitor", "tray"]
-  },
-  "group/resources": {
-    "orientation": "inherit",
-    "modules": ["cpu", "memory"]
   },
   "group/pc": {
     "orientation": "inherit",
@@ -24,7 +19,7 @@
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "active": "<span color='#61ffca'></span>",
+      "active": "<span color='#9ccfd8'></span>",
       "persistent": "",
       "empty": ""
     },
