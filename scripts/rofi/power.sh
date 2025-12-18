@@ -4,7 +4,8 @@
 OPTIONS="Lock
 Suspend
 Reboot
-Shutdown"
+Shutdown
+Logout"
 
 # Use rofi, wofi, or dmenu to choose
 CHOSEN=$(echo -e "$OPTIONS" | rofi -dmenu -i -p "Power Menu")
@@ -15,5 +16,6 @@ case "$CHOSEN" in
 "Suspend") systemctl suspend ;;
 "Reboot") systemctl reboot ;;
 "Shutdown") systemctl poweroff ;;
+"Logout") uwsm stop ;;
 *) exit 1 ;;
 esac
