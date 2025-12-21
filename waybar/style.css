@@ -1,5 +1,5 @@
 * {
-    font-family: "SF Pro", "Font Awesome";
+    font-family: "Jetbrains Mono", "Font Awesome";
     font-size: 12px;
     color: #edecee;
 }
@@ -39,7 +39,7 @@
 #resources,
 #bluetooth {
     background-color: rgba(0, 0, 0, 0.5);
-    margin-bottom: 8px;
+    margin-top: 5px;
 }
 
 #pulseaudio.muted,
