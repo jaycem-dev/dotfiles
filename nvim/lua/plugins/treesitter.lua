@@ -9,9 +9,11 @@ local ts_parsers = {
 	"bash",
 	"python",
 	"rust",
-	"go"
+	"go",
 }
 
-local ts = require("nvim-treesitter")
-
-ts.install(ts_parsers)
+require("nvim-treesitter").setup({
+	-- fix for nixos, the dir needs to be set so it doesn't use the /store which has permissions issues.
+	install_dir = vim.fn.stdpath("data") .. "/site",
+	install = ts_parsers,
+})
