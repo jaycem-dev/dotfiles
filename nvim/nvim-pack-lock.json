@@ -16,7 +16,7 @@
       "version": ">=0.0.0"
     },
     "mini.nvim": {
-      "rev": "94cae4660a8b2d95dbbd56e1fbc6fcfa2716d152",
+      "rev": "a995fe9cd4193fb492b5df69175a351a74b3d36b",
       "src": "https://github.com/echasnovski/mini.nvim",
       "version": ">=0.0.0"
     },
@@ -31,7 +31,7 @@
       "version": ">=0.0.0"
     },
     "nvim-treesitter": {
-      "rev": "d3218d988f72ed34414959c9ccd802d393432d6e",
+      "rev": "8cdffc6d334731ce3703b6d870a5a34fd878208a",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },

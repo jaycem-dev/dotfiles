@@ -11,3 +11,4 @@ vim.lsp.enable("marksman")
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("taplo")
 vim.lsp.enable("yamlls")
+vim.lsp.enable("nil_ls") -- nix lsp
