@@ -1,6 +1,3 @@
-return {
-	"neovim/nvim-lspconfig",
-	config = function()
 vim.lsp.enable("pyright")
 vim.lsp.enable("gopls")
 vim.lsp.enable("ts_ls")
@@ -15,4 +12,3 @@ vim.lsp.enable("lua_ls")
 vim.lsp.enable("taplo")
 vim.lsp.enable("yamlls")
 vim.lsp.enable("nil_ls") -- nix lsp
-end, }

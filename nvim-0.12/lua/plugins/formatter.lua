@@ -1,10 +1,3 @@
-return {
-	"stevearc/conform.nvim",
-	event = { "BufWritePre" },
-	cmd = { "ConformInfo" },
-	version = "*",
-
-	config = function()
 require("conform").setup({
 	formatters_by_ft = {
 		python = { "ruff" },
@@ -50,4 +43,3 @@ require("conform").setup({
 		},
 	},
 })
-end, }
