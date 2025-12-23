@@ -6,9 +6,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		if client:supports_method("textDocument/completion") then
 			-- Optional: trigger autocompletion on EVERY keypress. May be slow!
+			local unwanted = { ['{']=true, ['}']=true, ['[']=true, [']']=true, ['(']=true, [')']=true }
 			local chars = {}
 			for i = 32, 126 do
-				table.insert(chars, string.char(i))
+				local char = string.char(i)
+				if not unwanted[char] then
+					table.insert(chars, char)
+				end
 			end
 			client.server_capabilities.completionProvider.triggerCharacters = chars
 
