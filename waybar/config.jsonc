@@ -1,13 +1,9 @@
 {
   "layer": "bottom",
   "position": "top",
-  "modules-left": ["hyprland/workspaces", "hyprland/window"],
-  "modules-right": [
-    "group/systray",
-    "group/pc",
-    // "hyprland/language", # not updating on change from qwerty to colemak_dh_iso
-    "clock"
-  ],
+  "modules-left": ["group/systray", "hyprland/window"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["group/pc", "clock"],
   "group/systray": {
     "orientation": "inherit",
     "modules": ["custom/power", "idle_inhibitor", "tray"]
@@ -19,7 +15,7 @@
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "active": "<span color='#9ccfd8'></span>",
+      "active": "<span color='pink'></span>",
       "persistent": "",
       "empty": ""
     },
@@ -29,7 +25,7 @@
   },
   "custom/power": {
     "format": "  ",
-    "on-click": "$HOME/.config/scripts/rofi/power.sh"
+    "on-click": "rofi-power-menu"
   },
   "network": {
     "format-wifi": "  ",
