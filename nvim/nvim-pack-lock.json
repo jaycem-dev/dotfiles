@@ -25,6 +25,11 @@
       "src": "https://github.com/rose-pine/neovim",
       "version": ">=0.0.0"
     },
+    "nvim-lint": {
+      "rev": "fe160818db1b0a11302c8715f3a397ebfbd5e06a",
+      "src": "https://github.com/mfussenegger/nvim-lint",
+      "version": ">=0.0.0"
+    },
     "nvim-lspconfig": {
       "rev": "5bfcc89fd155b4ffc02d18ab3b7d19c2d4e246a7",
       "src": "https://github.com/neovim/nvim-lspconfig",
@@ -33,6 +38,16 @@
     "nvim-treesitter": {
       "rev": "8cdffc6d334731ce3703b6d870a5a34fd878208a",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
+      "version": "'main'"
+    },
+    "render-markdown.nvim": {
+      "rev": "6a744f0d14fd1d0fa8e3f446ac7825ec1e351d55",
+      "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim",
+      "version": ">=0.0.0"
+    },
+    "supermaven-nvim": {
+      "rev": "07d20fce48a5629686aefb0a7cd4b25e33947d50",
+      "src": "https://github.com/supermaven-inc/supermaven-nvim",
       "version": "'main'"
     },
     "which-key.nvim": {

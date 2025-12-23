@@ -1,6 +1,3 @@
-return {
-	"ibhagwan/fzf-lua",
-	config = function()
 local actions = require("fzf-lua.actions")
 require("fzf-lua").setup({
 	fzf_colors = {
@@ -52,5 +49,3 @@ vim.keymap.set("n", "<leader>a", require("fzf-lua").lsp_code_actions, { desc = "
 
 -- Neovim
 vim.keymap.set("n", "<leader>m", require("fzf-lua").marks, { desc = "Find marks" })
-end,
-}

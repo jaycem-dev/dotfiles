@@ -1,8 +1,3 @@
-return {
-	"nvim-treesitter/nvim-treesitter",
-	branch = "main",
-	build = ":TSUpdate",
-	config = function()
 local ts_parsers = {
 	"javascript",
 	"typescript",
@@ -22,4 +17,3 @@ require("nvim-treesitter").setup({
 	install_dir = vim.fn.stdpath("data") .. "/site",
 	install = ts_parsers,
 })
-end , }
