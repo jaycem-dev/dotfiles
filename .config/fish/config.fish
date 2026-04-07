@@ -4,3 +4,4 @@ if status is-interactive
 end
 
 set -gx EDITOR nvim
+fish_add_path -g $HOME/.local/bin
