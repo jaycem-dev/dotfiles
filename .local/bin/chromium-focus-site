@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+url="${1:?Usage: chromium-focus-site <url>}"
+brave --focus="$url/*" "$url"
