@@ -4,3 +4,4 @@ abbr --add h helix
 abbr --add ll ls -lA
 abbr --add lg lazygit
 abbr --add oc opencode
+abbr --add y yazi
