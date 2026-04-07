@@ -50,7 +50,6 @@ vim.pack.add({
 -- external config
 require("plugins.fzf")
 require("plugins.lsp")
-require("plugins.theme")
 require("plugins.treesitter")
 -- TODO: lazy load the plugin after saving a file
 require("plugins.formatter")
