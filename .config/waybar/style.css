@@ -1,12 +1,18 @@
+@import "colors.css";
+
 * {
     font-family: "JetBrains Mono", "Symbols Nerd Font Mono";
 }
 
 window#waybar {
-    border-bottom: 1px solid #586e75;
+    border-top: 1px solid @outline_variant;
+    background-color: @background;
+    color: @on_background;
 }
 
-.modules-left, .modules-right, .modules-center {
+.modules-left,
+.modules-right,
+.modules-center {
     padding: 0 10px;
 }
 
@@ -18,13 +24,13 @@ window#waybar {
 #network.wifi,
 #bluetooth.connected,
 #power-profiles-daemon.performance {
-    color: #2aa198;
+    color: @primary;
 }
 
-#battery.warning, 
+#battery.warning,
 #privacy,
 #power-profiles-daemon.power-saver {
-    color: #cb4b16;
+    color: @error;
 }
 
 #workspaces button {
@@ -34,19 +40,20 @@ window#waybar {
 }
 
 #actions {
-    background: #586e75;
-    border-radius: 4px;
+    border-top: 1px solid @outline_variant;
+    background-color: @surface_container;
+    border-radius: 0px;
 }
 
-#workspaces button.empty, 
+#workspaces button.empty,
 #workspaces button.hidden,
 #bluetooth.off {
-    color: #657b83;
+    color: @outline;
 }
 
 #workspaces button.active {
-    background-color: #268bd2;
-    color: #002b36;
+    background-color: @primary;
+    color: @on_primary;
 }
 
 .modules-left #workspaces button {
