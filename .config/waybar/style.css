@@ -2,10 +2,10 @@
 
 * {
     font-family: "JetBrains Mono", "Symbols Nerd Font Mono";
+    font-size: 10pt;
 }
 
 window#waybar {
-    border-top: 1px solid @outline_variant;
     background-color: @background;
     color: @on_background;
 }
@@ -35,12 +35,11 @@ window#waybar {
 
 #workspaces button {
     padding: 0 5px;
-    border-radius: 4px;
+    border-radius: 0px;
     transition: color 0.2s ease;
 }
 
 #actions {
-    border-top: 1px solid @outline_variant;
     background-color: @surface_container;
     border-radius: 0px;
 }
@@ -54,35 +53,4 @@ window#waybar {
 #workspaces button.active {
     background-color: @primary;
     color: @on_primary;
-}
-
-.modules-left #workspaces button {
-    border-bottom: 0;
-}
-.modules-left #workspaces button.focused,
-.modules-left #workspaces button.active {
-    border-bottom: 0;
-}
-.modules-left #workspaces button.urgent {
-    border-bottom: 0;
-}
-.modules-center #workspaces button {
-    border-bottom: 0;
-}
-.modules-center #workspaces button.focused,
-.modules-center #workspaces button.active {
-    border-bottom: 0;
-}
-.modules-center #workspaces button.urgent {
-    border-bottom: 0;
-}
-.modules-right #workspaces button {
-    border-bottom: 0;
-}
-.modules-right #workspaces button.focused,
-.modules-right #workspaces button.active {
-    border-bottom: 0;
-}
-.modules-right #workspaces button.urgent {
-    border-bottom: 0;
 }
