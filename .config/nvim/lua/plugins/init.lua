@@ -1,6 +1,8 @@
 -- native nvim package manager
 
 vim.pack.add({
+	"https://github.com/catgoose/nvim-colorizer.lua",
+	"https://github.com/RRethy/base16-nvim",
 	{
 		src = "https://github.com/ibhagwan/fzf-lua",
 		version = vim.version.range("*"),
@@ -54,11 +56,13 @@ require("plugins.treesitter")
 -- TODO: lazy load the plugin after saving a file
 require("plugins.formatter")
 require("plugins.linter")
+require("plugins.theme")
 
 -- no config needed
+require("colorizer").setup()
 require("mini.pairs").setup()
 require("mini.icons").setup()
 require("mini.surround").setup()
 require("gitsigns").setup()
--- require("supermaven").setup()
--- require("which-key").setup()
+require("supermaven-nvim").setup({})
+require("which-key").setup()

@@ -1,0 +1,54 @@
+[[mgr.prepend_keymap]]
+on = "<Tab>"
+run = ["toggle", "arrow 1"]
+desc = "Toggle selection"
+
+[[mgr.prepend_keymap]]
+on = ["g", "m"]
+run = "cd ~/Music"
+desc = "Go to ~/Music"
+
+[[mgr.prepend_keymap]]
+on = ["g", "p"]
+run = "cd ~/Pictures"
+desc = "Go to ~/Pictures"
+
+[[mgr.prepend_keymap]]
+on = ["g", "w"]
+run = "cd ~/wall"
+desc = "Go to wall directory"
+
+[[mgr.prepend_keymap]]
+on = "i"
+run = "spot"
+desc = "Info hovered file"
+
+[[mgr.prepend_keymap]]
+on = "o"
+run = "create"
+desc = "Create file"
+
+[[mgr.prepend_keymap]]
+on = ["<Space>", "/"]
+run = "search --via=rg"
+desc = "Grep (rg)"
+
+[[mgr.prepend_keymap]]
+on = ["<Space>", "f"]
+run = "plugin fzf"
+desc = "Find file/directory (fzf)"
+
+[[mgr.prepend_keymap]]
+on = "z"
+run = "plugin zoxide"
+desc = "Jump to a directory (zoxide)"
+
+[[mgr.prepend_keymap]]
+on = ["<Space>", "h"]
+run = "help"
+desc = "Help"
+
+[[mgr.prepend_keymap]]
+on = ["<Space>", "w"]
+run = "shell --orphan -- matugen image %H -q --source-color-index 0"
+desc = "Matugen theme"

@@ -1,7 +1,7 @@
 {
     "layer": "top",
-    "position": "bottom",
-    "spacing": 10,
+    "position": "top",
+    "spacing": 5,
     "modules-left": [
         "ext/workspaces",
         "dwl/window"
