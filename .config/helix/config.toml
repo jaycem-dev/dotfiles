@@ -1,3 +1,5 @@
+theme = "noctalia"
+
 [editor]
 end-of-line-diagnostics = "hint"
 color-modes = true
