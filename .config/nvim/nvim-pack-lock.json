@@ -29,6 +29,11 @@
       "src": "https://github.com/rose-pine/neovim",
       "version": ">=0.0.0"
     },
+    "nvim-autopairs": {
+      "rev": "23320e75953ac82e559c610bec5a90d9c6dfa743",
+      "src": "https://github.com/windwp/nvim-autopairs",
+      "version": ">=0.0.0"
+    },
     "nvim-colorizer.lua": {
       "rev": "5cfe7fffbd01e17b3c1e14af85d5febdef88bd8c",
       "src": "https://github.com/catgoose/nvim-colorizer.lua"
@@ -43,10 +48,20 @@
       "src": "https://github.com/neovim/nvim-lspconfig",
       "version": ">=0.0.0"
     },
+    "nvim-surround": {
+      "rev": "61319d4bd1c5e336e197defa15bd104c51f0fb29",
+      "src": "https://github.com/kylechui/nvim-surround",
+      "version": ">=0.0.0"
+    },
     "nvim-treesitter": {
       "rev": "8cdffc6d334731ce3703b6d870a5a34fd878208a",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
+    },
+    "oil.nvim": {
+      "rev": "975a77cce3c8cb742bc1b3629f4328f5ca977dad",
+      "src": "https://github.com/stevearc/oil.nvim",
+      "version": ">=0.0.0"
     },
     "render-markdown.nvim": {
       "rev": "6a744f0d14fd1d0fa8e3f446ac7825ec1e351d55",

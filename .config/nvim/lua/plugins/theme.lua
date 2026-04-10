@@ -1,4 +1,6 @@
--- An example subset of your init.lua
+vim.pack.add({
+	"https://github.com/RRethy/base16-nvim",
+})
 
 local function source_matugen()
 	-- Update this with the location of your output file
@@ -22,23 +24,21 @@ end
 
 -- Main entrypoint on matugen reloads
 local function auxiliary_function()
-	-- Load the matugen style file to get all the new colors
-	local matugen_path = os.getenv("HOME") .. "/.config/nvim/generated.lua"
 	source_matugen()
 
 	-- Because reloading base16 overwrites lualine configuration, just source lualine here
 	-- dofile(os.getenv("HOME") .. '/.config/nvim/config/plugins/lualine-nvim.lua') -- path of your lualine setup
 
 	-- Any other options you wish to set upon matugen reloads can also go here!
-	vim.api.nvim_set_hl(0, "Comment", { italic = true })
+	-- vim.api.nvim_set_hl(0, "Comment", { italic = true })
 
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NonText", { bg = "none" })
-	vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
-	vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none" })
-	vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+	-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+	-- vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+	-- vim.api.nvim_set_hl(0, "NonText", { bg = "none" })
+	-- vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+	-- vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none" })
+	-- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 end
 
 -- Register an autocmd to listen for matugen updates
