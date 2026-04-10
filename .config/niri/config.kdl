@@ -193,7 +193,7 @@ overview {
 
 // Put swww inside the overview backdrop.
 layer-rule {
-    match namespace="^swww-daemon$"
+    match namespace="^noctalia-wallpaper*"
     place-within-backdrop true
 }
 
