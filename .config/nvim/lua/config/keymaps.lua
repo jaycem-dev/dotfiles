@@ -1,17 +1,13 @@
 -- global keymaps
 -- for plugin keymaps look into each plugin spec in /lua/plugins/*
 vim.g.mapleader = " "
-local map = vim.keymap.set
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- buffer navigation, similar to tmux
-map("n", "<leader>l", ":buffer #<CR>", { desc = "Last buffer" })
-
--- Open netrw file explorer on the left at 25% width
-vim.keymap.set("n", "<leader>e", ":Lex 25<CR>", { noremap = true, silent = true, desc = "File explorer" })
+vim.keymap.set("n", "<leader>l", ":buffer #<CR>", { desc = "Last buffer" })
 
 -- -- map <c-space> to activate completion
 -- map("i", "<c-space>", function()
@@ -31,6 +27,7 @@ end, { desc = "Toggle Quickfix List" })
 
 -- replace visual selection across the entire file
 vim.keymap.set("v", "<leader>r", function()
+	---@diagnostic disable-next-line: deprecated
 	local unpack = unpack or table.unpack
 	local _, ls, cs = unpack(vim.fn.getpos("'<"))
 	local _, le, ce = unpack(vim.fn.getpos("'>"))

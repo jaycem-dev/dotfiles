@@ -1,15 +1,13 @@
-theme = "tokyonight_moon"
-
 [editor]
 end-of-line-diagnostics = "hint"
 color-modes = true
 popup-border = "all"
 
-[editor.lsp]
-display-inlay-hints = true # may be buggy
+# [editor.lsp]
+# display-inlay-hints = true # may be buggy
 
 [editor.inline-diagnostics]
-cursor-line = "warning" # show warnings and errors on the cursorline inline
+cursor-line = "error" # show warnings and errors on the cursorline inline
 
 [editor.soft-wrap]
 enable = true

@@ -4,4 +4,7 @@ require("config.autocmd")
 require("config.options")
 
 -- plugins
-require("plugins.init")
+require("plugins.editor")
+require("plugins.languages")
+require("plugins.theme")
+require("plugins.coding")
