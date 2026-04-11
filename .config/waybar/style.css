@@ -1,0 +1,50 @@
+@import "colors.css";
+
+* {
+    font-family: "JetBrains Mono", "Symbols Nerd Font Mono";
+    font-size: 10pt;
+}
+
+window#waybar {
+    background-color: @background;
+    color: @on_background;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 0 10px;
+}
+
+#idle_inhibitor.activated,
+#network.wifi,
+#bluetooth.connected,
+#power-profiles-daemon.performance {
+    color: @primary;
+}
+
+#battery.warning,
+#privacy,
+#power-profiles-daemon.power-saver {
+    color: @error;
+}
+
+#workspaces button {
+    border-radius: 5px;
+    transition: color 0.2s ease;
+}
+
+#workspaces button.empty,
+#workspaces button.hidden,
+#bluetooth.off {
+    color: @outline;
+}
+
+#workspaces button.active {
+    background-color: @primary;
+    color: @on_primary;
+}
+
+#custom-niri-workspace-windows {
+    font-size: 15pt;
+}
