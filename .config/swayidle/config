@@ -1,0 +1,5 @@
+timeout 120 'swaylock'
+timeout 120 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors' 
+timeout 120 'brightnessctl -sd kbd_backlight set 0' resume 'brightnessctl -rd kbd_backlight'
+timeout 180 'systemctl suspend'
+before-sleep 'swaylock'

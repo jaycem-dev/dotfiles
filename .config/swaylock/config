@@ -1,0 +1,5 @@
+ignore-empty-password
+indicator-idle-visible
+show-failed-attempts
+hide-keyboard-layout
+daemonize
