@@ -4,12 +4,10 @@ workspace "media"
 workspace "chat"
 workspace "gaming"
 
-spawn-at-startup "noctalia-shell"
-
-debug {
-  // Allows notification actions and window activation from Noctalia.
-  honor-xdg-activation-with-invalid-serial
-}
+spawn-at-startup "mako"
+spawn-at-startup "waybar"
+spawn-at-startup "swayidle"
+spawn-sh-at-startup "swaybg -i $HOME/.config/niri/wallpaper.png -m fill"
 
 input {
     keyboard {
@@ -205,7 +203,7 @@ binds {
     Mod+Shift+Slash repeat=false { show-hotkey-overlay; }
 
     // Core Noctalia binds
-    Mod+Space { spawn-sh "noctalia-shell ipc call launcher toggle"; }
+    Mod+Space hotkey-overlay-title="Open launcher" { spawn "fuzzel"; }
 
     Mod+T hotkey-overlay-title="Open terminal" { spawn "foot"; }
     Mod+N repeat=false hotkey-overlay-title="Open neovim" { spawn-sh "niri-launch-or-focus --tui nvim"; }
@@ -366,23 +364,24 @@ binds {
 
     // volume keys mappings for PipeWire & WirePlumber. "-l 1.0" limits the volume to 100%.
     // Using spawn-sh allows to pass multiple arguments together with the command.
-    XF86AudioRaiseVolume { spawn-sh "noctalia-shell ipc call volume increase"; }
-    XF86AudioLowerVolume { spawn-sh "noctalia-shell ipc call volume decrease"; }
-    XF86AudioMute { spawn-sh "noctalia-shell ipc call volume muteOutput"; }
-    XF86MonBrightnessUp { spawn-sh "noctalia-shell ipc call brightness increase"; }
-    XF86MonBrightnessDown { spawn-sh "noctalia-shell ipc call brightness decrease"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "volume up"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "volume down"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "volume mute"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "volume micmute"; }
 
     // media keys mapping using playerctl.
-
     XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
     XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
     XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
+
+    // brightness key mappings for brightness
+    XF86MonBrightnessUp allow-when-locked=true { spawn-sh "brightness up"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "brightness down"; }
 
     // keyboard backlight using Shift + brightness keys since M1 doesn't have dedicated keyboard backlight keys
     Shift+XF86MonBrightnessUp { spawn-sh "brightnessctl -q -d kbd_backlight s +25%"; }
     Shift+XF86MonBrightnessDown { spawn-sh "brightnessctl -q -d kbd_backlight s 25%-"; }
 }
 
-include "./noctalia.kdl"
-
+include "./colors.kdl"

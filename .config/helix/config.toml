@@ -1,4 +1,4 @@
-theme = "noctalia"
+theme = "colors"
 
 [editor]
 end-of-line-diagnostics = "hint"
