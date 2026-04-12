@@ -37,8 +37,8 @@ output_path = '~/.config/waybar/colors.css'
 post_hook = 'pkill -SIGUSR2 waybar'
 
 [templates.yazi]
-input_path = '~/.config/matugen/templates/yazi-theme.toml'
-output_path = '~/.config/yazi/flavors/colors.yazi'
+input_path = '~/.config/matugen/templates/yazi.toml'
+output_path = '~/.config/yazi/theme.toml'
 
 [templates.niri]
 input_path = '~/.config/matugen/templates/niri.kdl'
@@ -56,3 +56,7 @@ post_hook = 'pkill -SIGUSR1 nvim'
 [templates.helix]
 input_path = '~/.config/matugen/templates/helix.toml'
 output_path = '~/.config/helix/themes/colors.toml'
+
+[templates.swaylock]
+input_path = '~/.config/matugen/templates/swaylock'
+output_path = '~/.config/swaylock/config'
