@@ -1,6 +1,5 @@
 workspace "browser"
 workspace "dev"
-workspace "media"
 workspace "chat"
 workspace "gaming"
 
@@ -73,7 +72,6 @@ output "HDMI-A-1" {
 
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
-    background-color "transparent"
     gaps 10
     // options: never, always, on-overflow
     center-focused-column "never"
@@ -134,21 +132,6 @@ window-rule {
     block-out-from "screen-capture"
 }
 
-// floating windows for quick access
-window-rule {
-    match app-id=r#"impala"#
-    match app-id=r#"bluetui"#
-    match app-id=r#"org.pulseaudio.pavucontrol"#
-
-    open-floating true
-    open-focused true
-    default-floating-position x=0 y=0 relative-to="top"
-    // Half of the screen high.
-    default-window-height { proportion 0.5; }
-    // 80% of the screen wide.
-    default-column-width { proportion 0.8; }
-}
-
 window-rule {
     // rounded corners
     geometry-corner-radius 5 
@@ -191,12 +174,6 @@ overview {
     }
 }
 
-// Put swww inside the overview backdrop.
-layer-rule {
-    match namespace="^noctalia-wallpaper*"
-    place-within-backdrop true
-}
-
 binds {
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
@@ -213,6 +190,7 @@ binds {
     // launch or focus webapps
     Mod+W repeat=false hotkey-overlay-title="Open Whatsapp (Webapp)" { spawn-sh "niri-launch-or-focus-webapp web.whatsapp.com"; }
     Mod+Shift+M repeat=false hotkey-overlay-title="Open ProtonMail (Webapp)" { spawn-sh "niri-launch-or-focus-webapp mail.proton.me"; }
+    Mod+M repeat=false hotkey-overlay-title="Open YT Music (Webapp)" { spawn-sh "niri-launch-or-focus-webapp music.youtube.com"; }
     Mod+Y repeat=false hotkey-overlay-title="Open YouTube (Webapp)" { spawn-sh "niri-launch-or-focus-webapp youtube.com"; }
 
     Mod+O repeat=false { toggle-overview; }
