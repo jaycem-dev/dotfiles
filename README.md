@@ -1,8 +1,7 @@
-# Dotfiles 
+# Dotfiles
 
 ## Usage
 
 ```bash
-stow .
+stow */
 ```
-
