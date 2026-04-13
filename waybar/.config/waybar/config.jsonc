@@ -19,12 +19,11 @@
   "niri/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "browser": "󰊯",
-      "dev": "",
-      "media": "󰝚",
-      "chat": "󰭹",
+      "browser": "󰖟",
+      "dev": "",
+      "chat": "󰻞",
       "gaming": "󰊗",
-      "default": ""
+      "default": "󰧟"
     }
   },
 

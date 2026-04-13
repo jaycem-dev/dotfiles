@@ -8,7 +8,7 @@
 window#waybar {
     background-color: @background;
     color: @on_background;
-    border-radius: 10px;
+    border-top: 1px solid @outline_variant;
 }
 
 .modules-left,
@@ -38,7 +38,7 @@ window#waybar {
 #workspaces button.empty,
 #workspaces button.hidden,
 #bluetooth.off {
-    color: @outline;
+    color: @outline_variant;
 }
 
 #workspaces button.active {
