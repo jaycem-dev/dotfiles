@@ -4,4 +4,5 @@ if status is-interactive
 end
 
 set -gx EDITOR nvim
+set -gx TERMINAL foot
 fish_add_path -g $HOME/.local/bin
