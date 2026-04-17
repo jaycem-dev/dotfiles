@@ -4,5 +4,7 @@ if status is-interactive
 end
 
 set -gx EDITOR nvim
-set -gx TERMINAL foot
+set -gx TERMINAL "kitty -1"
+set -gx PAGER "nvim +Man!"
+
 fish_add_path -g $HOME/.local/bin
