@@ -82,9 +82,9 @@ else
     if [[ "$DEBUG" == "1" ]]; then echo "Debug: Using provided ID: $ID"; fi
 fi
 
-# Wrap command with foot if TUI mode
+# Wrap command with kitty if TUI mode
 if [[ "$TUI" == "1" ]]; then
-    CMD="foot --app-id $ID $CMD"
+    CMD="launch-tui $CMD"
     if [[ "$DEBUG" == "1" ]]; then echo "Debug: TUI mode enabled, command is now: $CMD"; fi
 fi
 
