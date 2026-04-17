@@ -8,17 +8,22 @@
 # You could also set a static color if you use the color keywords and the wallpaper setter supports it.
 # command = "pkill swaybg && swaybg -i {{ image }} -m fill &"
 
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/themes/Colors.conf'
+post_hook = "kitty +kitten themes --reload-in=all Colors"
+
 [templates.btop]
-input_path = '~/.config/matugen/templates/btop.theme'
+input_path = '~/.config/matugen/templates/btop-colors.theme'
 output_path = '~/.config/btop/themes/colors.theme'
 post_hook = 'pkill -USR2 btop || true'
 
 [templates.fuzzel]
-input_path = '~/.config/matugen/templates/fuzzel.ini'
+input_path = '~/.config/matugen/templates/fuzzel-colors.ini'
 output_path = '~/.config/fuzzel/colors.ini'
 
 [templates.mako]
-input_path = '~/.config/matugen/templates/mako'
+input_path = '~/.config/matugen/templates/mako-colors'
 output_path = '~/.config/mako/colors'
 post_hook = 'makoctl reload'
 
@@ -37,26 +42,26 @@ output_path = '~/.config/waybar/colors.css'
 post_hook = 'pkill -SIGUSR2 waybar'
 
 [templates.yazi]
-input_path = '~/.config/matugen/templates/yazi.toml'
+input_path = '~/.config/matugen/templates/yazi-colors.toml'
 output_path = '~/.config/yazi/theme.toml'
 
 [templates.niri]
-input_path = '~/.config/matugen/templates/niri.kdl'
+input_path = '~/.config/matugen/templates/niri-colors.kdl'
 output_path = '~/.config/niri/colors.kdl'
 
 [templates.foot]
-input_path = '~/.config/matugen/templates/foot.ini'
+input_path = '~/.config/matugen/templates/foot-colors.ini'
 output_path = '~/.config/foot/colors.ini'
 
 [templates.neovim]
-input_path = '~/.config/matugen/templates/neovim.lua'
-output_path = '~/.config/nvim/matugen.lua'
+input_path = '~/.config/matugen/templates/neovim-colors.lua'
+output_path = '~/.config/nvim/lua/plugins/theme.lua'
 post_hook = 'pkill -SIGUSR1 nvim'
 
 [templates.helix]
-input_path = '~/.config/matugen/templates/helix.toml'
+input_path = '~/.config/matugen/templates/helix-colors.toml'
 output_path = '~/.config/helix/themes/colors.toml'
 
 [templates.swaylock]
-input_path = '~/.config/matugen/templates/swaylock'
+input_path = '~/.config/matugen/templates/swaylock-colors'
 output_path = '~/.config/swaylock/config'
