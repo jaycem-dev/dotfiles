@@ -26,7 +26,11 @@ require("gitsigns").setup()
 require("which-key").setup()
 
 -- oil (file explorer)
-require("oil").setup()
+require("oil").setup({
+	view_options = {
+		show_hidden = true,
+	},
+})
 vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- fzf (fuzzy finder)

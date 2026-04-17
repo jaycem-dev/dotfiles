@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
+# TODO: check that env var BRORSER is set and i'ts Chromium
+
 url="${1:?Usage: chromium-focus-site <url>}"
-brave --focus="$url/*" "$url"
+$BRORSER --focus="$url/*" "$url"
