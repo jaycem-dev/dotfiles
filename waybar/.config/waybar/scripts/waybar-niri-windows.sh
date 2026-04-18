@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# niri-workspace-windows - waybar module to show workspace windows
 
 output_state() {
     local workspaces="$1"
@@ -9,11 +8,11 @@ output_state() {
     ws_id=$(echo "$workspaces" | jq -r '.[] | select(.is_focused) | .id')
     active_win_id=$(echo "$workspaces" | jq -r '.[] | select(.is_focused) | .active_window_id')
 
-    [[ -z "$ws_id" ]] && printf '{"text":"","class":"niri-workspace-windows"}\n' && return
+    [[ -z "$ws_id" ]] && printf '{"text":"","class":"waybar-niri-windows"}\n' && return
 
     # Handle empty workspace or no active window
     if [[ "$active_win_id" == "null" || "$active_win_id" == "" || -z "$active_win_id" ]]; then
-        printf '{"text":"","class":"niri-workspace-windows"}\n'
+        printf '{"text":"","class":"waybar-niri-windows"}\n'
         return
     fi
 
@@ -33,13 +32,8 @@ output_state() {
         fi
     done <<<"$sorted_ids"
 
-    printf '{"text":"%s","class":"niri-workspace-windows"}\n' "$result"
+    printf '{"text":"%s","class":"waybar-niri-windows"}\n' "$result"
 }
-
-# Initial state
-workspaces=$(niri msg --json workspaces 2>/dev/null)
-windows=$(niri msg --json windows 2>/dev/null)
-output_state "$workspaces" "$windows"
 
 # Listen for events
 niri msg --json event-stream 2>/dev/null | while IFS= read -r line; do
