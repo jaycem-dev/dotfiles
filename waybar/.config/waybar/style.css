@@ -8,7 +8,7 @@
 window#waybar {
     background-color: @background;
     color: @on_background;
-    border-top: 1px solid @outline_variant;
+    /* border-radius: 10px; */
 }
 
 .modules-left,
@@ -17,7 +17,18 @@ window#waybar {
     margin: 0 10px;
 }
 
-#idle_inhibitor.activated,
+/* general module spacing */
+.module {
+    padding: 0 5px;
+}
+
+#tray {
+    background-color: @surface_container;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+. #idle_inhibitor.activated,
 #network.wifi,
 #bluetooth.connected,
 #power-profiles-daemon.performance {
@@ -32,7 +43,6 @@ window#waybar {
 
 #workspaces button {
     border-radius: 10px;
-    transition: all 0.1s ease;
 }
 
 #workspaces button.empty,
@@ -48,4 +58,5 @@ window#waybar {
 
 #custom-niri-workspace-windows {
     font-size: 15pt;
+    color: @tertiary;
 }

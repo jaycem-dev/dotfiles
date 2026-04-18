@@ -1,7 +1,8 @@
 {
   "layer": "top",
   "position": "bottom",
-  "spacing": 15,
+  "spacing": 5,
+  // "margin": "0 10",
   "modules-left": ["custom/niri-workspace-windows", "niri/window"],
   "modules-center": ["niri/workspaces"],
   "modules-right": [
@@ -28,7 +29,7 @@
   },
 
   "custom/niri-workspace-windows": {
-    "exec": "~/.config/waybar/scripts/niri-workspace-windows.sh",
+    "exec": "~/.config/waybar/scripts/waybar-niri-windows.sh",
     "exec-on-event": true,
     "return-type": "json",
     "format": "{}"
@@ -112,8 +113,7 @@
   },
   "clock": {
     "interval": 1,
-    "format": "{:%H:%M}",
-    "on-click": "launch-webapp https://calendar.proton.me",
+    "format": "{:%a, %b %d  %H:%M}",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
       "format": {
