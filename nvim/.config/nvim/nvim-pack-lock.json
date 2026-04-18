@@ -9,6 +9,11 @@
       "src": "https://github.com/stevearc/conform.nvim",
       "version": ">=0.0.0"
     },
+    "flash.nvim": {
+      "rev": "ec0bf2842189f65f60fd40bf3557cac1029cc932",
+      "src": "https://github.com/folke/flash.nvim",
+      "version": ">=0.0.0"
+    },
     "fzf-lua": {
       "rev": "47b85a25c0c0b2c20b4e75199ed01bb71e7814f5",
       "src": "https://github.com/ibhagwan/fzf-lua",

@@ -16,6 +16,10 @@ vim.pack.add({
 		src = "https://github.com/lewis6991/gitsigns.nvim",
 		version = vim.version.range("*"),
 	},
+	{
+		src = "https://github.com/folke/flash.nvim",
+		version = vim.version.range("*"),
+	},
 })
 
 -- builtin plugins
@@ -23,7 +27,26 @@ vim.cmd("packadd nvim.undotree")
 -- no config needed
 require("colorizer").setup()
 require("gitsigns").setup()
-require("which-key").setup()
+require("which-key").setup({
+	preset = "helix",
+})
+
+-- flash
+vim.keymap.set({ "n", "x", "o" }, "s", function()
+	require("flash").jump()
+end, { desc = "Flash" })
+vim.keymap.set({ "n", "x", "o" }, "S", function()
+	require("flash").treesitter()
+end, { desc = "Flash Treesitter" })
+vim.keymap.set("o", "r", function()
+	require("flash").remote()
+end, { desc = "Remote Flash" })
+vim.keymap.set("o", "R", function()
+	require("flash").treesitter_search()
+end, { desc = "Treesitter Search" })
+vim.keymap.set("c", "<c-s>", function()
+	require("flash").toggle()
+end, { desc = "Toggle Flash Search" })
 
 -- oil (file explorer)
 require("oil").setup({
