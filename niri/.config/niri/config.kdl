@@ -167,6 +167,12 @@ window-rule {
     match app-id=r#"brave-mail.proton.me__-Default"#
     open-on-workspace "chat"
 }
+// gaming
+window-rule {
+    match app-id=r#"steam"#
+    match app-id=r#"heroic"#
+    open-on-workspace "gaming"
+}
 // disable the workspace shadows in the overview. 
 overview {
     workspace-shadow {
