@@ -73,6 +73,7 @@ output "HDMI-A-1" {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     gaps 10
+    background-color "transparent"
     // options: never, always, on-overflow
     center-focused-column "never"
     always-center-single-column
@@ -85,10 +86,6 @@ layout {
         proportion 0.2
         proportion 0.5
     }
-    // struts {
-    //     left 20
-    //     right 20
-    // }
     focus-ring {
         off
     }
@@ -130,6 +127,12 @@ window-rule {
     match app-id=r#"^org\.gnome\.seahorse\.Application$"#
     match app-id=r#"^Proton Pass$"#
     block-out-from "screen-capture"
+}
+
+// Put swaybg inside the overview backdrop.
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
 }
 
 window-rule {
