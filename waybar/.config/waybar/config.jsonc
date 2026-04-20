@@ -1,10 +1,10 @@
 {
   "layer": "top",
   "position": "bottom",
-  "spacing": 5,
+  "spacing": 15,
   // "margin": "0 10",
-  "modules-left": ["custom/niri-workspace-windows", "niri/window"],
-  "modules-center": ["niri/workspaces"],
+  "modules-left": ["niri/workspaces", "custom/niri-workspace-windows"],
+  "modules-center": ["niri/window"],
   "modules-right": [
     "tray",
     "idle_inhibitor",
@@ -18,7 +18,7 @@
   ],
 
   "niri/workspaces": {
-    "format": "{icon}",
+    "format": "{index}",
     "format-icons": {
       "browser": "󰖟",
       "dev": "",
@@ -84,7 +84,7 @@
       "warning": 30
     },
     "format": "{icon}{capacity}%",
-    "format-charging": "󰂄{capacity}%",
+    "format-charging": "󰂄 {capacity}%",
     "interval": 1,
     "format-icons": {
       "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
