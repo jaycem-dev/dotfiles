@@ -4,7 +4,7 @@ workspace "chat"
 workspace "gaming"
 
 spawn-at-startup "mako"
-spawn-at-startup "waybar"
+spawn-at-startup "waybar -c ~/.config/waybar/niri.jsonc"
 spawn-at-startup "swayidle"
 spawn-sh-at-startup "swaybg -i $HOME/.config/niri/wallpaper.png -m fill"
 
