@@ -46,13 +46,13 @@
     "format-linked": "󱎔 {ifname} (No IP)",
     "format-disconnected": "󰀦 Disconnected",
     "interval": 3,
-    "on-click": "launch-tui impala"
+    "on-click": "~/.local/bin/launch-tui impala"
   },
   "battery": {
     "states": {
       "warning": 30
     },
-    "format": "{icon}{capacity}%",
+    "format": "{icon} {capacity}%",
     "format-charging": "󰂄 {capacity}%",
     "interval": 1,
     "format-icons": {
@@ -113,6 +113,6 @@
     "tooltip-format-connected": "{controller_alias}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%",
-    "on-click": "launch-tui bluetui"
+    "on-click": "~/.local/bin/launch-tui bluetui"
   }
 }
