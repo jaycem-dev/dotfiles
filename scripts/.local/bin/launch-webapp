@@ -30,7 +30,7 @@ if [ -z "$URL" ]; then
     exit 1
 fi
 
-CMD=("$BROWSER" "--app=https://$URL")
+CMD=("brave" "--app=https://$URL")
 if [ -n "$PROFILE" ]; then
     CMD+=("--profile-directory=$PROFILE")
 fi
