@@ -1,8 +1,8 @@
 {
   "include": ["~/.config/waybar/default-modules.jsonc"],
 
-  "modules-left": ["niri/workspaces", "custom/niri-workspace-windows"],
-  "modules-center": ["niri/window"],
+  "modules-left": ["custom/niri-workspace-windows", "niri/window"],
+  "modules-center": ["niri/workspaces"],
   "modules-right": [
     "tray",
     "idle_inhibitor",
@@ -16,10 +16,11 @@
   ],
 
   "niri/workspaces": {
-    "format": "{index}",
+    "format": "{icon}",
     "format-icons": {
       "browser": "󰖟",
       "dev": "",
+      "media": "󰝚",
       "chat": "󰻞",
       "gaming": "󱤙",
       "default": "󰧟"
