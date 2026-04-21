@@ -1,5 +1,6 @@
 workspace "browser"
 workspace "dev"
+workspace "media"
 workspace "chat"
 workspace "gaming"
 
@@ -162,6 +163,10 @@ window-rule {
     match app-id=r#"Alacritty"#
     match app-id=r#"com.mitchellh.ghostty"#
     open-on-workspace "dev"
+}
+window-rule {
+    match app-id=r#"brave-music.youtube.com__-Default"#
+    open-on-workspace "media"
 }
 // chat workspace apps
 window-rule {
