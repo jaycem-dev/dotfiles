@@ -6,7 +6,7 @@
 }
 
 window#waybar {
-    background-color: @background_alpha;
+    background-color: @background;
     color: @on_background;
 }
 
