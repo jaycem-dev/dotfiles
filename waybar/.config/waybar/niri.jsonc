@@ -1,0 +1,35 @@
+{
+  "include": ["~/.config/waybar/default-modules.jsonc"],
+
+  "modules-left": ["niri/workspaces", "custom/niri-workspace-windows"],
+  "modules-center": ["niri/window"],
+  "modules-right": [
+    "tray",
+    "idle_inhibitor",
+    "power-profiles-daemon",
+    "privacy",
+    "network",
+    "bluetooth",
+    "pulseaudio",
+    "battery",
+    "clock"
+  ],
+
+  "niri/workspaces": {
+    "format": "{index}",
+    "format-icons": {
+      "browser": "󰖟",
+      "dev": "",
+      "chat": "󰻞",
+      "gaming": "󱤙",
+      "default": "󰧟"
+    }
+  },
+
+  "custom/niri-workspace-windows": {
+    "exec": "~/.config/waybar/scripts/waybar-niri-windows.sh",
+    "exec-on-event": true,
+    "return-type": "json",
+    "format": "{}"
+  }
+}

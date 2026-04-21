@@ -18,8 +18,7 @@ window#waybar {
 
 #tray {
     background-color: @surface_container;
-    border-radius: 10px;
-    padding: 0 10px;
+    border-radius: 0;
 }
 
 #idle_inhibitor.activated,
@@ -36,8 +35,8 @@ window#waybar {
 }
 
 #workspaces button {
-    border-radius: 10px;
-    padding: 5px;
+    border-radius: 0;
+    padding: 0 5px;
 }
 
 #workspaces button.empty,
