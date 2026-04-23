@@ -1,6 +1,6 @@
 {
   "layer": "top",
-  "position": "bottom",
+  "position": "top",
   "spacing": 15,
   "margin": "0 10",
 
@@ -38,6 +38,25 @@
         "name": "cava"
       }
     ]
+  },
+
+  "group/actions": {
+    "orientation": "inherit",
+    "modules": ["group/custom-tray", "idle_inhibitor", "power-profiles-daemon"]
+  },
+
+  "group/custom-tray": {
+    "orientation": "inherit",
+    "modules": ["custom/expander-icon", "tray"],
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "custom-tray-items"
+    }
+  },
+
+  "custom/expander-icon": {
+    "format": "󰅁",
+    "tooltip": false
   },
   "network": {
     "format-wifi": "󰖩",

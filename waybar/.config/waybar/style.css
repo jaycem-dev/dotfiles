@@ -8,7 +8,7 @@
 window#waybar {
     background-color: @background_alpha;
     color: @on_background;
-    border-radius: 5;
+    border-radius: 10;
     border: 1px solid @surface_container;
 }
 
@@ -18,9 +18,12 @@ window#waybar {
     margin: 0 10px;
 }
 
-#tray {
+#actions {
     background-color: @surface_container;
-    border-radius: 5;
+    border-radius: 10;
+}
+#actions .module {
+    margin: 0 8px;
 }
 
 #idle_inhibitor.activated,
@@ -37,7 +40,7 @@ window#waybar {
 }
 
 #workspaces button {
-    border-radius: 5;
+    border-radius: 10;
     padding: 0 5px;
 }
 
@@ -48,11 +51,10 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: @on_primary;
-    background-color: @primary;
+    color: @tertiary;
 }
 
 #custom-niri-workspace-windows {
     font-size: 15pt;
-    color: @tertiary;
+    color: @primary;
 }
