@@ -1,19 +1,23 @@
 #!/usr/bin/env bash
 
 declare -A items=(
-    [lock]="  Lock"
-    [suspend]="  Suspend"
-    [reboot]="  Reboot"
-    [shutdown]="  Shutdown"
+    [lock]=" Lock"
+    [suspend]=" Suspend"
+    [reboot]=" Reboot"
+    [shutdown]=" Shutdown"
 )
 
 # Display options with fuzzel
-selected=$(printf '%s\n' "${items[@]}" | fuzzel --dmenu -p "Select action: ")
+selected=$(printf '%s\n' "${items[@]}" | fuzzel --dmenu)
 
 # Find the key for the selected value and perform action
 if [[ -n "$selected" ]]; then
     for key in "${!items[@]}"; do
         if [[ "${items[$key]}" == "$selected" ]]; then
+            # confirm=$(printf 'Yes\nNo' | fuzzel --dmenu -p "Confirm ${key}? ")
+            # if [[ "$confirm" != "Yes" ]]; then
+            #     exit 0
+            # fi
             case $key in
             lock)
                 swaylock

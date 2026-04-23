@@ -1,14 +1,13 @@
 include=~/.config/mako/colors
 layer=overlay
 width=400
-outer-margin=10
 padding=10
-border-size=1
-border-radius=5
+border-size=2
+border-radius=10
 
 [category=osd]
 anchor=top-center
 width=200
-height=30
+height=50
 padding=5
 default-timeout=1500
