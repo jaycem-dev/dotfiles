@@ -7,7 +7,6 @@ workspace "gaming"
 spawn-at-startup "mako"
 spawn-at-startup "waybar -c ~/.config/waybar/niri.jsonc"
 spawn-at-startup "swayidle"
-spawn-sh-at-startup "swaybg -i $HOME/.config/wall/default.png -m fill"
 
 input {
     keyboard {
@@ -136,11 +135,11 @@ layer-rule {
     place-within-backdrop true
 }
 
-// window-rule {
-//     // rounded corners
-//     geometry-corner-radius 10
-//     clip-to-geometry true
-// }
+window-rule {
+    // rounded corners
+    geometry-corner-radius 5
+    clip-to-geometry true
+}
 
 // Make inactive windows semitransparent.
 window-rule {

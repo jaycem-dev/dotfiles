@@ -1,3 +1,6 @@
+image=/home/jay/Pictures/Wallpapers/default.png
+scaling=fill
+
 ignore-empty-password
 indicator-idle-visible
 show-failed-attempts

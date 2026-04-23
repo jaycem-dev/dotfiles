@@ -1,8 +1,8 @@
 {
   "layer": "top",
-  "position": "top",
+  "position": "bottom",
   "spacing": 15,
-  // "margin": "0 10",
+  "margin": "0 10",
 
   "power-profiles-daemon": {
     "format": "{icon}",

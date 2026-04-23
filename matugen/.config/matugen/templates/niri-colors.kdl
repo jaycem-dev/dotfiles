@@ -1,3 +1,5 @@
+spawn-sh-at-startup "swaybg -i {{image}} -m fill"
+
 layout {
     focus-ring {
         active-color   "{{colors.primary.default.hex}}"

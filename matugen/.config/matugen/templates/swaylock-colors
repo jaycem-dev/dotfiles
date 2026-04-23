@@ -1,3 +1,6 @@
+image={{image}}
+scaling=fill
+
 ignore-empty-password
 indicator-idle-visible
 show-failed-attempts
