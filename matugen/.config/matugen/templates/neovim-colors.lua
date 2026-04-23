@@ -29,7 +29,8 @@ local signal = vim.uv.new_signal()
 signal:start(
 	"sigusr1",
 	vim.schedule_wrap(function()
+		package.loaded["base16-colorscheme"] = nil
 		package.loaded["plugins.theme"] = nil
-		require("plugins.theme").setup()
+		require("plugins.theme")
 	end)
 )
