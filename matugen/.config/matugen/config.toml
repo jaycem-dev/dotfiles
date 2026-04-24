@@ -16,7 +16,7 @@ post_hook = 'mmsg -d reload_config'
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/themes/Colors.conf'
-post_hook = "kitty +kitten themes --reload-in=all Colors"
+post_hook = "kill -SIGUSR1 $KITTY_PID"
 
 [templates.btop]
 input_path = '~/.config/matugen/templates/btop-colors.theme'
