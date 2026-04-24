@@ -72,7 +72,7 @@ output "HDMI-A-1" {
 
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
-    gaps 10
+    gaps 5
     background-color "transparent"
     // options: never, always, on-overflow
     center-focused-column "never"
@@ -135,11 +135,11 @@ layer-rule {
     place-within-backdrop true
 }
 
-window-rule {
-    // rounded corners
-    geometry-corner-radius 10
-    clip-to-geometry true
-}
+// window-rule {
+//     // rounded corners
+//     geometry-corner-radius 5
+//     clip-to-geometry true
+// }
 
 // Make inactive windows semitransparent.
 window-rule {
