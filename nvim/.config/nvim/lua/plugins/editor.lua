@@ -1,5 +1,6 @@
 vim.pack.add({
 	"https://github.com/catgoose/nvim-colorizer.lua",
+	"https://github.com/nvim-tree/nvim-web-devicons",
 	{
 		src = "https://github.com/stevearc/oil.nvim",
 		version = vim.version.range("*"),
@@ -27,6 +28,7 @@ vim.cmd("packadd nvim.undotree")
 -- no config needed
 require("colorizer").setup()
 require("gitsigns").setup()
+require("nvim-web-devicons").setup()
 require("which-key").setup({
 	preset = "helix",
 })
@@ -61,6 +63,10 @@ local actions = require("fzf-lua.actions")
 require("fzf-lua").setup({
 	fzf_colors = {
 		true, -- inherit from nvim theme
+	},
+	grep = {
+		-- search dotfiles as well
+		hidden = true,
 	},
 	actions = {
 		files = {

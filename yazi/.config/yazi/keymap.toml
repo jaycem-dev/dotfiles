@@ -15,7 +15,7 @@ desc = "Go to ~/Pictures"
 
 [[mgr.prepend_keymap]]
 on = ["g", "w"]
-run = "cd ~/wall"
+run = "cd ~/Pictures/Wallpapers"
 desc = "Go to wall directory"
 
 [[mgr.prepend_keymap]]
@@ -37,11 +37,6 @@ desc = "Grep (rg)"
 on = ["<Space>", "f"]
 run = "plugin fzf"
 desc = "Find file/directory (fzf)"
-
-[[mgr.prepend_keymap]]
-on = "z"
-run = "plugin zoxide"
-desc = "Jump to a directory (zoxide)"
 
 [[mgr.prepend_keymap]]
 on = ["<Space>", "h"]
