@@ -2,11 +2,11 @@ vim.opt.number = true -- Show current line
 vim.opt.relativenumber = true -- Show relative number
 
 -- UI
-vim.opt.winborder = "rounded"
-vim.opt.pumborder = "rounded"
+vim.opt.winborder = "single"
+vim.opt.pumborder = "single"
 vim.opt.termguicolors = true -- Forces true color support in terminals
 vim.opt.cursorline = true
-vim.opt.winblend = 10
+-- vim.opt.winblend = 10
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10

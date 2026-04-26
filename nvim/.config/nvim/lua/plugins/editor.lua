@@ -74,6 +74,12 @@ require("fzf-lua").setup({
 			["ctrl-q"] = actions.file_sel_to_qf,
 		},
 	},
+	winopts = {
+		border = "single",
+		preview = {
+			border = "single",
+		},
+	},
 })
 -- Keymaps
 vim.keymap.set("n", "<leader>f", require("fzf-lua").files, { desc = "Find files" })
