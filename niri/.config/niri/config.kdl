@@ -41,7 +41,7 @@ input {
     }
 
     // make the mouse warp to the center of newly focused windows.
-    // warp-mouse-to-focus
+    warp-mouse-to-focus
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
@@ -143,11 +143,25 @@ layer-rule {
 //     clip-to-geometry true
 // }
 
-// Make inactive windows semitransparent.
+// Make inactive windows semitransparent with blur
+// TODO: check if this overlap with apps that already use ext-background-effect
 window-rule {
     match is-active=false
     exclude is-floating=true
-    opacity 0.9
+    opacity 0.8
+     background-effect {
+        blur true
+    }
+}
+
+// Enable blur for apps that don't support ext-background-effect
+layer-rule {
+    match namespace="^launcher$"
+    match namespace="^waybar$"
+
+    background-effect {
+        blur true
+    }
 }
 
 // browser workspace apps

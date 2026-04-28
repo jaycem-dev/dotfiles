@@ -6,7 +6,7 @@
 }
 
 window#waybar {
-    background-color: @background;
+    background-color: @background_alpha;
     color: @on_background;
     border-radius: 0;
 }
@@ -50,10 +50,6 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background-color: @on_primary;
-    color: @primary;
-}
-
-#custom-niri-workspace-windows {
-    color: @secondary;
+    background-color: @primary;
+    color: @on_primary;
 }
