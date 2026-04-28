@@ -25,6 +25,8 @@ vim.pack.add({
 
 -- builtin plugins
 vim.cmd("packadd nvim.undotree")
+vim.keymap.set("n", "<leader>u", require("undotree").open)
+
 -- no config needed
 require("colorizer").setup()
 require("gitsigns").setup()
