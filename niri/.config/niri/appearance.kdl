@@ -1,0 +1,42 @@
+prefer-no-csd // no client-side decorations
+
+// disable the workspace shadows in the overview. 
+overview {
+    workspace-shadow {
+        off
+    }
+}
+
+blur {
+    passes 3 // default: 3
+    offset 5 // default: 3.0
+    noise 0.02 // default: 0.02
+    saturation 1.2 // default: 1.5
+}
+
+layout {
+    gaps 5
+    background-color "transparent"
+    // options: never, always, on-overflow
+    center-focused-column "never"
+    always-center-single-column
+    default-column-width { proportion 0.9; }
+    preset-column-widths {
+        proportion 0.5
+        proportion 0.9
+    }
+    preset-window-heights {
+        proportion 0.2
+        proportion 0.5
+    }
+    focus-ring {
+        off
+    }
+    border {
+        on
+        width 3
+    }
+    shadow {
+        off
+    }
+}

@@ -1,0 +1,86 @@
+// Open the Firefox and Chromium PIP floating by default.
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"zen-beta$"# title="^Picture-in-Picture$"
+    match title="^Picture in picture$" // brave pip doesn't set app-id
+    open-floating true
+    default-floating-position x=16 y=16 relative-to="top-right"
+    default-column-width { fixed 400; }
+    default-window-height { fixed 225; }
+    open-focused false
+}
+
+// Block out apps from screen capture.
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    match app-id=r#"^org\.gnome\.seahorse\.Application$"#
+    match app-id=r#"^Proton Pass$"#
+    block-out-from "screen-capture"
+}
+
+// Put swaybg inside the overview backdrop.
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
+// window-rule {
+//     // rounded corners
+//     geometry-corner-radius 5
+//     clip-to-geometry true
+// }
+
+// Make inactive windows semitransparent with blur
+// TODO: check if this overlap with apps that already use ext-background-effect
+window-rule {
+    match is-active=false
+    exclude is-floating=true
+    opacity 0.8
+     background-effect {
+        blur true
+    }
+}
+
+// Enable blur for apps that don't support ext-background-effect
+layer-rule {
+    match namespace="^launcher$"
+    match namespace="^waybar$"
+
+    background-effect {
+        blur true
+    }
+}
+
+// browser workspace apps
+window-rule {
+    match app-id=r#"brave-browser"#
+    match app-id=r#"zen-beta"#
+    open-on-workspace "browser"
+}
+// dev workspace apps
+window-rule {
+    match app-id=r#"nvim"#
+    match app-id=r#"kitty"#
+    match app-id=r#"foot"#
+    match app-id=r#"Alacritty"#
+    match app-id=r#"com.mitchellh.ghostty"#
+    open-on-workspace "dev"
+}
+window-rule {
+    match app-id=r#"brave-music.youtube.com__-Default"#
+    open-on-workspace "media"
+}
+// chat workspace apps
+window-rule {
+    match app-id=r#"brave-web.whatsapp.com__-Default"#
+    match app-id=r#"signal"#
+    match app-id=r#"brave-mail.proton.me__-Default"#
+    open-on-workspace "chat"
+}
+// gaming
+window-rule {
+    match app-id=r#"steam"#
+    match app-id=r#"heroic"#
+    open-on-workspace "gaming"
+}
