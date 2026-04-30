@@ -1,8 +1,8 @@
 {
   "layer": "top",
-  "position": "top",
+  "position": "left",
   "spacing": 15,
-  // "margin": "0 5",
+  "margin": "5 0",
 
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -40,24 +40,6 @@
     ]
   },
 
-  "group/actions": {
-    "orientation": "inherit",
-    "modules": ["group/custom-tray", "idle_inhibitor", "power-profiles-daemon"]
-  },
-
-  "group/custom-tray": {
-    "orientation": "inherit",
-    "modules": ["custom/expander-icon", "tray"],
-    "drawer": {
-      "transition-duration": 500,
-      "children-class": "custom-tray-items"
-    }
-  },
-
-  "custom/expander-icon": {
-    "format": "󰅁",
-    "tooltip": false
-  },
   "network": {
     "format-wifi": "󰖩",
     "format-ethernet": "󰈀",
@@ -69,10 +51,13 @@
   },
   "battery": {
     "states": {
+      "full": 100,
+      "discharging": 99,
       "warning": 30
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": "󰂄 {capacity}%",
+    "format": "{icon}\n{capacity}",
+    "format-charging": "󰂄\n{capacity}",
+    "format-full": "{icon}",
     "interval": 1,
     "format-icons": {
       "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
@@ -101,7 +86,8 @@
   },
   "clock": {
     "interval": 1,
-    "format": "{:%a, %b %d  %H:%M}",
+    //"format": "{:%a, %b %d  %H:%M}",
+    "format": "{:%H\n%M}",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
       "format": {

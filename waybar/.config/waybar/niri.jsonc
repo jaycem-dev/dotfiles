@@ -1,16 +1,17 @@
 {
   "include": ["~/.config/waybar/default-modules.jsonc"],
 
-  "modules-left": ["niri/workspaces", "custom/niri-workspace-windows"],
-  "modules-center": ["niri/window"],
+  "modules-left": ["clock", "custom/niri-workspace-windows"],
+  "modules-center": ["niri/workspaces"],
   "modules-right": [
     "privacy",
-    "group/actions",
+    "tray",
+    "idle_inhibitor",
+    "power-profiles-daemon",
     "network",
     "bluetooth",
     "pulseaudio",
-    "battery",
-    "clock"
+    "battery"
   ],
 
   "niri/workspaces": {
@@ -21,6 +22,7 @@
     "exec": "~/.config/waybar/scripts/waybar-niri-windows.sh",
     "exec-on-event": true,
     "return-type": "json",
-    "format": "{}"
+    "format": "{}",
+    "rotate": 270
   }
 }
