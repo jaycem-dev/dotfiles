@@ -3,11 +3,12 @@ vim.opt.relativenumber = true -- Show relative number
 
 -- UI
 vim.opt.statusline = "%!v:lua.custom_statusline()"
-vim.opt.winborder = "single"
-vim.opt.pumborder = "single"
+vim.opt.winborder = "rounded"
+vim.opt.pumborder = "rounded"
 vim.opt.termguicolors = true -- Forces true color support in terminals
 vim.opt.cursorline = true
--- vim.opt.winblend = 10
+vim.opt.winblend = 10
+
 -- ui v2 experimental
 require("vim._core.ui2").enable({
 	enable = true, -- Whether to enable or disable the UI.
