@@ -3,13 +3,13 @@ spawn-sh-at-startup "swaybg -i /home/jay/Pictures/Wallpapers/default.png -m fill
 layout {
     focus-ring {
         active-color   "#d9bafa"
-        inactive-color "#151218"
+        inactive-color "#4a454e"
         urgent-color   "#ffb4ab"
     }
 
     border {
         active-color   "#d9bafa"
-        inactive-color "#151218"
+        inactive-color "#4a454e"
         urgent-color   "#ffb4ab"
     }
 

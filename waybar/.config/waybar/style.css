@@ -10,7 +10,7 @@ window#waybar {
     background-color: @background_alpha;
     color: @on_background;
     border-radius: 10;
-    border: 1px solid @outline_variant;
+    border: 2px solid @outline_variant;
 }
 
 #idle_inhibitor.activated,

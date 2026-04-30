@@ -6,4 +6,4 @@
     @define-color {{name}} {{value.default.hex}};
 <* endfor *>
 
-@define-color background_alpha {{colors.background.default.rgba | set_alpha: 0.9}};
+@define-color background_alpha {{colors.background.default.rgba | set_alpha: 0.8}};
