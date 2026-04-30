@@ -1,3 +1,20 @@
+// rounded corners
+window-rule {
+    geometry-corner-radius 10
+    clip-to-geometry true
+}
+
+// Make inactive windows semitransparent with blur
+// TODO: check if this overlap with apps that already use ext-background-effect
+window-rule {
+    match is-active=false
+    exclude is-floating=true
+    opacity 0.8
+     background-effect {
+        blur true
+    }
+}
+
 // Open the Firefox and Chromium PIP floating by default.
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
@@ -25,28 +42,10 @@ layer-rule {
     place-within-backdrop true
 }
 
-// window-rule {
-//     // rounded corners
-//     geometry-corner-radius 5
-//     clip-to-geometry true
-// }
-
-// Make inactive windows semitransparent with blur
-// TODO: check if this overlap with apps that already use ext-background-effect
-window-rule {
-    match is-active=false
-    exclude is-floating=true
-    opacity 0.8
-     background-effect {
-        blur true
-    }
-}
-
 // Enable blur for apps that don't support ext-background-effect
 layer-rule {
     match namespace="^launcher$"
     match namespace="^waybar$"
-
     background-effect {
         blur true
     }

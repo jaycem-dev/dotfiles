@@ -19,7 +19,7 @@ layout {
     background-color "transparent"
     // options: never, always, on-overflow
     center-focused-column "never"
-    always-center-single-column
+    // always-center-single-column
     default-column-width { proportion 0.9; }
     preset-column-widths {
         proportion 0.5

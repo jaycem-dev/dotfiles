@@ -2,27 +2,15 @@
 
 * {
     font-family: "JetBrains Mono", "Symbols Nerd Font Mono";
-    font-size: 10pt;
+    font-size: 11pt;
+    font-weight: bold;
 }
 
 window#waybar {
     background-color: @background_alpha;
     color: @on_background;
-    border-radius: 0;
-}
-
-.modules-left,
-.modules-center,
-.modules-right {
-    margin: 0 5px;
-}
-
-#actions {
-    background-color: @surface_container;
-    border-radius: 0;
-}
-#actions .module {
-    margin: 0 8px;
+    border-radius: 10;
+    border: 1px solid @outline_variant;
 }
 
 #idle_inhibitor.activated,
@@ -39,8 +27,7 @@ window#waybar {
 }
 
 #workspaces button {
-    border-radius: 0;
-    padding: 0 5px;
+    border-radius: 10;
 }
 
 #workspaces button.empty,
@@ -50,6 +37,13 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background-color: @primary;
     color: @on_primary;
+    background-color: @primary;
+    padding: 0;
+    margin: 0;
+}
+
+.modules-right,
+.modules-left {
+    padding: 10px 0;
 }
