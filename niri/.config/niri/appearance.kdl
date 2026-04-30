@@ -31,10 +31,11 @@ layout {
     }
     focus-ring {
         off
+        width 2
     }
     border {
         on
-        width 3
+        width 2
     }
     shadow {
         off
