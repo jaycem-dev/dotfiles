@@ -2,7 +2,7 @@
 
 My configuration files for Niri, Neovim, etc.
 
-Most programs are themed with [matugen](https://github.com/InioX/matugen) and have a default theme applied already. Check [the templates](./matugen/.config/matugen/templates/) for the complete list. To update the theme for all apps, use `matugen image <pathtoimage>`.
+Most programs are themed with [matugen](https://github.com/InioX/matugen) and have a default theme applied already. Check [the templates](./matugen/.config/matugen/config.toml) for the complete list. To update the theme for all apps, use `matugen image <pathtoimage>`.
 
 ## Screenshot (may be outdated)
 
