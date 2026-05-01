@@ -9,9 +9,9 @@ overview {
 
 blur {
     passes 3 // default: 3
-    offset 5 // default: 3.0
-    noise 0.02 // default: 0.02
-    saturation 1.2 // default: 1.5
+    offset 8 // default: 3.0
+    noise 0.05 // default: 0.02
+    saturation 1.5 // default: 1.5
 }
 
 layout {
@@ -38,6 +38,6 @@ layout {
         width 2
     }
     shadow {
-        off
+        on
     }
 }

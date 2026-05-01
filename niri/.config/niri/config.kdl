@@ -7,8 +7,9 @@ workspace "gaming"
 spawn-at-startup "mako"
 spawn-at-startup "swayidle"
 spawn-sh-at-startup "waybar -c ~/.config/waybar/niri.jsonc"
+spawn-at-startup "niriusd"
 // Workaraound for Asahi NixOS issues 
-spawn-sh-at-startup "niri msg action power-off-monitors; niri msg action power-on-monitors; volume up"
+spawn-sh-at-startup "niri msg action power-off-monitors; niri msg action power-on-monitors"
 
 screenshot-path "~/Pictures/Screenshots/screenshot %Y-%m-%d %H-%M-%S.png"
 
@@ -20,7 +21,6 @@ output "HDMI-A-1" {
     mode "1920x1080"
     scale 1
 }
-
 
 include "./rules.kdl"
 include "./binds.kdl"

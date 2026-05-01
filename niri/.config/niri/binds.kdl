@@ -3,7 +3,9 @@ binds {
     // shows a list of important hotkeys.
     Mod+Shift+Slash repeat=false { show-hotkey-overlay; }
 
-    // Core Noctalia binds
+    // Nirius
+    Mod+G repeat=false hotkey-overlay-title="Open terminal" { spawn-sh "nirius toggle-follow-mode"; }
+
     Mod+Space hotkey-overlay-title="Open launcher" { spawn "fuzzel"; }
 
     Mod+T hotkey-overlay-title="Open terminal" { spawn-sh "kitty -1"; }
