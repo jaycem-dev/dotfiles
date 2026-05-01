@@ -9,7 +9,7 @@ window-rule {
 window-rule {
     match is-active=false
     exclude is-floating=true
-    opacity 0.8
+    opacity 0.9
      background-effect {
         blur true
     }
@@ -21,7 +21,7 @@ window-rule {
     match app-id=r#"zen-beta$"# title="^Picture-in-Picture$"
     match title="^Picture in picture$" // brave pip doesn't set app-id
     open-floating true
-    default-floating-position x=16 y=16 relative-to="top-right"
+    default-floating-position x=5 y=5 relative-to="top-right"
     default-column-width { fixed 400; }
     default-window-height { fixed 225; }
     open-focused false
