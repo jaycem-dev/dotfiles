@@ -45,7 +45,7 @@
     "format-ethernet": "󰈀",
     "tooltip-format": "Connected to {essid}",
     "format-linked": "󱎔 {ifname} (No IP)",
-    "format-disconnected": "󰀦 Disconnected",
+    "format-disconnected": "󰀦",
     "interval": 3,
     "on-click": "~/.local/bin/launch-tui impala"
   },
