@@ -44,6 +44,42 @@ run = "help"
 desc = "Help"
 
 [[mgr.prepend_keymap]]
-on = ["<Space>", "w"]
+on = ["<Space>", "w", "w"]
 run = "shell --orphan -- matugen image %H -q --source-color-index 0"
-desc = "Matugen theme"
+desc = "Matugen theme [default]"
+[[mgr.prepend_keymap]]
+on = ["<Space>", "w", "c"]
+run = "shell --orphan -- matugen image %H -q --source-color-index 0 --type scheme-content"
+desc = "Matugen theme [content]"
+[[mgr.prepend_keymap]]
+on = ["<Space>", "w", "e"]
+run = "shell --orphan -- matugen image %H -q --source-color-index 0 --type scheme-expressive"
+desc = "Matugen theme [expressive]"
+[[mgr.prepend_keymap]]
+on = ["<Space>", "w", "f"]
+run = "shell --orphan -- matugen image %H -q --source-color-index 0 --type scheme-fidelity"
+desc = "Matugen theme [fidelity]"
+[[mgr.prepend_keymap]]
+on = ["<Space>", "w", "s"]
+run = "shell --orphan -- matugen image %H -q --source-color-index 0 --type scheme-fruit-salad"
+desc = "Matugen theme [fruit salad]"
+[[mgr.prepend_keymap]]
+on = ["<Space>", "w", "s"]
+run = "shell --orphan -- matugen image %H -q --source-color-index 0 --type scheme-fruit-salad"
+desc = "Matugen theme [fruit salad]"
+[[mgr.prepend_keymap]]
+on = ["<Space>", "w", "m"]
+run = "shell --orphan -- matugen image %H -q --source-color-index 0 --type scheme-monochrome"
+desc = "Matugen theme [monochrome]"
+[[mgr.prepend_keymap]]
+on = ["<Space>", "w", "n"]
+run = "shell --orphan -- matugen image %H -q --source-color-index 0 --type scheme-neutral"
+desc = "Matugen theme [neutral]"
+[[mgr.prepend_keymap]]
+on = ["<Space>", "w", "r"]
+run = "shell --orphan -- matugen image %H -q --source-color-index 0 --type scheme-rainbow"
+desc = "Matugen theme [rainbow]"
+[[mgr.prepend_keymap]]
+on = ["<Space>", "w", "v"]
+run = "shell --orphan -- matugen image %H -q --source-color-index 0 --type scheme-vibrant"
+desc = "Matugen theme [vibrant]"
