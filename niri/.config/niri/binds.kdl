@@ -8,7 +8,7 @@ binds {
 
     Mod+Space hotkey-overlay-title="Open launcher" { spawn "fuzzel"; }
 
-    Mod+T hotkey-overlay-title="Open terminal" { spawn-sh "kitty -1"; }
+    Mod+T hotkey-overlay-title="Open terminal" { spawn-sh "niri-launch-or-focus kitty"; }
     Mod+N repeat=false hotkey-overlay-title="Open neovim" { spawn-sh "niri-launch-or-focus --tui nvim"; }
     Mod+E repeat=false hotkey-overlay-title="Open yazi" { spawn-sh "niri-launch-or-focus --tui yazi"; }
     Mod+B repeat=false hotkey-overlay-title="Open browser" { spawn-sh "niri-launch-or-focus brave --id brave-browser"; }
