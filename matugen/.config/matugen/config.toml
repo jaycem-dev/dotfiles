@@ -66,6 +66,7 @@ post_hook = 'pkill -SIGUSR1 nvim'
 [templates.helix]
 input_path = '~/.config/matugen/templates/helix-colors.toml'
 output_path = '~/.config/helix/themes/colors.toml'
+post_hook = 'pkill -USR1 hx'
 
 [templates.swaylock]
 input_path = '~/.config/matugen/templates/swaylock-colors'
