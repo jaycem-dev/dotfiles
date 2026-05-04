@@ -4,6 +4,8 @@ theme = "colors"
 end-of-line-diagnostics = "hint"
 color-modes = true
 popup-border = "all"
+cursorline = true
+
 
 # [editor.lsp]
 # display-inlay-hints = true # may be buggy
