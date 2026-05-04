@@ -8,7 +8,8 @@ binds {
 
     Mod+Space hotkey-overlay-title="Open launcher" { spawn "fuzzel"; }
 
-    Mod+T hotkey-overlay-title="Open terminal" { spawn-sh "niri-launch-or-focus kitty"; }
+    Mod+T hotkey-overlay-title="Open or focus terminal" { spawn-sh "niri-launch-or-focus 'kitty -1' --id kitty"; }
+    Mod+Shift+T hotkey-overlay-title="Open terminal" { spawn-sh "kitty -1"; }
     Mod+N repeat=false hotkey-overlay-title="Open neovim" { spawn-sh "niri-launch-or-focus --tui nvim"; }
     Mod+E repeat=false hotkey-overlay-title="Open yazi" { spawn-sh "niri-launch-or-focus --tui yazi"; }
     Mod+B repeat=false hotkey-overlay-title="Open browser" { spawn-sh "niri-launch-or-focus brave --id brave-browser"; }
@@ -136,7 +137,7 @@ binds {
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
     // rather than stacked on top of each other.
-    Mod+Shift+T { toggle-column-tabbed-display; }
+    Mod+Shift+W { toggle-column-tabbed-display; }
 
     // Actions to switch layouts.
     // Note: if you uncomment these, make sure you do NOT have

@@ -40,4 +40,11 @@ layout {
     shadow {
         on
     }
+    tab-indicator {
+        width 10
+        length total-proportion=1.0
+        corner-radius 10
+        position "left"
+        place-within-column
+    }
 }

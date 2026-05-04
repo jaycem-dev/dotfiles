@@ -27,7 +27,7 @@ local function macro_status()
 	if reg == "" then
 		return
 	end
-	return "macro @" .. reg
+	return "@" .. reg
 end
 
 function M.render()
@@ -35,12 +35,8 @@ function M.render()
 	local macro = macro_status() or ""
 	local diagnostics = vim.diagnostic.status() or ""
 	local left_section = table.concat({
-		"%#Cursor#",
-		current_mode(),
-		"%*",
-		"%#OkMsg#",
-		branch,
-		"%*",
+		"%#TelescopePreviewTitle# " .. current_mode() .. " %*",
+		"%#gitcommitBranch#" .. branch .. "%*",
 		macro,
 	}, " ")
 	local center_section = table.concat({
@@ -52,8 +48,8 @@ function M.render()
 	}, " ")
 	local right_section = table.concat({
 		diagnostics,
-		"%y",
 		"%p%%",
+		"%#String#" .. "%y" .. "%*",
 		"%l:%c ",
 	}, " ")
 
