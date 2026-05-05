@@ -11,7 +11,6 @@ cd "$REPO_ROOT" || exit 1
 # List of all matugen output files (relative to repo root)
 # Add/remove files according to matugen config
 FILES=(
-    "mango/.config/mango/colors.conf"
     "kitty/.config/kitty/themes/Colors.conf"
     "btop/.config/btop/themes/colors.theme"
     "fuzzel/.config/fuzzel/colors.ini"
