@@ -8,11 +8,6 @@ set = true
 # You could also set a static color if you use the color keywords and the wallpaper setter supports it.
 command = "pkill swaybg && swaybg -i {{ image }} -m fill &"
 
-[templates.mango]
-input_path = '~/.config/matugen/templates/mango-colors.conf'
-output_path = '~/.config/mango/colors.conf'
-post_hook = 'mmsg -d reload_config'
-
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/themes/Colors.conf'
