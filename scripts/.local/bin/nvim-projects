@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+nvim -c "lua _G.fzf_projects()"

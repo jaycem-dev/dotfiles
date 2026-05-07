@@ -10,7 +10,7 @@ binds {
 
     Mod+T hotkey-overlay-title="Open or focus terminal" { spawn-sh "niri-launch-or-focus 'kitty -1' --id kitty"; }
     Mod+Shift+T hotkey-overlay-title="Open terminal" { spawn-sh "kitty -1"; }
-    Mod+N repeat=false hotkey-overlay-title="Open neovim" { spawn-sh "niri-launch-or-focus --tui nvim"; }
+    Mod+N repeat=false hotkey-overlay-title="Open neovim" { spawn-sh "niri-launch-or-focus --tui nvim-projects"; }
     Mod+E repeat=false hotkey-overlay-title="Open yazi" { spawn-sh "niri-launch-or-focus --tui yazi"; }
     Mod+B repeat=false hotkey-overlay-title="Open browser" { spawn-sh "niri-launch-or-focus brave --id brave-browser"; }
 
