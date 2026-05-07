@@ -39,11 +39,15 @@ window#waybar {
 #workspaces button.active {
     color: @on_primary;
     background-color: @primary;
-    padding: 0;
-    margin: 0;
 }
 
 .modules-right,
 .modules-left {
     padding: 10px 0;
+}
+
+#tray {
+    background-color: @surface_container_high;
+    border-radius: 10;
+    padding: 0 10px;
 }
