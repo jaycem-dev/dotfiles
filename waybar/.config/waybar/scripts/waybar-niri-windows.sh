@@ -9,7 +9,7 @@ niri msg --json event-stream 2>/dev/null | jq -cn --unbuffered '
             {
               text: (
                 .windows
-                | map(select(.workspace_id == $ws.id))
+                | map(select(.workspace_id == $ws.id and .is_floating == false))
                 | sort_by(.layout.pos_in_scrolling_layout // [999, 999])
                 | map(if .id == $ws.active_window_id then "" else "" end)
                 | join(" ")
