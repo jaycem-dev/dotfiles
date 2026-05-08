@@ -49,5 +49,5 @@ window#waybar {
 #tray {
     background-color: @surface_container_high;
     border-radius: 10;
-    padding: 0 10px;
+    padding: 10px 0;
 }
