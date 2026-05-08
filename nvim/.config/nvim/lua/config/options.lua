@@ -7,6 +7,7 @@ vim.opt.winborder = "rounded"
 vim.opt.pumborder = "rounded"
 vim.opt.termguicolors = true -- Forces true color support in terminals
 vim.opt.cursorline = true
+vim.opt.laststatus = 3 -- Global statusline
 -- vim.opt.winblend = 10
 
 -- ui v2 experimental
