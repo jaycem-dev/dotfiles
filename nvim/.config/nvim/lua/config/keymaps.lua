@@ -2,6 +2,9 @@
 -- for plugin keymaps look into each plugin spec in /lua/plugins/*
 vim.g.mapleader = " "
 
+-- easier exit terminal mode bind
+vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
