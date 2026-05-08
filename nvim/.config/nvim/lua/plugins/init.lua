@@ -9,6 +9,7 @@ require("plugins.theme")
 require("plugins.fzf")
 require("plugins.flash")
 require("plugins.oil")
+require("plugins.neogit")
 
 -- builtin plugins
 vim.cmd("packadd nvim.undotree")
