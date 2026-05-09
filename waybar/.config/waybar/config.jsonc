@@ -1,8 +1,32 @@
 {
   "layer": "top",
-  "position": "left",
+  "position": "bottom",
   "spacing": 15,
-  "margin": "5 0",
+  "margin": "0 5",
+
+  "modules-left": ["custom/niri-workspace-windows", "clock"],
+  "modules-center": ["niri/workspaces"],
+  "modules-right": [
+    "privacy",
+    "tray",
+    "idle_inhibitor",
+    "power-profiles-daemon",
+    "network",
+    "bluetooth",
+    "pulseaudio",
+    "battery"
+  ],
+
+  "niri/workspaces": {
+    "format": "{index}"
+  },
+
+  "custom/niri-workspace-windows": {
+    "exec": "~/.config/waybar/scripts/waybar-niri-windows.sh",
+    "exec-on-event": true,
+    "return-type": "json",
+    "format": "{}"
+  },
 
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -51,13 +75,10 @@
   },
   "battery": {
     "states": {
-      "full": 100,
-      "discharging": 99,
       "warning": 30
     },
-    "format": "{icon}\n{capacity}",
-    "format-charging": "󰂄\n{capacity}",
-    "format-full": "{icon}",
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
     "interval": 1,
     "format-icons": {
       "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
@@ -86,8 +107,8 @@
   },
   "clock": {
     "interval": 1,
-    //"format": "{:%a, %b %d  %H:%M}",
-    "format": "{:%H\n%M}",
+    "format": "{:%a, %b %d  %H:%M}",
+    // "format": "{:%H\n%M}",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
       "format": {
