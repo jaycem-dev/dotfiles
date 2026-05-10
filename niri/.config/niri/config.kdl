@@ -197,15 +197,6 @@ input {
     }
 }
 
-// Enable blur for apps that don't support ext-background-effect
-layer-rule {
-    match namespace="^launcher$"
-    match namespace="^waybar$"
-    background-effect {
-        blur true
-    }
-}
-
 // rounded corners
 window-rule {
     geometry-corner-radius 10
