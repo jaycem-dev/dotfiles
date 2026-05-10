@@ -30,3 +30,51 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.hl.on_yank()
 	end,
 })
+
+-- markdown task checkboxes
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "markdown",
+	callback = function()
+		-- Toggle checkbox under cursor
+		vim.keymap.set("n", "<leader>c", function()
+			local line = vim.api.nvim_get_current_line()
+			if line:match("%[ %]") then
+				line = line:gsub("%[ %]", "[x]", 1)
+			elseif line:match("%[x%]") then
+				line = line:gsub("%[x%]", "[ ]", 1)
+			end
+			vim.api.nvim_set_current_line(line)
+		end, { buffer = true, desc = "Toggle markdown task checkbox" })
+
+		-- Create markdown list from selection
+		vim.keymap.set("v", "<leader>l", function()
+			local s = vim.fn.getpos("'<")[2]
+			local e = vim.fn.getpos("'>")[2]
+			if s > e then
+				s, e = e, s
+			end
+			for lnum = s, e do
+				local line = vim.fn.getline(lnum)
+				if line:match("%S") then
+					vim.fn.setline(lnum, "- " .. line)
+				end
+			end
+		end, { buffer = true, desc = "Create markdown list from selection" })
+
+		-- Toggle checkbox for visual selection
+		vim.keymap.set("v", "<leader>c", function()
+			local s = vim.fn.getpos("'<")[2]
+			local e = vim.fn.getpos("'>")[2]
+			if s > e then
+				s, e = e, s
+			end
+
+			for lnum = s, e do
+				local line = vim.fn.getline(lnum)
+				if line:match("%S") and not line:match("%[.%]") then
+					vim.fn.setline(lnum, "- [ ] " .. line)
+				end
+			end
+		end, { buffer = true, desc = "Create markdown checkboxes from selection" })
+	end,
+})

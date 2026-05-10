@@ -7,19 +7,23 @@ vim.pack.add({
 
 local actions = require("fzf-lua.actions")
 require("fzf-lua").setup({
+	keymap = {
+		fzf = {
+			["ctrl-a"] = "toggle-all",
+		},
+	},
+	actions = {
+		files = {
+			true, -- inherit defaults
+			["ctrl-q"] = actions.file_sel_to_qf,
+		},
+	},
 	fzf_colors = {
 		true, -- inherit from nvim theme
 	},
 	grep = {
-		-- TODO: ignore .git dir
-		-- search dotfiles as well
 		hidden = true,
-	},
-	actions = {
-		files = {
-			true, -- inherit from defaults
-			["ctrl-q"] = actions.file_sel_to_qf,
-		},
+		rg_opts = "--glob '!.git' --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
 	},
 })
 -- Keymaps
