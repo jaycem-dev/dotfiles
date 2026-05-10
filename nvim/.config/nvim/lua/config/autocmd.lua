@@ -78,3 +78,15 @@ vim.api.nvim_create_autocmd("FileType", {
 		end, { buffer = true, desc = "Create markdown checkboxes from selection" })
 	end,
 })
+
+-- fff.nvim autodownload binary, must be loaded before package install
+vim.api.nvim_create_autocmd("PackChanged", {
+	group = vim.api.nvim_create_augroup("fff-nvim-pack-hooks", { clear = true }),
+	callback = function(ev)
+		local name, kind = ev.data.spec.name, ev.data.kind
+		if name == "fff.nvim" and (kind == "install" or kind == "update") then
+			vim.cmd.packadd("fff.nvim")
+			require("fff.download").download_or_build_binary()
+		end
+	end,
+})
