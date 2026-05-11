@@ -4,6 +4,9 @@ vim.pack.add({
 
 local actions = require("fzf-lua.actions")
 require("fzf-lua").setup({
+	winopts = {
+		backdrop = 100,
+	},
 	keymap = {
 		fzf = {
 			["ctrl-a"] = "toggle-all",
