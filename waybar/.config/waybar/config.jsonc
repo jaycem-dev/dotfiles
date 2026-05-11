@@ -77,8 +77,8 @@
     "states": {
       "warning": 30
     },
-    "format": "{icon}{capacity}",
-    "format-charging": "󰂄{capacity}",
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
     "interval": 1,
     "format-icons": {
       "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
@@ -107,7 +107,7 @@
   },
   "clock": {
     "interval": 1,
-    "format": "{:%a, %b %d  %H:%M}",
+    "format": "{:%A, %b %d  %H:%M}",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
       "format": {

@@ -1,8 +1,9 @@
 @import "colors.css";
 
 * {
-    font-family: "Dejavu Sans", "Symbols Nerd Font Mono";
+    font-family: "JetBrains Mono", "Symbols Nerd Font Mono";
     font-size: 10pt;
+    font-weight: bold;
 }
 
 window#waybar {
@@ -26,7 +27,11 @@ window#waybar {
 
 #workspaces button {
     border-radius: 10;
-    padding: 0 5px;
+    padding: 2px 5px;
+}
+
+#clock {
+    color: @secondary;
 }
 
 #workspaces button.empty,
@@ -36,8 +41,8 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: @on_primary;
-    background-color: @primary;
+    color: @tertiary;
+    /* background-color: @primary; */
 }
 
 .modules-center,
