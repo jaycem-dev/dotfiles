@@ -27,9 +27,9 @@ require("fzf-lua").setup({
 	},
 })
 -- Keymaps
--- vim.keymap.set("n", "<leader>f", require("fzf-lua").files, { desc = "Find files" })
--- vim.keymap.set("n", "<leader>/", require("fzf-lua").live_grep_native, { desc = "Grep project" })
--- vim.keymap.set("v", "<leader>/", require("fzf-lua").grep_visual, { desc = "Grep visual selection" })
+vim.keymap.set("n", "<leader>f", require("fzf-lua").files, { desc = "Find files" })
+vim.keymap.set("n", "<leader>/", require("fzf-lua").live_grep_native, { desc = "Grep project" })
+vim.keymap.set("v", "<leader>/", require("fzf-lua").grep_visual, { desc = "Grep visual selection" })
 vim.keymap.set("n", "<leader>b", require("fzf-lua").buffers, { desc = "Find buffers" })
 vim.keymap.set("n", "<leader>k", require("fzf-lua").keymaps, { desc = "Find keymaps" })
 vim.keymap.set("n", "<leader>h", require("fzf-lua").helptags, { desc = "Find help" })

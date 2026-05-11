@@ -1,7 +1,6 @@
 -- Simgle configs go here, larger configs are sourced bellow
 
 -- external config
-require("plugins.fff")
 require("plugins.treesitter")
 require("plugins.lsp")
 require("plugins.linter")
