@@ -3,8 +3,8 @@ vim.opt.relativenumber = true -- Show relative number
 
 -- UI
 vim.opt.statusline = "%!v:lua.custom_statusline()"
-vim.opt.winborder = "rounded"
-vim.opt.pumborder = "rounded"
+vim.opt.winborder = "single"
+vim.opt.pumborder = "single"
 vim.opt.termguicolors = true -- Forces true color support in terminals
 vim.opt.cursorline = true
 vim.opt.laststatus = 3 -- Global statusline
@@ -73,8 +73,11 @@ vim.diagnostic.config({
 	},
 })
 
+-- completion
 -- see `:h completeopt`
 vim.opt.completeopt = "menuone,noinsert,popup"
+vim.opt.autocomplete = true
+vim.opt.pumheight = 10
 
 -- manually set filetypes not detected by vim
 vim.filetype.add({

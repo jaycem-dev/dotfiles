@@ -6,6 +6,10 @@ local actions = require("fzf-lua.actions")
 require("fzf-lua").setup({
 	winopts = {
 		backdrop = 100,
+		border = "single",
+		preview = {
+			border = "single",
+		},
 	},
 	keymap = {
 		fzf = {
@@ -26,11 +30,15 @@ require("fzf-lua").setup({
 		rg_opts = "--glob '!.git' --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
 	},
 })
--- Keymaps
-vim.keymap.set("n", "<leader>f", require("fzf-lua").files, { desc = "Find files" })
-vim.keymap.set("n", "<leader>/", require("fzf-lua").live_grep_native, { desc = "Grep project" })
-vim.keymap.set("v", "<leader>/", require("fzf-lua").grep_visual, { desc = "Grep visual selection" })
+-- buffers and files
 vim.keymap.set("n", "<leader>b", require("fzf-lua").buffers, { desc = "Find buffers" })
+vim.keymap.set("n", "<leader>f", require("fzf-lua").files, { desc = "Find files" })
+
+-- search
+vim.keymap.set("n", "<leader>/", require("fzf-lua").live_grep_native, { desc = "Grep project" })
+vim.keymap.set("v", "<leader>/", require("fzf-lua").grep_visual, { desc = "Find visual selection" })
+vim.keymap.set("n", "<leader>w", require("fzf-lua").grep_cword, { desc = "Find word under cursor" })
+
 vim.keymap.set("n", "<leader>k", require("fzf-lua").keymaps, { desc = "Find keymaps" })
 vim.keymap.set("n", "<leader>h", require("fzf-lua").helptags, { desc = "Find help" })
 -- LSP keymaps
