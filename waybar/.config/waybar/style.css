@@ -7,27 +7,26 @@
 }
 
 window#waybar {
-    background-color: @background_alpha;
+    background-color: @background;
     color: @on_background;
-    border-radius: 10;
+    /* border-radius: 10; */
 }
 
 #idle_inhibitor.activated,
-#network.wifi,
 #bluetooth.connected,
 #power-profiles-daemon.performance {
     color: @primary;
 }
 
 #battery.warning,
-#privacy,
-#power-profiles-daemon.power-saver {
+#privacy {
     color: @error;
 }
 
 #workspaces button {
     border-radius: 10;
-    padding: 2px 5px;
+    padding: 0 5px;
+    border-radius: 0;
 }
 
 #clock {
@@ -41,18 +40,18 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: @tertiary;
-    /* background-color: @primary; */
+    color: @on_primary;
+    background-color: @primary;
 }
 
 .modules-center,
 .modules-right,
 .modules-left {
-    padding: 0 10px;
+    padding: 0 5px;
 }
 
 #tray {
     background-color: @surface_container_high;
-    border-radius: 10;
+    border-radius: 0;
     padding: 0 10px;
 }

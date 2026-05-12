@@ -2,10 +2,10 @@
   "layer": "top",
   "position": "bottom",
   "spacing": 15,
-  "margin": "0 5",
+  // "margin": "0 5",
 
-  "modules-left": ["custom/niri-workspace-windows", "clock"],
-  "modules-center": ["niri/workspaces"],
+  "modules-left": ["niri/workspaces", "custom/niri-workspace-windows"],
+  "modules-center": ["clock"],
   "modules-right": [
     "privacy",
     "tray",

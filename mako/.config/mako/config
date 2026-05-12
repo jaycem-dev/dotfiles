@@ -2,9 +2,8 @@ include=~/.config/mako/colors
 layer=overlay
 width=400
 padding=10
-margin=5
 border-size=2
-border-radius=10
+border-radius=0
 
 [category=osd]
 anchor=top-center
