@@ -1,20 +1,4 @@
--- Simgle configs go here, larger configs are sourced bellow
-
--- external config
-require("plugins.treesitter")
-require("plugins.lsp")
-require("plugins.linter")
-require("plugins.formatter")
-require("plugins.theme")
-require("plugins.fzf")
-require("plugins.flash")
-require("plugins.oil")
-require("plugins.neogit")
-
--- builtin plugins
-vim.cmd("packadd nvim.undotree")
-vim.keymap.set("n", "<leader>u", require("undotree").open)
-
+-- small plugins with small or no config
 vim.pack.add({
 	"https://github.com/catgoose/nvim-colorizer.lua",
 	"https://github.com/nvim-tree/nvim-web-devicons",
@@ -24,15 +8,21 @@ vim.pack.add({
 	{ src = "https://github.com/windwp/nvim-autopairs", version = vim.version.range("*") },
 	{ src = "https://github.com/folke/which-key.nvim", version = vim.version.range("*") },
 	{ src = "https://github.com/lewis6991/gitsigns.nvim", version = vim.version.range("*") },
+	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim", version = vim.version.range("*") },
 })
+
+-- builtin plugins
+vim.cmd("packadd nvim.undotree")
+vim.keymap.set("n", "<leader>u", require("undotree").open)
+-- ui2 (experimental)
+require("vim._core.ui2").enable({ enable = true })
 
 -- simgle config / no config
 require("supermaven-nvim").setup({})
 require("nvim-autopairs").setup({})
 require("colorizer").setup()
-require("gitsigns").setup()
 require("nvim-web-devicons").setup()
-require("which-key").setup({ preset = "helix" })
+
 -- toggleterm
 require("toggleterm").setup()
 vim.keymap.set({ "n", "t" }, "<C-/>", "<CMD>ToggleTerm<CR>", { desc = "Toggleterm" })
