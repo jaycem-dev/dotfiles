@@ -66,11 +66,8 @@ vim.keymap.set("n", "<leader>m", require("fzf-lua").marks, { desc = "Find marks"
 _G.fzf_projects = function(opts)
 	local fzf_lua = require("fzf-lua")
 	opts = opts or {}
-	opts.prompt = "Projects > "
+	opts.prompt = "Projects> "
 	opts.cwd = opts.cwd or vim.fn.expand("~/dev")
-	opts.fn_transform = function(x)
-		return fzf_lua.utils.ansi_codes.magenta(x)
-	end
 	opts.actions = {
 		["default"] = function(selected)
 			vim.cmd("cd " .. selected[1])
