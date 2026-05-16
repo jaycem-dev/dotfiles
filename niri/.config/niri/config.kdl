@@ -196,11 +196,11 @@ input {
     }
 }
 
-// // rounded corners
-// window-rule {
-//     geometry-corner-radius 10
-//     clip-to-geometry true
-// }
+// rounded corners
+window-rule {
+    geometry-corner-radius 10
+    clip-to-geometry true
+}
 
 // Make inactive windows semitransparent with blur
 window-rule {
