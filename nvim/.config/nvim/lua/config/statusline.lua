@@ -31,9 +31,7 @@ function _G.statusline()
 		"%=",
 		vim.diagnostic.status(),
 		"%p%%",
-		"%#String#",
-		"%y",
-		"%*",
+		"%#String#" .. "%y" .. "%*",
 		"%l:%c ",
 	}, " ")
 end

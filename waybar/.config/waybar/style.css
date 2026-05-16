@@ -28,10 +28,6 @@ window#waybar {
     padding: 0 5px;
 }
 
-#clock {
-    color: @secondary;
-}
-
 #workspaces button.empty,
 #workspaces button.hidden,
 #bluetooth.off {
