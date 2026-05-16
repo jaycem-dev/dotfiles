@@ -4,8 +4,8 @@
   "spacing": 15,
   // "margin": "0 5",
 
-  "modules-left": ["niri/workspaces", "custom/niri-workspace-windows"],
-  "modules-center": ["clock"],
+  "modules-left": ["custom/niri-workspace-windows", "clock"],
+  "modules-center": ["niri/workspaces"],
   "modules-right": [
     "privacy",
     "tray",
@@ -18,7 +18,15 @@
   ],
 
   "niri/workspaces": {
-    "format": "{index}"
+    "format": "{icon}",
+    "format-icons": {
+      "default": "󰧞",
+      "browser": "󰖟",
+      "dev": "󰗀",
+      "media": "󰝚",
+      "chat": "󰭻",
+      "gaming": "󱤙"
+    }
   },
 
   "custom/niri-workspace-windows": {
