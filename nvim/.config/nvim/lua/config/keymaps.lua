@@ -14,7 +14,7 @@ vim.keymap.set("n", "<leader>l", ":buffer #<CR>", { desc = "Last buffer" })
 
 -- map <c-space> to activate completion
 vim.keymap.set("i", "<c-space>", function()
-	vim.lsp.completion.get()
+    vim.lsp.completion.get()
 end)
 
 -- Map <leader>y to yank to system clipboard
@@ -22,8 +22,8 @@ vim.keymap.set({ "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" 
 
 -- Toggle Quickfix List
 vim.keymap.set("n", "<leader>q", function()
-	local is_open = vim.iter(vim.fn.getwininfo()):any(function(win)
-		return win.quickfix == 1
-	end)
-	vim.cmd(is_open and "cclose" or "copen")
+    local is_open = vim.iter(vim.fn.getwininfo()):any(function(win)
+        return win.quickfix == 1
+    end)
+    vim.cmd(is_open and "cclose" or "copen")
 end, { desc = "Toggle Quickfix List" })
