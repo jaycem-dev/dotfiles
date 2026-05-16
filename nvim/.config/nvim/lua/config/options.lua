@@ -11,7 +11,6 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 -- UI
-vim.opt.statusline = "%!v:lua.custom_statusline()"
 vim.opt.winborder = "single"
 vim.opt.pumborder = "single"
 vim.opt.termguicolors = true
