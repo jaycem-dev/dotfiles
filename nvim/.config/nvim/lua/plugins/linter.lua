@@ -1,8 +1,5 @@
 vim.pack.add({
-	{
-		src = "https://github.com/mfussenegger/nvim-lint",
-		version = vim.version.range("*"),
-	},
+	{ src = "https://github.com/mfussenegger/nvim-lint", version = vim.version.range("*") },
 })
 
 local lint = require("lint")
