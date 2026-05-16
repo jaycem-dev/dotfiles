@@ -1,12 +1,16 @@
 vim.pack.add({
-	{
-		src = "https://github.com/ibhagwan/fzf-lua",
-		version = vim.version.range("*"),
-	},
+	{ src = "https://github.com/ibhagwan/fzf-lua", version = vim.version.range("*") },
 })
 
 local actions = require("fzf-lua.actions")
 require("fzf-lua").setup({
+	winopts = {
+		backdrop = 100,
+		border = "single",
+		preview = {
+			border = "single",
+		},
+	},
 	keymap = {
 		fzf = {
 			["ctrl-a"] = "toggle-all",
@@ -26,11 +30,15 @@ require("fzf-lua").setup({
 		rg_opts = "--glob '!.git' --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
 	},
 })
--- Keymaps
--- vim.keymap.set("n", "<leader>f", require("fzf-lua").files, { desc = "Find files" })
--- vim.keymap.set("n", "<leader>/", require("fzf-lua").live_grep_native, { desc = "Grep project" })
--- vim.keymap.set("v", "<leader>/", require("fzf-lua").grep_visual, { desc = "Grep visual selection" })
+-- buffers and files
 vim.keymap.set("n", "<leader>b", require("fzf-lua").buffers, { desc = "Find buffers" })
+vim.keymap.set("n", "<leader>f", require("fzf-lua").files, { desc = "Find files" })
+
+-- search
+vim.keymap.set("n", "<leader>/", require("fzf-lua").live_grep_native, { desc = "Grep project" })
+vim.keymap.set("v", "<leader>/", require("fzf-lua").grep_visual, { desc = "Find visual selection" })
+vim.keymap.set("n", "<leader>w", require("fzf-lua").grep_cword, { desc = "Find word under cursor" })
+
 vim.keymap.set("n", "<leader>k", require("fzf-lua").keymaps, { desc = "Find keymaps" })
 vim.keymap.set("n", "<leader>h", require("fzf-lua").helptags, { desc = "Find help" })
 -- LSP keymaps
@@ -58,11 +66,8 @@ vim.keymap.set("n", "<leader>m", require("fzf-lua").marks, { desc = "Find marks"
 _G.fzf_projects = function(opts)
 	local fzf_lua = require("fzf-lua")
 	opts = opts or {}
-	opts.prompt = "Projects > "
+	opts.prompt = "Projects> "
 	opts.cwd = opts.cwd or vim.fn.expand("~/dev")
-	opts.fn_transform = function(x)
-		return fzf_lua.utils.ansi_codes.magenta(x)
-	end
 	opts.actions = {
 		["default"] = function(selected)
 			vim.cmd("cd " .. selected[1])

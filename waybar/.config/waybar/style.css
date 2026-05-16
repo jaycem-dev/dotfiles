@@ -1,32 +1,35 @@
 @import "colors.css";
 
 * {
-    font-family: "Dejavu Sans", "Symbols Nerd Font Mono";
+    font-family: "JetBrains Mono", "Symbols Nerd Font Mono";
     font-size: 10pt;
+    font-weight: bold;
 }
 
 window#waybar {
-    background-color: @background_alpha;
+    background-color: @background;
     color: @on_background;
-    border-radius: 10;
+    /* border-radius: 10; */
 }
 
 #idle_inhibitor.activated,
-#network.wifi,
 #bluetooth.connected,
 #power-profiles-daemon.performance {
     color: @primary;
 }
 
 #battery.warning,
-#privacy,
-#power-profiles-daemon.power-saver {
+#privacy {
     color: @error;
 }
 
 #workspaces button {
     border-radius: 10;
     padding: 0 5px;
+}
+
+#clock {
+    color: @secondary;
 }
 
 #workspaces button.empty,
@@ -43,7 +46,7 @@ window#waybar {
 .modules-center,
 .modules-right,
 .modules-left {
-    padding: 0 10px;
+    padding: 0 5px;
 }
 
 #tray {
