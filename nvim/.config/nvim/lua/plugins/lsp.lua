@@ -18,6 +18,9 @@ vim.lsp.enable("astro")
 vim.lsp.enable("html")
 vim.lsp.enable("tailwindcss")
 vim.lsp.enable("cssls")
+vim.lsp.config("cssls", {
+  init_options = { provideFormatter = false },
+})
 vim.lsp.enable("marksman")
 vim.lsp.enable("taplo")
 vim.lsp.enable("yamlls")
