@@ -1,35 +1,35 @@
 {
-  "include": ["~/.config/waybar/common.jsonc"],
+    "include": ["~/.config/waybar/common.jsonc"],
 
-  "modules-left": ["custom/niri-workspace-windows", "clock"],
-  "modules-center": ["niri/workspaces"],
-  "modules-right": [
-    "privacy",
-    "tray",
-    "idle_inhibitor",
-    "power-profiles-daemon",
-    "network",
-    "bluetooth",
-    "pulseaudio",
-    "battery"
-  ],
+    "modules-left": ["custom/niri-workspace-windows", "clock"],
+    "modules-center": ["niri/workspaces"],
+    "modules-right": [
+        "privacy",
+        "tray",
+        "idle_inhibitor",
+        "power-profiles-daemon",
+        "network",
+        "bluetooth",
+        "pulseaudio",
+        "battery",
+    ],
 
-  "niri/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "default": "󰧞",
-      "browser": "󰖟",
-      "dev": "󰗀",
-      "media": "󰝚",
-      "chat": "󰭻",
-      "gaming": "󱤙"
-    }
-  },
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": "󰧞",
+            "browser": "󰖟",
+            "dev": "󰗀",
+            "media": "󰝚",
+            "chat": "󰭻",
+            "gaming": "󱤙",
+        },
+    },
 
-  "custom/niri-workspace-windows": {
-    "exec": "~/.config/waybar/scripts/waybar-niri-windows.sh",
-    "exec-on-event": true,
-    "return-type": "json",
-    "format": "{}"
-  }
+    "custom/niri-workspace-windows": {
+        "exec": "~/.config/waybar/scripts/waybar-niri-windows.sh",
+        "exec-on-event": true,
+        "return-type": "json",
+        "format": "{}",
+    },
 }

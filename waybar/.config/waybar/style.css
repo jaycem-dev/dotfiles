@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-    background-color: @background;
+    background-color: @background_alpha;
     color: @on_background;
     /* border-radius: 10; */
 }
@@ -25,7 +25,7 @@ window#waybar {
 
 #workspaces button {
     border-radius: 10;
-    padding: 0 5px;
+    padding: 0 10px;
 }
 
 #workspaces button.empty,
@@ -35,8 +35,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: @on_primary;
-    background-color: @primary;
+    background-color: @surface_container_high;
 }
 
 .modules-center,
