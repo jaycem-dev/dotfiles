@@ -1,59 +1,44 @@
-local mod = "SUPER" -- Sets "Windows" key as main modifier
+local spawn_or_focus = require("utils").spawn_or_focus
+local spawn_or_focus_webapp = require("utils").spawn_or_focus_webapp
+local spawn_or_focus_tui = require("utils").spawn_or_focus_tui
+
+local mod = "SUPER"
+local mod2 = "SUPER + SHIFT"
+
 local brightness = "~/.local/bin/brightness"
 local volume = "~/.local/bin/volume"
 
--- apps
-local terminal = { cmd = "foot" }
+-- apps,
+-- format for spawn_or_focus: { cmd = "command", class = "class" }
+-- format for spawn: "command"
 local menu = "fuzzel"
+local terminal = { cmd = "foot" }
 local browser = { cmd = "brave", class = "brave-browser" }
 
 -- webapps, use only url
 local whatsapp = "web.whatsapp.com"
 local protonmail = "mail.proton.me"
+local yt_music = "music.youtube.com"
 
 -- tui, class is optional
 local yazi = { cmd = "yazi" }
-local nvim = { cmd = "nvim -c 'lua _G.fzf_projects()'", class = "nvim-projects" }
-
--- spawn or focus utils
-local function spawn_or_focus(app)
-    return function()
-        local w = hl.get_window("class:" .. (app.class or app.cmd))
-        if w then
-            hl.dispatch(hl.dsp.focus({ window = w }))
-        else
-            hl.dispatch(hl.dsp.exec_cmd(app.cmd))
-        end
-    end
-end
-
-local function spawn_or_focus_webapp(url)
-    return spawn_or_focus({
-        cmd = "brave --app=https://" .. url,
-        class = "brave-" .. url .. "__-Default",
-    })
-end
-
-local function spawn_or_focus_tui(app)
-    local class = app.class or app.cmd
-    local cmd = "foot --app-id " .. class .. " " .. app.cmd
-    return spawn_or_focus({ cmd = cmd, class = app.class or app.cmd })
-end
+local nvim = { cmd = "nvim -c 'lua _G.fzf_projects()'", class = "nvim" }
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
-hl.bind(mod .. " + SHIFT + F", hl.dsp.window.fullscreen())
+hl.bind(mod2 .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mod .. " + T", spawn_or_focus(terminal))
 hl.bind(mod .. " + Q", hl.dsp.window.close())
 hl.bind(
-    mod .. " + SHIFT + Q",
+    mod2 .. " + Q",
     hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
 hl.bind(mod .. " + E", spawn_or_focus_tui(yazi))
 hl.bind(mod .. " + N", spawn_or_focus_tui(nvim))
 hl.bind(mod .. " + B", spawn_or_focus(browser))
 hl.bind(mod .. " + W", spawn_or_focus_webapp(whatsapp))
-hl.bind(mod .. " + M", spawn_or_focus_webapp(protonmail))
+hl.bind(mod .. " + M", spawn_or_focus_webapp(yt_music))
+hl.bind(mod2 .. " + M", spawn_or_focus_webapp(protonmail))
 hl.bind(mod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + G", hl.dsp.window.pin())
 hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd(menu))
@@ -66,27 +51,22 @@ hl.bind(mod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mod .. " + down", hl.dsp.focus({ direction = "down" }))
 
-hl.bind(mod .. " + SHIFT + left", hl.dsp.window.move({ direction = "left" }))
-hl.bind(mod .. " + SHIFT + right", hl.dsp.window.move({ direction = "right" }))
-hl.bind(mod .. " + SHIFT + up", hl.dsp.window.move({ direction = "up" }))
-hl.bind(mod .. " + SHIFT + down", hl.dsp.window.move({ direction = "down" }))
+hl.bind(mod2 .. " + left", hl.dsp.window.move({ direction = "left" }))
+hl.bind(mod2 .. " + right", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mod2 .. " + up", hl.dsp.window.move({ direction = "up" }))
+hl.bind(mod2 .. " + down", hl.dsp.window.move({ direction = "down" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
     hl.bind(mod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-    hl.bind(mod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+    hl.bind(mod2 .. " + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
 -- Example special workspace (scratchpad)
 hl.bind(mod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(
-    mod .. " + SHIFT + S",
-    hl.dsp.exec_cmd(
-        "hyprctl dispatch tagwindow +scratchpad activewindow && hyprctl dispatch movetoworkspace special:magic"
-    )
-)
+hl.bind(mod2 .. " + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
