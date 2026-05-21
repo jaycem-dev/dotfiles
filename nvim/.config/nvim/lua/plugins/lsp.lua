@@ -8,7 +8,6 @@ vim.lsp.enable("oxfmt")
 vim.lsp.enable("oxlint")
 -- lua
 vim.lsp.enable("lua_ls")
-vim.lsp.enable("stylua")
 
 vim.lsp.enable("pyright")
 vim.lsp.enable("gopls")
@@ -19,7 +18,7 @@ vim.lsp.enable("html")
 vim.lsp.enable("tailwindcss")
 vim.lsp.enable("cssls")
 vim.lsp.config("cssls", {
-  init_options = { provideFormatter = false },
+    init_options = { provideFormatter = false },
 })
 vim.lsp.enable("marksman")
 vim.lsp.enable("taplo")

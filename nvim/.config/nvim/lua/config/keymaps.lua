@@ -27,3 +27,17 @@ vim.keymap.set("n", "<leader>q", function()
     end)
     vim.cmd(is_open and "cclose" or "copen")
 end, { desc = "Toggle Quickfix List" })
+
+-- jump for snippets
+vim.keymap.set({ "i", "s" }, "<Tab>", function()
+    if vim.snippet and vim.snippet.active() then
+        return vim.snippet.jump(1)
+    end
+    return "<Tab>"
+end, { expr = true })
+vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
+    if vim.snippet and vim.snippet.active() then
+        return vim.snippet.jump(-1)
+    end
+    return "<S-Tab>"
+end, { expr = true })

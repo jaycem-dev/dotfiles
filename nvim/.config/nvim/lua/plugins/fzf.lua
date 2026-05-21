@@ -1,30 +1,30 @@
 vim.pack.add({
-	{ src = "https://github.com/ibhagwan/fzf-lua", version = vim.version.range("*") },
+    { src = "https://github.com/ibhagwan/fzf-lua", version = vim.version.range("*") },
 })
 
 local actions = require("fzf-lua.actions")
 require("fzf-lua").setup({
-	winopts = {
-		backdrop = 100,
-	},
-	keymap = {
-		fzf = {
-			["ctrl-a"] = "toggle-all",
-		},
-	},
-	actions = {
-		files = {
-			true, -- inherit defaults
-			["ctrl-q"] = actions.file_sel_to_qf,
-		},
-	},
-	fzf_colors = {
-		true, -- inherit from nvim theme
-	},
-	grep = {
-		hidden = true,
-		rg_opts = "--glob '!.git' --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
-	},
+    winopts = {
+        backdrop = 100,
+    },
+    keymap = {
+        fzf = {
+            ["ctrl-a"] = "toggle-all",
+        },
+    },
+    actions = {
+        files = {
+            true, -- inherit defaults
+            ["ctrl-q"] = actions.file_sel_to_qf,
+        },
+    },
+    fzf_colors = {
+        true, -- inherit from nvim theme
+    },
+    grep = {
+        hidden = true,
+        rg_opts = "--glob '!.git' --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
+    },
 })
 -- buffers and files
 vim.keymap.set("n", "<leader>b", require("fzf-lua").buffers, { desc = "Find buffers" })
@@ -41,16 +41,16 @@ vim.keymap.set("n", "<leader>h", require("fzf-lua").helptags, { desc = "Find hel
 vim.keymap.set("n", "<leader>r", require("fzf-lua").lsp_references, { desc = "Find references (LSP)" })
 vim.keymap.set("n", "<leader>i", require("fzf-lua").lsp_implementations, { desc = "Find implementations (LSP)" })
 vim.keymap.set(
-	"n",
-	"<leader>D",
-	require("fzf-lua").diagnostics_workspace,
-	{ desc = "Find diagnostics on workspace (LSP)" }
+    "n",
+    "<leader>D",
+    require("fzf-lua").diagnostics_workspace,
+    { desc = "Find diagnostics on workspace (LSP)" }
 )
 vim.keymap.set(
-	"n",
-	"<leader>d",
-	require("fzf-lua").diagnostics_document,
-	{ desc = "Find diagnostics on current buffer (LSP)" }
+    "n",
+    "<leader>d",
+    require("fzf-lua").diagnostics_document,
+    { desc = "Find diagnostics on current buffer (LSP)" }
 )
 vim.keymap.set("n", "<leader>s", require("fzf-lua").lsp_document_symbols, { desc = "Find document symbols (LSP)" })
 vim.keymap.set("n", "<leader>S", require("fzf-lua").lsp_workspace_symbols, { desc = "Find workspace symbols (LSP)" })
@@ -60,16 +60,16 @@ vim.keymap.set("n", "<leader>m", require("fzf-lua").marks, { desc = "Find marks"
 
 -- Custom
 _G.fzf_projects = function(opts)
-	local fzf_lua = require("fzf-lua")
-	opts = opts or {}
-	opts.prompt = "Projects> "
-	opts.cwd = opts.cwd or vim.fn.expand("~/dev")
-	opts.actions = {
-		["default"] = function(selected)
-			vim.cmd("cd " .. selected[1])
-			vim.cmd("edit .")
-		end,
-	}
-	fzf_lua.fzf_exec("fd --type d --max-depth 1 --absolute-path", opts)
+    local fzf_lua = require("fzf-lua")
+    opts = opts or {}
+    opts.prompt = "Projects> "
+    opts.cwd = opts.cwd or vim.fn.expand("~/dev")
+    opts.actions = {
+        ["default"] = function(selected)
+            vim.cmd("cd " .. selected[1])
+            vim.cmd("edit .")
+        end,
+    }
+    fzf_lua.fzf_exec("fd --type d --max-depth 1 --absolute-path", opts)
 end
 vim.keymap.set("n", "<leader>p", _G.fzf_projects)
