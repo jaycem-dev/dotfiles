@@ -24,7 +24,7 @@ vim.opt.pumheight = 10            -- popup menu items
 vim.opt.ignorecase = true         -- Ignore case in search patterns.
 vim.opt.smartcase = true          -- Override the 'ignorecase' option if the search pattern contains upper case characters.
 -- completion
-vim.opt.completeopt = "menuone,noinsert,noselect,popup"
+vim.opt.completeopt = "menuone,noinsert,popup"
 -- diagnostics
 vim.diagnostic.config({
     status = {
@@ -36,3 +36,8 @@ vim.diagnostic.config({
         },
     },
 })
+-- backup
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = vim.fn.stdpath("data") .. "/undodir"
+vim.opt.undofile = true
