@@ -2,10 +2,10 @@ local image = require("colors").image
 
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
 hl.on("hyprland.start", function()
-	hl.exec_cmd("waybar -c ~/.config/waybar/hypr.jsonc")
-	hl.exec_cmd("swayidle -c ~/.config/waybar/hypr.jsonc")
-	hl.exec_cmd("swaybg -i " .. image .. " -m fill")
-	hl.exec_cmd("hyprsunset")
+    hl.exec_cmd("waybar -c ~/.config/waybar/hypr.jsonc")
+    hl.exec_cmd("swayidle -C ~/.config/swayidle/hypr")
+    hl.exec_cmd("swaybg -i " .. image .. " -m fill")
+    hl.exec_cmd("hyprsunset")
 end)
 
 -- ENVIRONMENT VARIABLES
