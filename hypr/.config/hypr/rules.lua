@@ -10,7 +10,7 @@ hl.window_rule({
 })
 hl.window_rule({
     match = {
-        class = "foot|kitty",
+        class = "foot|kitty|nvim",
     },
     workspace = 2,
 })
@@ -58,6 +58,12 @@ hl.window_rule({
 hl.window_rule({
     match = { fullscreen = true },
     border_color = colors.error,
+})
+
+-- Inhibit idle when any window is fullscreen
+hl.window_rule({
+    match = { class = ".*" },
+    idle_inhibit = "fullscreen",
 })
 
 hl.window_rule({
