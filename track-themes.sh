@@ -24,6 +24,7 @@ FILES=(
     "nvim/.config/nvim/lua/plugins/theme.lua"
     "helix/.config/helix/themes/colors.toml"
     "swaylock/.config/swaylock/config"
+    "hypr/.config/hypr/colors.lua"
 )
 
 skip_updates() {

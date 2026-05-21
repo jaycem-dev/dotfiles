@@ -1,7 +1,7 @@
 {
     "include": ["~/.config/waybar/common.jsonc"],
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
+    "modules-center": ["clock"],
     "modules-right": [
         "privacy",
         "tray",
@@ -11,22 +11,12 @@
         "bluetooth",
         "pulseaudio",
         "battery",
-        "clock",
     ],
-    "niri/workspaces": {
-        "format": "{icon}",
-        "format-icons": {
-            "default": "󰧞",
-            "browser": "󰖟",
-            "dev": "󰗀",
-            "media": "󰝚",
-            "chat": "󰭻",
-            "gaming": "󱤙",
-        },
-    },
+
     "hyprland/workspaces": {
         "format": "{icon} {windows}",
         "format-window-separator": "",
+        "show-special": true,
         "persistent-workspaces": {
             "*": 5,
         },
