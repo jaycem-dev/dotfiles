@@ -2,42 +2,37 @@
 -- for plugin keymaps look into each plugin spec in /lua/plugins/*
 vim.g.mapleader = " "
 
--- easier exit terminal mode bind
 vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
-
--- Clear highlights on search when pressing <Esc> in normal mode
---  See `:help hlsearch`
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-
--- buffer navigation, similar to tmux
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
 vim.keymap.set("n", "<leader>l", ":buffer #<CR>", { desc = "Last buffer" })
+vim.keymap.set("i", "<c-space>", function() vim.lsp.completion.get() end, { desc = "Autocomplete" })
+vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 
--- map <c-space> to activate completion
-vim.keymap.set("i", "<c-space>", function()
-    vim.lsp.completion.get()
-end)
+-- QoL
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Join lines without moving cursor" })
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Moves visual selection down" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Moves visual selection up" })
+vim.keymap.set("v", "<", "<gv", { desc = "Unindent and keep selection" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent and keep selection" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Move down in buffer with cursor centered" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Move up in buffer with cursor centered" })
+vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result cursor centered" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result cursor centered" })
 
--- Map <leader>y to yank to system clipboard
-vim.keymap.set({ "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
-
--- Toggle Quickfix List
-vim.keymap.set("n", "<leader>q", function()
-    local is_open = vim.iter(vim.fn.getwininfo()):any(function(win)
-        return win.quickfix == 1
-    end)
-    vim.cmd(is_open and "cclose" or "copen")
-end, { desc = "Toggle Quickfix List" })
-
--- jump for snippets
 vim.keymap.set({ "i", "s" }, "<Tab>", function()
     if vim.snippet and vim.snippet.active() then
         return vim.snippet.jump(1)
     end
     return "<Tab>"
-end, { expr = true })
+end, { expr = true, desc = "Next snippet" })
 vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
     if vim.snippet and vim.snippet.active() then
         return vim.snippet.jump(-1)
     end
     return "<S-Tab>"
-end, { expr = true })
+end, { expr = true, desc = "Previous snippet" })
+
+vim.keymap.set("n", "<leader>q", function()
+    local is_open = vim.iter(vim.fn.getwininfo()):any(function(win) return win.quickfix == 1 end)
+    vim.cmd(is_open and "cclose" or "copen")
+end, { desc = "Toggle Quickfix List" })
