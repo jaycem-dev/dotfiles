@@ -1,10 +1,10 @@
 [[language]]
 name = "astro"
 formatter = { command = "prettier", args = [
-  "--plugin",
-  "prettier-plugin-astro",
-  "--parser",
-  "astro",
+    "--plugin",
+    "prettier-plugin-astro",
+    "--parser",
+    "astro",
 ] }
 auto-format = true
 
