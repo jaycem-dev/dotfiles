@@ -1,6 +1,20 @@
 local colors = require("colors")
 local webapp_class = require("utils").webapp_class
 
+-- pip
+hl.window_rule({
+    name = "apply-something",
+    match = {
+        title = "Picture in picture"
+    },
+    float = true,
+    pin = true,
+    keep_aspect_ratio = true,
+    no_initial_focus = true,
+    size = { 384, 216 },
+    move = { "monitor_w - window_w - 5", 5 }
+})
+
 -- workspace assignment
 hl.window_rule({
     match = {
