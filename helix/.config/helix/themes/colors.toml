@@ -19,9 +19,7 @@
 
 "path" = { fg = "secondary", underline = { color = "secondary", style = "line" } }
 
-"comment" = { fg = "outline", bg = "surfaceContainerHigh", modifiers = [
-  "italic",
-] }
+"comment" = { fg = "outline", bg = "surfaceContainerHigh", modifiers = ["italic"] }
 
 "variable" = "onSurface"
 "variable.builtin" = "secondary"
@@ -34,10 +32,7 @@
 "punctuation.special" = "outline"
 
 "keyword" = { fg = "primary", modifiers = ["bold"] }
-"keyword.control.conditional" = { fg = "tertiary", modifiers = [
-  "italic",
-  "bold",
-] }
+"keyword.control.conditional" = { fg = "tertiary", modifiers = ["italic", "bold"] }
 
 "operator" = { fg = "secondary", modifiers = ["bold"] }
 
@@ -76,15 +71,9 @@
 
 "ui.statusline" = { fg = "onSurface", bg = "surfaceContainerLow" }
 "ui.statusline.inactive" = { fg = "onSurface", bg = "surfaceContainerLowest" }
-"ui.statusline.normal" = { fg = "onPrimary", bg = "primary", modifiers = [
-  "bold",
-] }
-"ui.statusline.insert" = { fg = "onTertiary", bg = "tertiary", modifiers = [
-  "bold",
-] }
-"ui.statusline.select" = { fg = "onSecondary", bg = "secondary", modifiers = [
-  "bold",
-] }
+"ui.statusline.normal" = { fg = "onPrimary", bg = "primary", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "onTertiary", bg = "tertiary", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "onSecondary", bg = "secondary", modifiers = ["bold"] }
 
 "ui.bufferline" = { fg = "onSurface", bg = "surfaceContainerLowest" }
 "ui.bufferline.active" = { fg = "onSurface", bg = "surfaceContainer", underline = { color = "primary", style = "line" } }
@@ -96,16 +85,12 @@
 "ui.help" = { fg = "onSurface", bg = "surfaceContainerLow" }
 
 "ui.text" = { fg = "onBackground" }
-"ui.text.focus" = { fg = "onSurface", bg = "surfaceContainer", modifiers = [
-  "bold",
-] }
+"ui.text.focus" = { fg = "onSurface", bg = "surfaceContainer", modifiers = ["bold"] }
 
 "ui.virtual" = "surfaceVariant"
 "ui.virtual.ruler" = { bg = "surfaceContainerLow" }
 "ui.virtual.indent-guide" = "surfaceVariant"
-"ui.virtual.inlay-hint" = { fg = "onSurfaceVariant", bg = "surfaceContainer", modifiers = [
-  "dim",
-] }
+"ui.virtual.inlay-hint" = { fg = "onSurfaceVariant", bg = "surfaceContainer", modifiers = ["dim"] }
 "ui.virtual.jump-label" = { fg = "primary", modifiers = ["bold"] }
 
 "ui.menu" = { fg = "onSurface", bg = "surfaceContainer" }
