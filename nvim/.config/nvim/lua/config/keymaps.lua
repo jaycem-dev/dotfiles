@@ -18,6 +18,9 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Move down in buffer with curso
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Move up in buffer with cursor centered" })
 vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result cursor centered" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result cursor centered" })
+-- remap macro to Q
+vim.keymap.set('n', 'q', '<Nop>', { noremap = true })
+vim.keymap.set('n', 'Q', 'q', { noremap = true, desc = 'Record macro' })
 
 vim.keymap.set({ "i", "s" }, "<Tab>", function()
     if vim.snippet and vim.snippet.active() then

@@ -74,12 +74,6 @@ hl.window_rule({
     border_color = colors.error,
 })
 
--- Inhibit idle when any window is fullscreen
-hl.window_rule({
-    match = { class = ".*" },
-    idle_inhibit = "fullscreen",
-})
-
 hl.window_rule({
     -- Fix some dragging issues with XWayland
     name = "fix-xwayland-drags",
