@@ -11,8 +11,8 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 -- UI
-vim.opt.winborder = "single"
-vim.opt.pumborder = "single"
+vim.opt.winborder = "rounded"
+vim.opt.pumborder = "rounded"
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
 vim.opt.laststatus = 3            -- global statusline
@@ -24,7 +24,7 @@ vim.opt.pumheight = 10            -- popup menu items
 vim.opt.ignorecase = true         -- Ignore case in search patterns.
 vim.opt.smartcase = true          -- Override the 'ignorecase' option if the search pattern contains upper case characters.
 -- completion
-vim.opt.completeopt = "menuone,noinsert,popup"
+vim.opt.completeopt = "menuone,noinsert,noselect,popup"
 -- diagnostics
 vim.diagnostic.config({
     status = {
