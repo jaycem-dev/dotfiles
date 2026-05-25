@@ -91,6 +91,10 @@ hl.bind(
 )
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(brightness .. " up"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(brightness .. " down"), { locked = true, repeating = true })
+hl.bind(mod .. " + XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -q -d kbd_backlight s +25%"),
+    { locked = true, repeating = true })
+hl.bind(mod .. " + XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -q -d kbd_backlight s 25%-"),
+    { locked = true, repeating = true })
 
 -- Requires playerctl
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
