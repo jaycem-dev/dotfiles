@@ -1,9 +1,9 @@
 hl.config({
     input = {
-        kb_layout = "us",
-        kb_variant = "colemak_dh_iso",
+        kb_layout = "us,us",
+        kb_variant = "colemak_dh_iso,",
         kb_model = "",
-        kb_options = "caps:escape",
+        kb_options = "caps:escape,grp:alt_shift_toggle",
         kb_rules = "",
 
         follow_mouse = 1,
