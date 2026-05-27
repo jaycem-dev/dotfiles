@@ -3,6 +3,7 @@
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
     "modules-right": [
+        "hyprland/language",
         "privacy",
         "tray",
         "idle_inhibitor",
@@ -13,9 +14,14 @@
         "battery",
     ],
 
+    "hyprland/language": {
+        "format": "󰌌 {}",
+        "format-en": "QWERTY",
+        "format-en-colemak_dh_iso": "Colemak-DH",
+    },
+
     "hyprland/workspaces": {
-        "format": "{icon} {windows}",
-        "format-window-separator": "",
+        "format": "{id} {windows}",
         "show-special": true,
         "persistent-workspaces": {
             "*": 5,
@@ -26,6 +32,13 @@
             "format": "{icon}",
             "icon-size": 18,
             "on-click-window": "${SCRIPTS}/focus-window.sh {address} {button}",
+        },
+        "format-icons": {
+            "1": "󰖟",
+            "2": "",
+            "3": "󰝚",
+            "4": "󰭻",
+            "5": "󱤙",
         },
     },
 }

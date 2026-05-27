@@ -63,7 +63,7 @@
         "tooltip": true,
     },
     "pulseaudio": {
-        "format": "{icon}",
+        "format": "{icon} {volume}%",
         "format-muted": "󰝟",
         "format-icons": {
             "headphone": "󰋋",
