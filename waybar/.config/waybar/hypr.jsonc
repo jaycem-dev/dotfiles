@@ -16,8 +16,8 @@
 
     "hyprland/language": {
         "format": "󰌌 {}",
-        "format-en": "QWERTY",
-        "format-en-colemak_dh_iso": "Colemak-DH",
+        "format-en": "US",
+        "format-en-colemak_dh_iso": "CO",
     },
 
     "hyprland/workspaces": {
@@ -31,7 +31,6 @@
             "update-active-window": true,
             "format": "{icon}",
             "icon-size": 18,
-            "on-click-window": "${SCRIPTS}/focus-window.sh {address} {button}",
         },
         "format-icons": {
             "1": "󰖟",
