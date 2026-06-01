@@ -24,13 +24,6 @@ require("base16-colorscheme").setup({
     base0F = "#93000a",        -- Deprecated, Embedded Tags
 })
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
-vim.api.nvim_set_hl(0, "LineNr", { fg = "#595359", bg = "none" })
-vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none" })
-
 -- Register a signal handler for SIGUSR1 (matugen updates)
 local signal = vim.uv.new_signal()
 signal:start(
