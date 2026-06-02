@@ -7,3 +7,4 @@
 <* endfor *>
 
 @define-color background_alpha {{colors.background.default.rgba | set_alpha: 0.9}};
+@define-color background_waybar {{colors.background.default.rgba | set_alpha: 0.99}};
