@@ -23,6 +23,7 @@ window#waybar {
 }
 
 #battery.warning,
+#power-profiles-daemon.power-saver,
 #privacy {
     color: @error;
 }
@@ -53,7 +54,6 @@ window#waybar {
 .modules-center,
 .modules-right,
 .modules-left {
-    /* padding: 0 5px; */
     padding: 10px 0;
 }
 
@@ -61,5 +61,6 @@ window#waybar {
     background-color: @surface_container_high;
     border: 0.5px solid @outline;
     border-radius: 10;
-    padding: 0 10px;
+    margin: 0 5px;
+    padding: 5px;
 }
