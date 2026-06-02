@@ -21,23 +21,16 @@
     },
 
     "hyprland/workspaces": {
-        "format": "{id} {windows}",
+        "format": "{name} {windows}",
         "show-special": true,
         "persistent-workspaces": {
             "*": 5,
         },
+        "format-window-separator": "",
         "workspace-taskbar": {
             "enable": true,
-            "update-active-window": true,
             "format": "{icon}",
-            "icon-size": 18,
-        },
-        "format-icons": {
-            "1": "󰖟",
-            "2": "",
-            "3": "󰝚",
-            "4": "󰭻",
-            "5": "󱤙",
+            "icon-size": 15,
         },
     },
 }
