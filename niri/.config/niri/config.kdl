@@ -24,15 +24,16 @@ output "HDMI-A-1" {
 }
 
 blur {
-    offset 20 // default: 3.0
+    offset 10 // default: 3.0
 }
+
 gestures {
     hot-corners {
         off
     }
 }
 cursor {
-    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-theme "Bibata-Modern-Classic"
     xcursor-size 24
     hide-after-inactive-ms 5000
 }
@@ -41,7 +42,7 @@ layout {
     gaps 5
     background-color "transparent"
     center-focused-column "never" // never, always, on-overflow
-    always-center-single-column
+    // always-center-single-column
     default-column-width { proportion 0.9; }
     preset-column-widths {
         proportion 0.5
@@ -161,7 +162,7 @@ binds {
     Mod+B repeat=false hotkey-overlay-title="Open browser" { spawn-sh "niri-launch-or-focus brave --id brave-browser"; }
     Mod+W repeat=false hotkey-overlay-title="Open Whatsapp (Webapp)" { spawn-sh "niri-launch-or-focus-webapp web.whatsapp.com"; }
     Mod+Shift+M repeat=false hotkey-overlay-title="Open ProtonMail (Webapp)" { spawn-sh "niri-launch-or-focus-webapp mail.proton.me"; }
-    Mod+M repeat=false hotkey-overlay-title="Open YT Music (Webapp)" { spawn-sh "niri-launch-or-focus-webapp music.youtube.com"; }
+    Mod+M repeat=false hotkey-overlay-title="Open Spotify (Webapp)" { spawn-sh "niri-launch-or-focus-webapp open.spotify.com"; }
     Mod+Y repeat=false hotkey-overlay-title="Open YouTube (Webapp)" { spawn-sh "niri-launch-or-focus-webapp youtube.com"; }
     Mod+P repeat=false { spawn "dmenu-power"; }
 }
@@ -195,6 +196,15 @@ input {
         // scroll-method "no-scroll"
     }
 }
+
+// manual blur for apps that don't support ext-background-effect-v1
+layer-rule {
+    match namespace="^launcher$"
+    background-effect {
+        blur true
+    }
+}
+
 
 // rounded corners
 window-rule {
@@ -250,6 +260,7 @@ window-rule {
 }
 window-rule {
     match app-id=r#"brave-music.youtube.com__-Default"#
+    match app-id=r#"brave-open.spotify.com__-Default"#
     open-on-workspace "media"
 }
 // chat workspace apps
