@@ -25,6 +25,8 @@ FILES=(
     "helix/.config/helix/themes/colors.toml"
     "swaylock/.config/swaylock/config"
     "hypr/.config/hypr/colors.lua"
+    "qtct/.config/qt5ct/qt5ct.conf"
+    "qtct/.config/qt6ct/qt6ct.conf"
 )
 
 skip_updates() {
