@@ -1,8 +1,8 @@
 {
     "layer": "top",
-    "position": "bottom",
     "spacing": 15,
-    // "margin": "0 5",
+    "position": "left",
+    "margin": "5 0",
 
     "power-profiles-daemon": {
         "format": "{icon}",
@@ -15,6 +15,7 @@
             "power-saver": "󰾆",
         },
     },
+
     "privacy": {
         "icon-spacing": 10,
         "icon-size": 15,
@@ -40,50 +41,9 @@
         ],
     },
 
-    "network": {
-        "format-wifi": "󰖩",
-        "format-ethernet": "󰈀",
-        "tooltip-format": "Connected to {essid}",
-        "format-linked": "󱎔 {ifname} (No IP)",
-        "format-disconnected": "󰀦",
-        "interval": 3,
-        "on-click": "~/.local/bin/launch-tui impala",
-    },
-    "battery": {
-        "states": {
-            "warning": 30,
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": "󰂄 {capacity}%",
-        "interval": 1,
-        "format-icons": {
-            "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-            "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
-        },
-        "tooltip": true,
-    },
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": "󰝟",
-        "format-icons": {
-            "headphone": "󰋋",
-            "hands-free": "󰋋",
-            "headset": "󰋋",
-            "default": ["󰕿", "󰖀", "󰕾"],
-        },
-        "on-click": "pavucontrol -t 3",
-        "on-click-right": "pactl --set-sink-mute 0 toggle",
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "󰅶",
-            "deactivated": "󰛊",
-        },
-    },
     "clock": {
         "interval": 1,
-        "format": "{:%A, %b %d  %H:%M}",
+        "format": "{:%H\n%M}",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "format": {
@@ -100,11 +60,61 @@
             "on-scroll-down": "shift_down",
         },
     },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋋",
+            "headset": "󰋋",
+            "default": ["󰕿", "󰖀", "󰕾"],
+        },
+        "on-click": "pavucontrol -t 3",
+        "on-click-right": "pactl --set-sink-mute 0 toggle",
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "full": 100,
+            "discharging": 99,
+        },
+        "format": "{icon}\n{capacity}",
+        "format-full": "{icon}",
+        "format-charging": "󰂄\n{capacity}",
+        "interval": 1,
+        "format-icons": {
+            "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+            "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+        },
+        "tooltip": true,
+    },
+
+    "network": {
+        "format-wifi": "󰖩",
+        "format-ethernet": "󰈀",
+        "tooltip-format": "Connected to {essid}",
+        "format-linked": "󱎔 {ifname} (No IP)",
+        "format-disconnected": "󰀦",
+        "interval": 3,
+        "on-click": "~/.local/bin/launch-tui impala",
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰅶",
+            "deactivated": "󰛊",
+        },
+    },
+
     "tray": {
         "icon-size": 15,
         "spacing": 10,
         "show-passive-items": true,
     },
+
     "bluetooth": {
         "format": "󰂯",
         "format-off": "󰂲",
