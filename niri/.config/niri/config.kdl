@@ -1,4 +1,3 @@
-spawn-at-startup "mako"
 spawn-at-startup "swayidle"
 spawn-sh-at-startup "waybar -c ~/.config/waybar/niri.jsonc"
 spawn-at-startup "niriusd"

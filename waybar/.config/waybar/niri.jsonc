@@ -1,7 +1,5 @@
 {
     "include": ["~/.config/waybar/common.jsonc"],
-    "position": "left",
-    "margin": "5 0",
 
     "modules-left": ["clock", "custom/niri-workspace-windows"],
     "modules-center": ["niri/workspaces"],
@@ -34,53 +32,5 @@
         "return-type": "json",
         "format": "{}",
         "rotate": 270,
-    },
-
-    "clock": {
-        "interval": 1,
-        "format": "{:%H\n%M}",
-        "tooltip-format": "<tt>{calendar}</tt>",
-        "calendar": {
-            "format": {
-                "months": "<span color='#ffead3'><b>{}</b></span>",
-                "days": "<span color='#ecc6d9'><b>{}</b></span>",
-                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
-                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-                "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
-            },
-        },
-        "actions": {
-            "on-click-right": "shift_reset",
-            "on-scroll-up": "shift_up",
-            "on-scroll-down": "shift_down",
-        },
-    },
-    "pulseaudio": {
-        "format": "{icon}",
-        "format-muted": "󰝟",
-        "format-icons": {
-            "headphone": "󰋋",
-            "hands-free": "󰋋",
-            "headset": "󰋋",
-            "default": ["󰕿", "󰖀", "󰕾"],
-        },
-        "on-click": "pavucontrol -t 3",
-        "on-click-right": "pactl --set-sink-mute 0 toggle",
-    },
-    "battery": {
-        "states": {
-            "warning": 30,
-            "full": 100,
-            "discharging": 99,
-        },
-        "format": "{icon}\n{capacity}",
-        "format-full": "{icon}",
-        "format-charging": "󰂄\n{capacity}",
-        "interval": 1,
-        "format-icons": {
-            "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-            "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
-        },
-        "tooltip": true,
     },
 }
