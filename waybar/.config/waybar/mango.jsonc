@@ -1,0 +1,38 @@
+{
+    "include": ["~/.config/waybar/common.jsonc"],
+    "modules-left": ["ext/workspaces", "wlr/taskbar"],
+    "modules-center": ["dwl/window"],
+    "modules-right": [
+        "privacy",
+        "tray",
+        "idle_inhibitor",
+        "power-profiles-daemon",
+        "network",
+        "bluetooth",
+        "backlight",
+        "pulseaudio",
+        "battery",
+    ],
+    "dwl/window": {
+        "format": "[{layout}] {title}",
+        "max-length": 50,
+    },
+    "ext/workspaces": {
+        "format": "{id}",
+        // "ignore-hidden": false,
+        "on-click": "activate",
+        "on-click-right": "deactivate",
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 15,
+        "tooltip-format": "id: {app_id}",
+        "on-click": "activate",
+        "app_ids-mapping": {
+            "brave-web.whatsapp.com__-Default": "whatsapp",
+            "brave-open.spotify.com__-Default": "spotify",
+            "brave-mail.proton.me__-Default": "proton-mail",
+        },
+    },
+    },
+}
