@@ -31,6 +31,5 @@
         "exec-on-event": true,
         "return-type": "json",
         "format": "{}",
-        "rotate": 270,
     },
 }
