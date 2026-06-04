@@ -12,6 +12,11 @@ command = "pkill swaybg && swaybg -i {{ image }} -m fill &"
 input_path = '~/.config/matugen/templates/hyprland-colors.lua'
 output_path = '~/.config/hypr/colors.lua'
 
+[templates.mango]
+input_path = '~/.config/matugen/templates/mango-colors.conf'
+output_path = '~/.config/mango/colors.conf'
+post_hook = 'mmsg -d reload_config'
+
 [templates.qt5ct]
 input_path = '~/.config/matugen/templates/qtct.conf'
 output_path = '~/.config/qt5ct/qt5ct.conf'
