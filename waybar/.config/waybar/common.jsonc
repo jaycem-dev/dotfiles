@@ -1,8 +1,8 @@
 {
     "layer": "top",
     "spacing": 15,
-    "position": "left",
-    "margin": "5 0",
+    "position": "top",
+    // "margin": "0 5",
 
     "power-profiles-daemon": {
         "format": "{icon}",
@@ -43,7 +43,7 @@
 
     "clock": {
         "interval": 1,
-        "format": "{:%H\n%M}",
+        "format": "{:%A, %b %d  %H:%M}",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "format": {
@@ -62,7 +62,7 @@
     },
 
     "pulseaudio": {
-        "format": "{icon}",
+        "format": "{icon} {volume}%",
         "format-muted": "󰝟",
         "format-icons": {
             "headphone": "󰋋",
@@ -77,12 +77,11 @@
     "battery": {
         "states": {
             "warning": 30,
-            "full": 100,
-            "discharging": 99,
+            "critical": 20,
         },
-        "format": "{icon}\n{capacity}",
-        "format-full": "{icon}",
-        "format-charging": "󰂄\n{capacity}",
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-critical": "LOW BATTERY {icon} {capacity}%",
         "interval": 1,
         "format-icons": {
             "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
@@ -125,5 +124,11 @@
         "tooltip-format-enumerate-connected": "{device_alias}",
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%",
         "on-click": "~/.local/bin/launch-tui bluetui",
+    },
+
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰖔", "󰖨"],
     },
 }

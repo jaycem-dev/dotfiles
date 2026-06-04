@@ -10,10 +10,8 @@ window#waybar {
     /* rounded corners need to set 0.99 or lower instead of 1 */
     /* issue: https://github.com/Alexays/Waybar/issues/3882 */
     /* background_waybar = 0.99, background_alpha = 0.9 */
-    background-color: @background_waybar;
+    background-color: @background_alpha;
     color: @on_background;
-    border-radius: 10;
-    border: 1px solid @outline;
 }
 
 #idle_inhibitor.activated,
@@ -28,10 +26,16 @@ window#waybar {
     color: @error;
 }
 
+#battery.critical {
+    background-color: @on_error;
+    color: @error;
+    padding: 0 10px;
+    border-radius: 10;
+}
+
 #workspaces button {
     border-radius: 10;
-    margin: 0 5px;
-    padding: 5px;
+    padding: 0 5px;
 }
 
 #workspaces button.empty,
@@ -54,13 +58,16 @@ window#waybar {
 .modules-center,
 .modules-right,
 .modules-left {
-    padding: 10px 0;
+    padding: 0 10px;
+}
+
+#taskbar button {
+    padding: 0 5px;
 }
 
 #tray {
     background-color: @surface_container_high;
     border: 0.5px solid @outline;
     border-radius: 10;
-    margin: 0 5px;
-    padding: 5px;
+    padding: 0 5px;
 }

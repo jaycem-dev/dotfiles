@@ -104,5 +104,5 @@
     @define-color tertiary_fixed_dim #f3b7bf;
 
 
-@define-color background_alpha rgba(21, 18, 24, 0.9);
+@define-color background_alpha rgba(21, 18, 24, 0.95);
 @define-color background_waybar rgba(21, 18, 24, 0.99);
