@@ -25,7 +25,6 @@
     },
     "wlr/taskbar": {
         "format": "{icon}",
-        "icon-size": 18,
         "tooltip-format": "id: {app_id}",
         "on-click": "activate",
         "app_ids-mapping": {
