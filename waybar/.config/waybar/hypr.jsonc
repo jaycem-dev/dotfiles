@@ -30,7 +30,6 @@
         "workspace-taskbar": {
             "enable": true,
             "format": "{icon}",
-            "icon-size": 15,
         },
     },
 }

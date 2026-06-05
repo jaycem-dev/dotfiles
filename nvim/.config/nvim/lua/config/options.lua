@@ -1,9 +1,8 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.iskeyword:append({ "_", "-" }) -- treat _ and - as part of words
 vim.opt.scrolloff = 10
-vim.opt.confirm = true                 -- ask for save on :q
-vim.opt.breakindent = true             -- continue indentation
+vim.opt.confirm = true     -- ask for save on :q
+vim.opt.breakindent = true -- continue indentation
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.expandtab = true
