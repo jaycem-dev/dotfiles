@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 
-if [ "$#" -ne 1 ] || { [ "$1" != "up" ] && [ "$1" != "down" ] && [ "$1" != "mute" ] && [ "$1" != "micmute" ]; }; then
-    echo "Usage: $0 up|down|mute|micmute"
+if [ "$#" -lt 1 ] || [ "$#" -gt 2 ] || { [ "$1" != "up" ] && [ "$1" != "down" ] && [ "$1" != "mute" ] && [ "$1" != "micmute" ]; }; then
+    echo "Usage: $0 up|down|mute|micmute [step]"
     exit 1
 fi
 
-VOL_INCREMENT=5
+VOL_INCREMENT=${2:-2}
+
+if ! [[ "$VOL_INCREMENT" =~ ^[0-9]+$ ]] || [ "$VOL_INCREMENT" -lt 0 ] || [ "$VOL_INCREMENT" -gt 100 ]; then
+    echo "Error: step must be a number between 0-100"
+    exit 1
+fi
 
 if [ "$1" = "mute" ]; then
     wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle

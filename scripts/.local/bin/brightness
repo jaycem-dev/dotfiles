@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 
-if [ "$#" -ne 1 ] || { [ "$1" != "up" ] && [ "$1" != "down" ]; }; then
-    echo "Usage: $0 up|down"
+if [ "$#" -lt 1 ] || [ "$#" -gt 2 ] || { [ "$1" != "up" ] && [ "$1" != "down" ]; }; then
+    echo "Usage: $0 up|down [step]"
     exit 1
 fi
 
-STEP=5
+STEP=${2:-2}
+
+if ! [[ "$STEP" =~ ^[0-9]+$ ]] || [ "$STEP" -lt 0 ] || [ "$STEP" -gt 100 ]; then
+    echo "Error: step must be a number between 0-100"
+    exit 1
+fi
 
 # Adjust external monitors using ddcutil
 displays=$(ddcutil detect --sleep-multiplier 0.5 | grep "Display" | awk '{print $2}' | tr -d ':')
