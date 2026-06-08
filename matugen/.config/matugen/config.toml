@@ -15,7 +15,7 @@ output_path = '~/.config/hypr/colors.lua'
 [templates.mango]
 input_path = '~/.config/matugen/templates/mango-colors.conf'
 output_path = '~/.config/mango/colors.conf'
-post_hook = 'mmsg -d reload_config'
+post_hook = 'mmsg dispatch reload_config'
 
 [templates.qt5ct]
 input_path = '~/.config/matugen/templates/qtct.conf'

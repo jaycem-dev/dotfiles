@@ -51,4 +51,4 @@ done
 
 [ "$MODE" = tui ] && CMD="$HOME/.local/bin/launch-tui $CMD"
 
-wlrctl window focus "$ID" || mmsg -d spawn,"$CMD"
+wlrctl window focus "$ID" || mmsg dispatch spawn,"$CMD"
