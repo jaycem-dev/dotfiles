@@ -5,7 +5,7 @@ if [ "$#" -lt 1 ] || [ "$#" -gt 2 ] || { [ "$1" != "up" ] && [ "$1" != "down" ] 
     exit 1
 fi
 
-VOL_INCREMENT=${2:-2}
+VOL_INCREMENT=${2:-5}
 
 if ! [[ "$VOL_INCREMENT" =~ ^[0-9]+$ ]] || [ "$VOL_INCREMENT" -lt 0 ] || [ "$VOL_INCREMENT" -gt 100 ]; then
     echo "Error: step must be a number between 0-100"
