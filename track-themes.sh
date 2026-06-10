@@ -27,6 +27,7 @@ FILES=(
     "hypr/.config/hypr/colors.lua"
     "qtct/.config/qt5ct/qt5ct.conf"
     "qtct/.config/qt6ct/qt6ct.conf"
+    "mango/.config/mango/colors.conf"
 )
 
 skip_updates() {
