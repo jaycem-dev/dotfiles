@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+
+usage() {
+    echo "Usage: $0 <mode> [args...]"
+    echo ""
+    echo "Modes:"
+    echo "  <command>                        Run command directly (default)"
+    echo "  --tui <command>                  Launch command in kitty terminal"
+    echo "  --webapp <url>                   Launch webapp for URL (needs a Chromium-based browser, default: brave)"
+    echo ""
+    echo "Options:"
+    echo "  --id <app_id>                    App ID for window matching (defaults to command/url)"
+    echo "  -h, --help                       Show this help message"
+}
+
+MODE=""
+ID=""
+CMD=""
+WEBAPP_BROWSER="${WEBAPP_BROWSER:-brave}" # needs to be a Chromium-based browser
+
+case "$DESKTOP_SESSION" in
+mango)
+    FOCUS_CMD="wlrctl window focus"
+    LAUNCH_CMD="mmsg dispatch spawn,"
+    ;;
+niri)
+    FOCUS_CMD="niri msg action focus-window --id"
+    LAUNCH_CMD="niri msg action spawn -- sh -c"
+    ;;
+*)
+    echo "Error: unsupported desktop session '$DESKTOP_SESSION'" >&2
+    exit 1
+    ;;
+esac
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+    -h | --help)
+        usage
+        exit 0
+        ;;
+    --id)
+        ID="$2"
+        shift 2
+        ;;
+    --tui)
+        [ -n "$MODE" ] && {
+            echo "Error: conflicting modes"
+            usage
+            exit 1
+        }
+        MODE=tui
+        CMD="kitty -1 --app-id $2 $2"
+        [ -z "$ID" ] && ID="$2"
+        shift 2
+        ;;
+    --webapp)
+        [ -n "$MODE" ] && {
+            echo "Error: conflicting modes"
+            usage
+            exit 1
+        }
+        MODE=webapp
+        CMD="$WEBAPP_BROWSER --app=https://$2"
+        [ -z "$ID" ] && ID="$WEBAPP_BROWSER-$2__-Default"
+        shift 2
+        ;;
+    *)
+        [ -n "$MODE" ] && {
+            echo "Error: conflicting modes"
+            usage
+            exit 1
+        }
+        MODE=default
+        CMD="$1"
+        shift
+        ;;
+    esac
+done
+
+[ -z "$ID" ] && ID="$CMD"
+
+# niri's focus-window requires a numeric window ID, not an app_id
+if [ "$DESKTOP_SESSION" = niri ]; then
+    ID=$(niri msg --json windows | jq -r '.[] | select(.app_id == "'"$ID"'") | .id')
+fi
+
+$FOCUS_CMD "$ID" && exit 0
+$LAUNCH_CMD "$CMD"
