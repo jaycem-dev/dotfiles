@@ -5,7 +5,6 @@ vim.g.mapleader = " "
 vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
 vim.keymap.set("n", "<leader>l", ":buffer #<CR>", { desc = "Last buffer" })
-vim.keymap.set("i", "<c-space>", function() vim.lsp.completion.get() end, { desc = "Autocomplete" })
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 
 -- QoL
@@ -19,8 +18,8 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Move up in buffer with cursor 
 vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result cursor centered" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result cursor centered" })
 -- remap macro to Q
-vim.keymap.set('n', 'q', '<Nop>', { noremap = true })
-vim.keymap.set('n', 'Q', 'q', { noremap = true, desc = 'Record macro' })
+vim.keymap.set("n", "q", "<Nop>", { noremap = true })
+vim.keymap.set("n", "Q", "q", { noremap = true, desc = "Record macro" })
 
 vim.keymap.set({ "i", "s" }, "<Tab>", function()
     if vim.snippet and vim.snippet.active() then
@@ -36,6 +35,8 @@ vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
 end, { expr = true, desc = "Previous snippet" })
 
 vim.keymap.set("n", "<leader>q", function()
-    local is_open = vim.iter(vim.fn.getwininfo()):any(function(win) return win.quickfix == 1 end)
+    local is_open = vim.iter(vim.fn.getwininfo()):any(function(win)
+        return win.quickfix == 1
+    end)
     vim.cmd(is_open and "cclose" or "copen")
 end, { desc = "Toggle Quickfix List" })
