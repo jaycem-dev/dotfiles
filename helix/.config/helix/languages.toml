@@ -11,4 +11,4 @@ auto-format = true
 [[language]]
 name = "toml"
 formatter = { command = "taplo", args = ["fmt", "-"] }
-auto-format = true                                     # Optional: enables formatting on save
+auto-format = true # Optional: enables formatting on save

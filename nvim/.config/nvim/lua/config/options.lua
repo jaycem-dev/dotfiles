@@ -1,7 +1,7 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 10
-vim.opt.confirm = true     -- ask for save on :q
+vim.opt.confirm = true -- ask for save on :q
 vim.opt.breakindent = true -- continue indentation
 vim.opt.splitright = true
 vim.opt.splitbelow = true
@@ -14,14 +14,14 @@ vim.opt.winborder = "rounded"
 vim.opt.pumborder = "rounded"
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
-vim.opt.laststatus = 3            -- global statusline
+vim.opt.laststatus = 3 -- global statusline
 vim.opt.fillchars = { eob = " " } -- remove ~ at end of buffer
 vim.opt.signcolumn = "yes"
-vim.opt.cmdheight = 0             -- hides cmd until used
-vim.opt.pumheight = 10            -- popup menu items
+vim.opt.cmdheight = 0 -- hides cmd until used
+vim.opt.pumheight = 10 -- popup menu items
 -- Search
-vim.opt.ignorecase = true         -- Ignore case in search patterns.
-vim.opt.smartcase = true          -- Override the 'ignorecase' option if the search pattern contains upper case characters.
+vim.opt.ignorecase = true -- Ignore case in search patterns.
+vim.opt.smartcase = true -- Override the 'ignorecase' option if the search pattern contains upper case characters.
 -- completion
 vim.opt.completeopt = "menuone,noinsert,noselect,popup"
 -- diagnostics
