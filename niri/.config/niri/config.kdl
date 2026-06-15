@@ -41,7 +41,7 @@ layout {
     gaps 5
     background-color "transparent"
     center-focused-column "never" // never, always, on-overflow
-    // always-center-single-column
+    always-center-single-column
     default-column-width { proportion 0.9; }
     preset-column-widths {
         proportion 0.5
@@ -62,7 +62,7 @@ layout {
     tab-indicator {
         width 10
         length total-proportion=1.0
-        corner-radius 10
+        corner-radius 5 
         position "left"
         place-within-column
     }
@@ -207,7 +207,7 @@ layer-rule {
 
 // rounded corners
 window-rule {
-    geometry-corner-radius 10
+    geometry-corner-radius 5 
     clip-to-geometry true
 }
 

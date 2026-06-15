@@ -3,7 +3,7 @@
 background-color=#151218
 text-color=#e8e0e8
 border-color=#d9bafa
-progress-color=over #d9bafa
+progress-color=over #3d2459
 # Per-mode settings
 
 [mode=do-not-disturb]
@@ -17,4 +17,4 @@ on-notify=none
 border-color=#93000a
 
 [category=osd]
-text-color=#3d2459
+text-color=#e8e0e8

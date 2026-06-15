@@ -4,24 +4,24 @@ vim.pack.add({
 
 require("base16-colorscheme").setup({
     -- Background tones
-    base00 = "#151218",             -- Default Background
-    base01 = "#221e24",      -- Lighter Background (status bars)
+    base00 = "#151218", -- Default Background
+    base01 = "#221e24", -- Lighter Background (status bars)
     base02 = "#2c292e", -- Selection Background
-    base03 = "#958e98",                -- Comments, Invisibles
+    base03 = "#958e98", -- Comments, Invisibles
     -- Foreground tones
-    base04 = "#ccc4cf",     -- Dark Foreground (status bars)
-    base05 = "#e8e0e8",             -- Default Foreground
-    base06 = "#e8e0e8",             -- Light Foreground
-    base07 = "#e8e0e8",          -- Lightest Foreground
+    base04 = "#ccc4cf", -- Dark Foreground (status bars)
+    base05 = "#e8e0e8", -- Default Foreground
+    base06 = "#e8e0e8", -- Light Foreground
+    base07 = "#e8e0e8", -- Lightest Foreground
     -- Accent colors
-    base08 = "#ffb4ab",                  -- Variables, XML Tags, Errors
-    base09 = "#f3b7bf",               -- Integers, Constants
-    base0A = "#d0c1da",              -- Classes, Search Background
-    base0B = "#d9bafa",                -- Strings, Diff Inserted
-    base0C = "#f3b7bf",     -- Regex, Escape Chars
-    base0D = "#d9bafa",      -- Functions, Methods
-    base0E = "#d0c1da",    -- Keywords, Storage
-    base0F = "#93000a",        -- Deprecated, Embedded Tags
+    base08 = "#ffb4ab", -- Variables, XML Tags, Errors
+    base09 = "#f3b7bf", -- Integers, Constants
+    base0A = "#d0c1da", -- Classes, Search Background
+    base0B = "#d9bafa", -- Strings, Diff Inserted
+    base0C = "#f3b7bf", -- Regex, Escape Chars
+    base0D = "#d9bafa", -- Functions, Methods
+    base0E = "#d0c1da", -- Keywords, Storage
+    base0F = "#93000a", -- Deprecated, Embedded Tags
 })
 
 -- Register a signal handler for SIGUSR1 (matugen updates)

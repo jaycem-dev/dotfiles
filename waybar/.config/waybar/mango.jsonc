@@ -9,7 +9,6 @@
         "power-profiles-daemon",
         "network",
         "bluetooth",
-        "backlight",
         "pulseaudio",
         "battery",
     ],
