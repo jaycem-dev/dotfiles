@@ -21,15 +21,10 @@
     },
 
     "hyprland/workspaces": {
-        "format": "{name} {windows}",
+        "format": "{name}",
         "show-special": true,
         "persistent-workspaces": {
             "*": 5,
-        },
-        "format-window-separator": "",
-        "workspace-taskbar": {
-            "enable": true,
-            "format": "{icon}",
         },
     },
 }
