@@ -149,8 +149,9 @@ binds {
     XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
     XF86MonBrightnessUp allow-when-locked=true { spawn-sh "brightness up"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn-sh "brightness down"; }
-    Shift+XF86MonBrightnessUp { spawn-sh "brightnessctl -q -d kbd_backlight s +25%"; }
-    Shift+XF86MonBrightnessDown { spawn-sh "brightnessctl -q -d kbd_backlight s 25%-"; }
+    Shift+XF86MonBrightnessUp { spawn-sh "brightness up 20"; }
+    Shift+XF86MonBrightnessDown { spawn-sh "brightness down 20"; }
+
 
     // application binds
     Mod+G repeat=false hotkey-overlay-title="Open terminal" { spawn-sh "nirius toggle-follow-mode"; }
