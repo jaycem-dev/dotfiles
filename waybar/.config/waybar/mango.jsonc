@@ -26,10 +26,5 @@
         "format": "{icon}",
         "tooltip-format": "id: {app_id}",
         "on-click": "activate",
-        "app_ids-mapping": {
-            "brave-web.whatsapp.com__-Default": "whatsapp",
-            "brave-open.spotify.com__-Default": "spotify",
-            "brave-mail.proton.me__-Default": "proton-mail",
-        },
     },
 }
