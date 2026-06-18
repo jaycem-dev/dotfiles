@@ -35,6 +35,8 @@ window#waybar {
 #workspaces button {
     padding: 0 5px;
     border-radius: 5;
+    margin: 0 2px;
+    background-color: @surface_container;
 }
 
 #workspaces button.empty,
@@ -44,8 +46,8 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background-color: @primary;
-    color: @on_primary;
+    background-color: @surface_container_highest;
+    border: 1px solid @outline;
 }
 
 #workspaces .taskbar-window {
