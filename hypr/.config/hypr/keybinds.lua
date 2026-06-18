@@ -12,13 +12,13 @@ local volume = "~/.local/bin/volume"
 -- format for spawn_or_focus: { cmd = "command", class = "class" }
 -- format for spawn: "command"
 local menu = "fuzzel"
-local terminal = { cmd = "foot" }
+local terminal = { cmd = "kitty" }
 local browser = { cmd = "brave", class = "brave-browser" }
 
 -- webapps, use only url
 local whatsapp = "web.whatsapp.com"
 local protonmail = "mail.proton.me"
-local yt_music = "music.youtube.com"
+local music = "open.spotify.com"
 
 -- tui, class is optional
 local yazi = { cmd = "yazi" }
@@ -37,7 +37,7 @@ hl.bind(mod .. " + E", spawn_or_focus_tui(yazi))
 hl.bind(mod .. " + N", spawn_or_focus_tui(nvim))
 hl.bind(mod .. " + B", spawn_or_focus(browser))
 hl.bind(mod .. " + W", spawn_or_focus_webapp(whatsapp))
-hl.bind(mod .. " + M", spawn_or_focus_webapp(yt_music))
+hl.bind(mod .. " + M", spawn_or_focus_webapp(music))
 hl.bind(mod2 .. " + M", spawn_or_focus_webapp(protonmail))
 hl.bind(mod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + G", hl.dsp.window.pin())
@@ -65,8 +65,8 @@ for i = 1, 10 do
 end
 
 -- Example special workspace (scratchpad)
-hl.bind(mod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mod2 .. " + S", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind(mod .. " + S", hl.dsp.workspace.toggle_special("scratch"))
+hl.bind(mod2 .. " + S", hl.dsp.window.move({ workspace = "special:scratch" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
@@ -79,11 +79,7 @@ hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(volume .. " up"), { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(volume .. " down"), { locked = true, repeating = true })
-hl.bind(
-    "XF86AudioMute",
-    hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
-    { locked = true, repeating = true }
-)
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(volume .. " mute"), { locked = true, repeating = true })
 hl.bind(
     "XF86AudioMicMute",
     hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
@@ -91,17 +87,8 @@ hl.bind(
 )
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(brightness .. " up"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(brightness .. " down"), { locked = true, repeating = true })
-hl.bind(
-    "SHIFT + XF86MonBrightnessUp",
-    hl.dsp.exec_cmd(brightness .. " up 20"),
-    { locked = true, repeating = true }
-)
-hl.bind(
-    "SHIFT + XF86MonBrightnessDown",
-    hl.dsp.exec_cmd(brightness .. " down 20"),
-    { locked = true, repeating = true }
-)
-
+hl.bind("SHIFT + XF86MonBrightnessUp", hl.dsp.exec_cmd(brightness .. " up 20"), { locked = true, repeating = true })
+hl.bind("SHIFT + XF86MonBrightnessDown", hl.dsp.exec_cmd(brightness .. " down 20"), { locked = true, repeating = true })
 
 -- Requires playerctl
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })

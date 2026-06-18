@@ -29,7 +29,7 @@ end
 
 function M.spawn_or_focus_tui(app)
     local class = app.class or app.cmd
-    local cmd = "foot --app-id " .. class .. " " .. app.cmd
+    local cmd = "kitty --app-id " .. class .. " " .. app.cmd
     return M.spawn_or_focus({ cmd = cmd, class = app.class or app.cmd })
 end
 

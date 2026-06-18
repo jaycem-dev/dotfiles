@@ -30,7 +30,7 @@ hl.window_rule({
 })
 hl.window_rule({
     match = {
-        class = webapp_class("music.youtube.com"),
+        class = webapp_class("music.youtube.com") .. "|" .. webapp_class("open.spotify.com"),
     },
     workspace = 3,
 })
@@ -96,6 +96,8 @@ hl.window_rule({
     move = "20 monitor_h-120",
     float = true,
 })
+
+hl.workspace_rule({ workspace = "s[true]", gaps_out = 50 })
 
 -- "Smart gaps" / "No gaps when only"
 -- uncomment all if you wish to use that.
