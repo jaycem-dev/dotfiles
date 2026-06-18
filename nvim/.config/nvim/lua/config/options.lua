@@ -26,8 +26,8 @@ vim.opt.smartcase = true -- Override the 'ignorecase' option if the search patte
 vim.opt.completeopt = "menuone,noinsert,noselect,popup"
 -- diagnostics
 vim.diagnostic.config({
-    status = {
-        format = {
+    signs = {
+        text = {
             [vim.diagnostic.severity.ERROR] = " ",
             [vim.diagnostic.severity.WARN] = " ",
             [vim.diagnostic.severity.INFO] = " ",
