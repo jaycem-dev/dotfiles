@@ -12,7 +12,7 @@ local volume = "~/.local/bin/volume"
 -- format for spawn_or_focus: { cmd = "command", class = "class" }
 -- format for spawn: "command"
 local menu = "fuzzel"
-local terminal = { cmd = "kitty" }
+local terminal = "kitty"
 local browser = { cmd = "brave", class = "brave-browser" }
 
 -- webapps, use only url
@@ -27,7 +27,6 @@ local nvim = { cmd = "nvim -c 'lua _G.fzf_projects()'", class = "nvim" }
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
 hl.bind(mod2 .. " + F", hl.dsp.window.fullscreen())
-hl.bind(mod .. " + T", spawn_or_focus(terminal))
 hl.bind(mod .. " + Q", hl.dsp.window.close())
 hl.bind(
     mod2 .. " + Q",
@@ -42,8 +41,28 @@ hl.bind(mod2 .. " + M", spawn_or_focus_webapp(protonmail))
 hl.bind(mod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + G", hl.dsp.window.pin())
 hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd(menu))
+hl.bind(mod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
+hl.bind(mod .. " + L", function()
+    local workspace = hl.get_active_special_workspace() or hl.get_active_workspace()
+    if not workspace then
+        return
+    end
+    local new_layout = workspace.tiled_layout == "master" and "scrolling" or "master"
+    if workspace.special then
+        hl.workspace_rule({ workspace = tostring(workspace.name), layout = new_layout })
+    else
+        hl.workspace_rule({ workspace = tostring(workspace.id), layout = new_layout })
+    end
+end) -- toggle between master and scrolling layout
+hl.bind(mod .. " + R", function()
+    local workspace = hl.get_active_special_workspace() or hl.get_active_workspace()
+    if not workspace or workspace.tiled_layout ~= "scrolling" then
+        return
+    end
+    hl.dispatch(hl.dsp.layout("colresize +conf"))
+end) -- scrolling: cycle column width forward
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mod .. " + left", hl.dsp.focus({ direction = "left" }))
@@ -51,8 +70,22 @@ hl.bind(mod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mod .. " + down", hl.dsp.focus({ direction = "down" }))
 
-hl.bind(mod2 .. " + left", hl.dsp.window.move({ direction = "left" }))
-hl.bind(mod2 .. " + right", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mod2 .. " + left", function()
+    local ws = hl.get_active_special_workspace() or hl.get_active_workspace()
+    if ws and ws.tiled_layout == "scrolling" then
+        hl.dispatch(hl.dsp.layout("swapcol l"))
+    else
+        hl.dispatch(hl.dsp.window.move({ direction = "left" }))
+    end
+end)
+hl.bind(mod2 .. " + right", function()
+    local ws = hl.get_active_special_workspace() or hl.get_active_workspace()
+    if ws and ws.tiled_layout == "scrolling" then
+        hl.dispatch(hl.dsp.layout("swapcol r"))
+    else
+        hl.dispatch(hl.dsp.window.move({ direction = "right" }))
+    end
+end)
 hl.bind(mod2 .. " + up", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mod2 .. " + down", hl.dsp.window.move({ direction = "down" }))
 
