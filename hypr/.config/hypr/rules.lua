@@ -15,6 +15,14 @@ hl.window_rule({
     move = { "monitor_w - 384 - 5", 5 },
 })
 
+hl.window_rule({
+    name = "disable-focus-on-activate",
+    match = {
+        class = "rocketleague.exe",
+    },
+    focus_on_activate = false,
+})
+
 -- workspace assignment
 hl.window_rule({
     match = {
