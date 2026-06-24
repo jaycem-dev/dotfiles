@@ -1,6 +1,6 @@
 {
     "include": ["~/.config/waybar/common.jsonc"],
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
     "modules-center": ["clock"],
     "modules-right": [
         "hyprland/language",
@@ -21,7 +21,7 @@
     },
 
     "hyprland/workspaces": {
-        "format": "{name} {windows}",
+        "format": "{name}",
         "show-special": true,
         "persistent-workspaces": {
             "*": 5,

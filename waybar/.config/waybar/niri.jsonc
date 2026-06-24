@@ -1,8 +1,8 @@
 {
     "include": ["~/.config/waybar/common.jsonc"],
 
-    "modules-left": ["clock", "custom/niri-workspace-windows"],
-    "modules-center": ["niri/workspaces"],
+    "modules-left": ["niri/workspaces", "wlr/taskbar"],
+    "modules-center": ["clock"],
     "modules-right": [
         "privacy",
         "tray",
@@ -15,21 +15,6 @@
     ],
 
     "niri/workspaces": {
-        "format": "{icon}",
-        "format-icons": {
-            "default": "󰧞",
-            "browser": "󰖟",
-            "dev": "󰗀",
-            "media": "󰝚",
-            "chat": "󰭻",
-            "gaming": "󱤙",
-        },
-    },
-
-    "custom/niri-workspace-windows": {
-        "exec": "~/.config/waybar/scripts/waybar-niri-windows.sh",
-        "exec-on-event": true,
-        "return-type": "json",
-        "format": "{}",
+        "format": "{index}",
     },
 }
