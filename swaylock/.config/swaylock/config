@@ -1,6 +1,3 @@
-image=/home/jay/Pictures/Wallpapers/default.png
-scaling=fill
-
 ignore-empty-password
 indicator-idle-visible
 show-failed-attempts
@@ -8,24 +5,47 @@ hide-keyboard-layout
 daemonize
 indicator-radius=100
 
-color=151218
+# Background color
+color=#191724
 
-text-color=e8e0e8
-ring-color=d9bafa
-inside-color=3d2459
-line-color=d9bafa
-key-hl-color=3d2459
+# Layout text colors
+layout-bg-color=#00000000
+layout-border-color=#00000000
+layout-text-color=#e0def4
 
-line-clear-color=d0c1da
-text-clear-color=ffb4ab
-inside-clear-color=690005
-ring-clear-color=ffb4ab
+# Text color
+text-color=#31748f
+text-clear-color=#9ccfd8
+text-caps-lock-color=#f6c177
+text-ver-color=#c4a7e7
+text-wrong-color=#eb6f92
 
-text-ver-color=362d3f
-ring-ver-color=d0c1da
-inside-ver-color=d0c1da
+# Highlight segments
+bs-hl-color=#19172466
+key-hl-color=#31748f
+caps-lock-bs-hl-color=#19172466
+caps-lock-key-hl-color=#f6c177
 
-text-wrong-color=690005
-inside-wrong-color=ffb4ab
-ring-wrong-color=ffb4ab
-line-wrong-color=ffb4ab
+# Highlight segments separator
+separator-color=#00000000
+
+# Inside of the indicator
+inside-color=#31748f55
+inside-clear-color=#9ccfd855
+inside-caps-lock-color=#f6c17755
+inside-ver-color=#c4a7e755
+inside-wrong-color=#eb6f9255
+
+# Line between the inside and ring
+line-color=#31748f11
+line-clear-color=#9ccfd811
+line-caps-lock-color=#f6c17711
+line-ver-color=#c4a7e711
+line-wrong-color=#eb6f9211
+
+# Indicator ring
+ring-color=#31748faa
+ring-clear-color=#9ccfd8aa
+ring-caps-lock-color=#f6c177aa
+ring-ver-color=#c4a7e7aa
+ring-wrong-color=#eb6f92aa

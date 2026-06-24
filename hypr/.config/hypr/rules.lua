@@ -1,4 +1,3 @@
-local colors = require("colors")
 local webapp_class = require("utils").webapp_class
 
 -- pip
@@ -75,12 +74,6 @@ hl.window_rule({
     name = "suppress-maximize-events",
     match = { class = ".*" },
     suppress_event = "maximize",
-})
-
--- Set border color to red if window is fullscreen
-hl.window_rule({
-    match = { fullscreen = true },
-    border_color = colors.error,
 })
 
 hl.window_rule({

@@ -37,9 +37,23 @@
       "src": "https://github.com/lewis6991/gitsigns.nvim",
       "version": ">=0.0.0"
     },
+    "kanagawa.nvim": {
+      "rev": "bb85e4bfc8d89b0e62c8fa53ccdd13d12e2f77b3",
+      "src": "https://github.com/rebelot/kanagawa.nvim"
+    },
     "neogit": {
       "rev": "99326a1310fb2d616b455d2fd16d01bf00682f06",
       "src": "https://github.com/NeogitOrg/neogit"
+    },
+    "neovim": {
+      "rev": "ff483051a47e27d84bdef47703538df1ed9f4a47",
+      "src": "https://github.com/rose-pine/neovim",
+      "version": ">=0.0.0"
+    },
+    "nvim": {
+      "rev": "e068ab5f8261f23f6f71ffd8791ae40315b77b9c",
+      "src": "https://github.com/catppuccin/nvim",
+      "version": ">=0.0.0"
     },
     "nvim-autopairs": {
       "rev": "23320e75953ac82e559c610bec5a90d9c6dfa743",
@@ -78,6 +92,10 @@
       "rev": "17c0a8faaf48298a0c0cfb0d757c0eaee4ff7a32",
       "src": "https://github.com/stevearc/oil.nvim",
       "version": ">=0.0.0"
+    },
+    "oxocarbon.nvim": {
+      "rev": "cf49e389c22dab56224e43ae16422ddcd5b61b28",
+      "src": "https://github.com/nyoom-engineering/oxocarbon.nvim"
     },
     "render-markdown.nvim": {
       "rev": "e3c18ddd27a853f85a6f513a864cf4f2982b9f26",
