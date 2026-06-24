@@ -5,8 +5,10 @@ local spawn_or_focus_tui = require("utils").spawn_or_focus_tui
 local mod = "SUPER"
 local mod2 = "SUPER + SHIFT"
 
-local brightness = "~/.local/bin/brightness"
-local volume = "~/.local/bin/volume"
+local scripts = "~/.local/bin/"
+local brightness = scripts .. "brightness"
+local volume = scripts .. "volume"
+local dmenu_power = scripts .. "dmenu-power"
 
 -- apps,
 -- format for spawn_or_focus: { cmd = "command", class = "class" }
@@ -41,8 +43,8 @@ hl.bind(mod2 .. " + M", spawn_or_focus_webapp(protonmail))
 hl.bind(mod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + G", hl.dsp.window.pin())
 hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd(menu))
+hl.bind(mod .. " + P", hl.dsp.exec_cmd(dmenu_power))
 hl.bind(mod .. " + T", hl.dsp.exec_cmd(terminal))
-hl.bind(mod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind(mod .. " + L", function()
     local workspace = hl.get_active_special_workspace() or hl.get_active_workspace()
