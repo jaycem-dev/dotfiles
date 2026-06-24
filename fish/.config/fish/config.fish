@@ -3,6 +3,8 @@ if status is-interactive
     set -U fish_greeting
 end
 
+fish_config theme choose "rose-pine"
+
 set -gx EDITOR nvim
 set -gx TERMINAL "kitty -1"
 set -gx PAGER "nvim +Man!"

@@ -7,11 +7,8 @@
 }
 
 window#waybar {
-    /* rounded corners need to set 0.99 or lower instead of 1 */
-    /* issue: https://github.com/Alexays/Waybar/issues/3882 */
-    /* background_waybar = 0.99, background_alpha = 0.9 */
-    background-color: @background_alpha;
-    color: @on_background;
+    background-color: @base;
+    color: @text;
 }
 
 #idle_inhibitor.activated,
@@ -23,31 +20,27 @@ window#waybar {
 #battery.warning,
 #power-profiles-daemon.power-saver,
 #privacy {
-    color: @error;
+    color: @warning;
 }
 
 #battery.critical {
-    background-color: @on_error;
     color: @error;
-    padding: 0 10px;
 }
 
 #workspaces button {
     padding: 0 5px;
     border-radius: 5;
-    margin: 0 2px;
-    background-color: @surface_container;
 }
 
 #workspaces button.empty,
 #workspaces button.hidden,
 #bluetooth.off {
-    color: @outline_variant;
+    color: @muted;
 }
 
 #workspaces button.active {
-    background-color: @surface_container_highest;
-    border: 1px solid @outline;
+    background-color: @surfaceMed;
+    border: 1px solid @surfaceHigh;
 }
 
 #workspaces .taskbar-window {
@@ -57,7 +50,7 @@ window#waybar {
 .modules-center,
 .modules-right,
 .modules-left {
-    padding: 0 10px;
+    padding: 0 5px;
 }
 
 #taskbar button {
@@ -66,7 +59,7 @@ window#waybar {
 }
 
 #tray {
-    background-color: @surface_container_high;
+    background-color: @surfaceHigh;
     padding: 0 5px;
     border-radius: 5;
 }
