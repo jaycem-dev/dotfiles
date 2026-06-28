@@ -1,34 +1,45 @@
 local colors = {
     image = "~/Pictures/Wallpapers/default.jpg",
-    base = "#191724",
-    surface = "#1f1d2e",
-    overlay = "#26233a",
-    muted = "#6e6a86",
-    subtle = "#908caa",
-    text = "#e0def4",
-    love = "#eb6f92",
-    gold = "#f6c177",
-    rose = "#ebbcba",
-    pine = "#31748f",
-    foam = "#9ccfd8",
-    iris = "#c4a7e7",
-    highlightLow = "#21202e",
-    highlightMed = "#403d52",
-    highlightHigh = "#524f67",
+    rosewater = "#f5e0dc",
+    flamingo = "#f2cdcd",
+    pink = "#f5c2e7",
+    mauve = "#cba6f7",
+    red = "#f38ba8",
+    maroon = "#eba0ac",
+    peach = "#fab387",
+    yellow = "#f9e2af",
+    green = "#a6e3a1",
+    teal = "#94e2d5",
+    sky = "#89dceb",
+    sapphire = "#74c7ec",
+    blue = "#89b4fa",
+    lavender = "#b4befe",
+    text = "#cdd6f4",
+    subtext1 = "#bac2de",
+    subtext0 = "#a6adc8",
+    overlay2 = "#9399b2",
+    overlay1 = "#7f849c",
+    overlay0 = "#6c7086",
+    surface2 = "#585b70",
+    surface1 = "#45475a",
+    surface0 = "#313244",
+    base = "#1e1e2e",
+    mantle = "#181825",
+    crust = "#11111b",
 }
 
 hl.config({
     general = {
         col = {
-            active_border = { colors = { colors.iris }, angle = 45 },
-            inactive_border = colors.muted,
+            active_border = { colors = { colors.mauve }, angle = 45 },
+            inactive_border = colors.subtext0,
         },
     },
 })
 
 hl.window_rule({
     match = { fullscreen = true },
-    border_color = colors.love,
+    border_color = colors.red,
 })
 
 hl.on("hyprland.start", function()

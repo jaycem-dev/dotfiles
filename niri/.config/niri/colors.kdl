@@ -1,40 +1,38 @@
-spawn-sh-at-startup "swaybg -i /home/jay/Pictures/Wallpapers/default.png -m fill"
-
 layout {
     focus-ring {
-        active-color   "#d9bafa"
-        inactive-color "#4a454e"
-        urgent-color   "#ffb4ab"
+        active-color   "#cba6f7"
+        inactive-color "#6c7086"
+        urgent-color   "#f38ba8"
     }
 
     border {
-        active-color   "#d9bafa"
-        inactive-color "#4a454e"
-        urgent-color   "#ffb4ab"
+        active-color   "#cba6f7"
+        inactive-color "#6c7086"
+        urgent-color   "#f38ba8"
     }
 
     shadow {
-        color "#00000070"
+        color "#11111b70"
     }
 
     tab-indicator {
-        active-color   "#d9bafa"
-        inactive-color "#553b71"
-        urgent-color   "#ffb4ab"
+        active-color   "#cba6f7"
+        inactive-color "#6c7086"
+        urgent-color   "#f38ba8"
     }
 
     insert-hint {
-        color "#d9bafa80"
+        color "#89dceb80"
     }
 }
 
 recent-windows {
     highlight {
-        active-color "#d9bafa"
-        urgent-color "#ffb4ab"
+        active-color   "#cba6f7"
+        urgent-color   "#f38ba8"
     }
 }
 
 overview {
-    backdrop-color "#151218"
+    backdrop-color "#1e1e2e"
 }
