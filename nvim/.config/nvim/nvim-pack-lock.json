@@ -29,8 +29,7 @@
     },
     "fzf-lua": {
       "rev": "47b85a25c0c0b2c20b4e75199ed01bb71e7814f5",
-      "src": "https://github.com/ibhagwan/fzf-lua",
-      "version": ">=0.0.0"
+      "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
       "rev": "a462f416e2ce4744531c6256252dee99a7d34a83",
