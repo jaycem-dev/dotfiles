@@ -1,5 +1,5 @@
 vim.pack.add({
-    { src = "https://github.com/ibhagwan/fzf-lua", version = vim.version.range("*") },
+    "https://github.com/ibhagwan/fzf-lua",
 })
 
 local actions = require("fzf-lua.actions")

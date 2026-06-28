@@ -26,7 +26,6 @@ local music = "open.spotify.com"
 local yazi = { cmd = "yazi" }
 local nvim = { cmd = "nvim -c 'lua _G.fzf_projects()'", class = "nvim" }
 
--- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
 hl.bind(mod2 .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mod .. " + Q", hl.dsp.window.close())
@@ -43,6 +42,8 @@ hl.bind(mod2 .. " + M", spawn_or_focus_webapp(protonmail))
 hl.bind(mod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + G", hl.dsp.window.pin())
 hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd(menu))
+hl.bind(mod .. " + D", hl.dsp.exec_cmd("makoctl dismiss"))
+hl.bind(mod .. " + I", hl.dsp.exec_cmd("makoctl invoke"))
 hl.bind(mod .. " + P", hl.dsp.exec_cmd(dmenu_power))
 hl.bind(mod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
@@ -124,6 +125,18 @@ hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(brightness .. " up"), { locked = 
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(brightness .. " down"), { locked = true, repeating = true })
 hl.bind("SHIFT + XF86MonBrightnessUp", hl.dsp.exec_cmd(brightness .. " up 20"), { locked = true, repeating = true })
 hl.bind("SHIFT + XF86MonBrightnessDown", hl.dsp.exec_cmd(brightness .. " down 20"), { locked = true, repeating = true })
+hl.bind("CTRL + XF86MonBrightnessUp", hl.dsp.exec_cmd(brightness .. " up 2"), { locked = true, repeating = true })
+hl.bind("CTRL + XF86MonBrightnessDown", hl.dsp.exec_cmd(brightness .. " down 2"), { locked = true, repeating = true })
+hl.bind(
+    mod .. " + XF86MonBrightnessUp",
+    hl.dsp.exec_cmd("brightnessctl -q -d kbd_backlight s +25%"),
+    { locked = true, repeating = true }
+)
+hl.bind(
+    mod .. " + XF86MonBrightnessDown",
+    hl.dsp.exec_cmd("brightnessctl -q -d kbd_backlight s 25%-"),
+    { locked = true, repeating = true }
+)
 
 -- Requires playerctl
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
