@@ -20,7 +20,7 @@ local colors = {
 hl.config({
     general = {
         col = {
-            active_border = { colors = { colors.iris }, angle = 45 },
+            active_border = { colors = { colors.rose }, angle = 45 },
             inactive_border = colors.muted,
         },
     },

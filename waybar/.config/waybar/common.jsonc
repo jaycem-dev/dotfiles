@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "spacing": 15,
-    "position": "top",
+    "position": "bottom",
     // "margin": "0 5",
 
     "power-profiles-daemon": {
@@ -59,7 +59,7 @@
     },
 
     "pulseaudio": {
-        "format": "{icon}",
+        "format": "{icon} {volume}%",
         "format-muted": "󰝟",
         "format-icons": {
             "headphone": "󰋋",
@@ -77,8 +77,8 @@
             "critical": 20,
         },
         "format": "{icon} {capacity}%",
-        "format-charging": "󱐋 {capacity}",
-        "format-critical": "LOW BATTERY {icon} {capacity}",
+        "format-charging": "󱐋 {capacity}%",
+        "format-critical": "LOW BATTERY {icon} {capacity}%",
         "interval": 1,
         "format-icons": {
             "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
