@@ -20,14 +20,11 @@ FILES=(
     "waybar/.config/waybar/colors.css"
     "yazi/.config/yazi/theme.toml"
     "niri/.config/niri/colors.kdl"
-    "foot/.config/foot/colors.ini"
     "nvim/.config/nvim/lua/plugins/theme.lua"
-    "helix/.config/helix/themes/colors.toml"
     "swaylock/.config/swaylock/config"
     "hypr/.config/hypr/colors.lua"
     "qtct/.config/qt5ct/qt5ct.conf"
     "qtct/.config/qt6ct/qt6ct.conf"
-    "mango/.config/mango/colors.conf"
 )
 
 skip_updates() {
