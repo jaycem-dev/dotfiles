@@ -15,9 +15,8 @@
     ],
 
     "hyprland/language": {
-        "format": "󰌌 {}",
-        "format-en": "US",
-        "format-en-colemak_dh_iso": "CO",
+        "format-en": "󰌌 qwerty",
+        "format-en-colemak_dh_iso": "",
     },
 
     "hyprland/workspaces": {

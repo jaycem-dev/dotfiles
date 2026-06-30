@@ -31,8 +31,8 @@ local colors = {
 hl.config({
     general = {
         col = {
-            active_border = { colors = { colors.mauve }, angle = 45 },
-            inactive_border = colors.subtext0,
+            active_border = { colors = { colors.pink }, angle = 45 },
+            inactive_border = colors.surface0,
         },
     },
 })
