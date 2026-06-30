@@ -4,11 +4,13 @@
     font-family: "JetBrains Mono", "Symbols Nerd Font Mono";
     font-size: 10pt;
     font-weight: bold;
+    border-radius: 5;
 }
 
 window#waybar {
     background-color: @base;
     color: @text;
+    border-radius: 0;
 }
 
 #idle_inhibitor.activated,
@@ -29,7 +31,6 @@ window#waybar {
 
 #workspaces button {
     padding: 0 5px;
-    border-radius: 0;
 }
 
 #workspaces button.empty,
@@ -55,11 +56,10 @@ window#waybar {
 
 #taskbar button {
     padding: 0 5px;
-    border-radius: 0;
 }
 
 #tray {
-    background-color: @surfaceHigh;
+    background-color: @surfaceLow;
+    border: 1px solid @surfaceHigh;
     padding: 0 5px;
-    border-radius: 0;
 }
