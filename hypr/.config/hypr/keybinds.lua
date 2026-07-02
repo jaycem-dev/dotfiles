@@ -108,7 +108,7 @@ end
 hl.bind(mod .. " + S", hl.dsp.workspace.toggle_special("scratch"))
 hl.bind(mod2 .. " + S", hl.dsp.window.move({ workspace = "special:scratch" }))
 
-hl.bind(mod .. " + M", scratchpad("music", webapp_class(music), webapp_cmd(music)))
+hl.bind(mod .. " + M", scratchpad("music", webapp_cmd(music), webapp_class(music)))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
