@@ -1,6 +1,10 @@
 local spawn_or_focus = require("utils").spawn_or_focus
 local spawn_or_focus_webapp = require("utils").spawn_or_focus_webapp
 local spawn_or_focus_tui = require("utils").spawn_or_focus_tui
+local spawn_or_focus_url = require("utils").spawn_or_focus_url
+local scratchpad = require("utils").scratchpad
+local webapp_class = require("utils").webapp_class
+local webapp_cmd = require("utils").webapp_cmd
 
 local mod = "SUPER"
 local mod2 = "SUPER + SHIFT"
@@ -36,8 +40,8 @@ hl.bind(
 hl.bind(mod .. " + E", spawn_or_focus_tui(yazi))
 hl.bind(mod .. " + N", spawn_or_focus_tui(nvim))
 hl.bind(mod .. " + B", spawn_or_focus(browser))
+hl.bind(mod .. " + Y", spawn_or_focus_url("www.youtube.com"))
 hl.bind(mod .. " + W", spawn_or_focus_webapp(whatsapp))
-hl.bind(mod .. " + M", spawn_or_focus_webapp(music))
 hl.bind(mod2 .. " + M", spawn_or_focus_webapp(protonmail))
 hl.bind(mod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + G", hl.dsp.window.pin())
@@ -103,6 +107,8 @@ end
 -- Example special workspace (scratchpad)
 hl.bind(mod .. " + S", hl.dsp.workspace.toggle_special("scratch"))
 hl.bind(mod2 .. " + S", hl.dsp.window.move({ workspace = "special:scratch" }))
+
+hl.bind(mod .. " + M", scratchpad("music", webapp_class(music), webapp_cmd(music)))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
