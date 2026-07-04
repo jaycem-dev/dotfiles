@@ -15,7 +15,6 @@ declare -A map=(
     [mako]="$config_dir/mako/colors"
     [niri.kdl]="$config_dir/niri/colors.kdl"
     [nvim.lua]="$config_dir/nvim/lua/plugins/theme.lua"
-    [qtct.conf]="$config_dir/qt5ct/colors/rose-pine.conf"
     [swaylock]="$config_dir/swaylock/config"
     [waybar.css]="$config_dir/waybar/colors.css"
     [bat/config]="$config_dir/bat/config"
