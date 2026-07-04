@@ -1,4 +1,4 @@
-image=/home/jay/dev/dotfiles/wall/Pictures/Wallpapers/default.jpg
+image=/home/jay/Pictures/Wallpapers/default.jpg
 scaling=fill
 
 ignore-empty-password
@@ -10,20 +10,20 @@ indicator-radius=100
 
 color=0f1416
 
-text-color=dee3e6
-ring-color=88d1ec
-inside-color=003543
-line-color=88d1ec
-key-hl-color=003543
+text-color=dee3e5
+ring-color=84d2e7
+inside-color=003640
+line-color=84d2e7
+key-hl-color=003640
 
-line-clear-color=b3cad4
+line-clear-color=b2cbd2
 text-clear-color=ffb4ab
 inside-clear-color=690005
 ring-clear-color=ffb4ab
 
-text-ver-color=1e333b
-ring-ver-color=b3cad4
-inside-ver-color=b3cad4
+text-ver-color=1d343a
+ring-ver-color=b2cbd2
+inside-ver-color=b2cbd2
 
 text-wrong-color=690005
 inside-wrong-color=ffb4ab

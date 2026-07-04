@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-    background-color: @background_waybar;
+    background-color: @background_alpha;
     color: @on_background;
     border-radius: 0;
 }
@@ -50,6 +50,7 @@ button {
 #tray {
     background-color: @surface_container_high;
     border: 1px solid @outline;
+    padding: 0 5px;
 }
 
 #workspaces.taskbar button .niri-taskbar-btn {

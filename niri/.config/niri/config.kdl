@@ -197,18 +197,25 @@ input {
     }
 }
 
-// // manual blur for apps that don't support ext-background-effect-v1
-// layer-rule {
-//     match namespace="^launcher$"
-//     background-effect {
-//         blur true
-//     }
-// }
+// manual blur for apps that don't support ext-background-effect-v1
+layer-rule {
+    match namespace="^launcher$"
+    geometry-corner-radius 5 
+    background-effect {
+        blur true
+    }
+}
 
+layer-rule {
+    match namespace="^waybar$"
+    background-effect {
+        blur true
+    }
+}
 
 // rounded corners
 window-rule {
-    geometry-corner-radius 5 
+    geometry-corner-radius 10 
     clip-to-geometry true
 }
 
