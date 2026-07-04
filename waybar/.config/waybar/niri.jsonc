@@ -19,11 +19,11 @@
     },
 
     "niri/workspaces#idx": {
-        "format": "{icon}",
-        //"hide-empty": true,
+        "format": "{index}",
+        // "hide-empty": true,
         "format-icons": {
-            "default": "",
-            "focused": "",
+            "default": "",
+            "focused": "",
         },
     },
 
