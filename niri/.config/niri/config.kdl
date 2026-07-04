@@ -23,7 +23,7 @@ output "HDMI-A-1" {
 }
 
 blur {
-    offset 10 // default: 3.0
+    offset 15 // default: 3.0
 }
 
 gestures {
@@ -38,7 +38,7 @@ cursor {
 }
 
 layout {
-    gaps 5
+    gaps 5 
     background-color "transparent"
     center-focused-column "never" // never, always, on-overflow
     always-center-single-column
@@ -157,13 +157,13 @@ binds {
     Mod+G repeat=false hotkey-overlay-title="Open terminal" { spawn-sh "nirius toggle-follow-mode"; }
     Mod+Space hotkey-overlay-title="Open launcher" { spawn "fuzzel"; }
     Mod+T hotkey-overlay-title="Open terminal" { spawn-sh "kitty"; }
-    Mod+N repeat=false hotkey-overlay-title="Open neovim" { spawn-sh "launch-or-focus --tui nvim-projects"; }
+    Mod+N repeat=false hotkey-overlay-title="Open neovim" { spawn-sh "launch-or-focus --tui neovim"; }
     Mod+E repeat=false hotkey-overlay-title="Open yazi" { spawn-sh "launch-or-focus --tui yazi"; }
     Mod+B repeat=false hotkey-overlay-title="Open browser" { spawn-sh "launch-or-focus brave --id brave-browser"; }
     Mod+W repeat=false hotkey-overlay-title="Open Whatsapp (Webapp)" { spawn-sh "launch-or-focus --webapp web.whatsapp.com"; }
     Mod+Shift+M repeat=false hotkey-overlay-title="Open ProtonMail (Webapp)" { spawn-sh "launch-or-focus --webapp mail.proton.me"; }
     Mod+M repeat=false hotkey-overlay-title="Open Spotify (Webapp)" { spawn-sh "launch-or-focus --webapp open.spotify.com"; }
-    Mod+Y repeat=false hotkey-overlay-title="Open YouTube (Webapp)" { spawn-sh "launch-or-focus --webapp youtube.com"; }
+    Mod+Y repeat=false hotkey-overlay-title="Open YouTube (Webapp)" { spawn-sh "launch-or-focus --webapp www.youtube.com"; }
     Mod+P repeat=false { spawn "dmenu-power"; }
 }
 
@@ -197,13 +197,13 @@ input {
     }
 }
 
-// manual blur for apps that don't support ext-background-effect-v1
-layer-rule {
-    match namespace="^launcher$"
-    background-effect {
-        blur true
-    }
-}
+// // manual blur for apps that don't support ext-background-effect-v1
+// layer-rule {
+//     match namespace="^launcher$"
+//     background-effect {
+//         blur true
+//     }
+// }
 
 
 // rounded corners

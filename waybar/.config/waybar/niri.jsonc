@@ -1,7 +1,7 @@
 {
     "include": ["~/.config/waybar/common.jsonc"],
 
-    "modules-left": ["niri/workspaces", "wlr/taskbar"],
+    "modules-left": ["niri/workspaces#idx", "niri/workspaces#taskbar"],
     "modules-center": ["clock"],
     "modules-right": [
         "privacy",
@@ -14,7 +14,23 @@
         "battery",
     ],
 
-    "niri/workspaces": {
-        "format": "{index}",
+    "niri/window": {
+        "format": "[{col}/{max_col}] {title}",
+    },
+
+    "niri/workspaces#idx": {
+        "format": "{icon}",
+        //"hide-empty": true,
+        "format-icons": {
+            "default": "",
+            "focused": "",
+        },
+    },
+
+    "niri/workspaces#taskbar": {
+        "current-only": true,
+        "workspace-taskbar": {
+            "enable": true,
+        },
     },
 }
