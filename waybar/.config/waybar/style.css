@@ -35,15 +35,19 @@ button {
     padding: 0 10px;
 }
 
-#workspaces.idx button.empty,
-#workspaces.idx button.hidden,
+#workspaces button {
+    background-color: @surface_container;
+    margin: 0 5px;
+}
+#workspaces button.empty,
+#workspaces button.hidden,
 #bluetooth.off {
     color: @outline_variant;
 }
 
-#workspaces.idx button.active {
+#workspaces button.active {
     color: @primary;
-    background-color: @on_primary;
+    background-color: @surface_container_high;
     border: 1px solid @primary;
 }
 
@@ -51,16 +55,6 @@ button {
     background-color: @surface_container_high;
     border: 1px solid @outline;
     padding: 0 5px;
-}
-
-#workspaces.taskbar button .niri-taskbar-btn {
-    opacity: 0.3;
-}
-
-#workspaces.taskbar button .niri-taskbar-btn.focused {
-    opacity: 1;
-    background-color: @surface_container;
-    border: 1px solid @outline_variant;
 }
 
 .modules-center,
