@@ -1,6 +1,5 @@
 spawn-at-startup "swayidle"
 spawn-sh-at-startup "waybar -c ~/.config/waybar/niri.jsonc"
-spawn-at-startup "niriusd"
 // Workaraound for Asahi NixOS issues 
 spawn-sh-at-startup "niri msg action power-off-monitors; niri msg action power-on-monitors"
 
@@ -154,7 +153,7 @@ binds {
 
 
     // application binds
-    Mod+G repeat=false hotkey-overlay-title="Open terminal" { spawn-sh "nirius toggle-follow-mode"; }
+    Mod+D repeat=false hotkey-overlay-title="Dismiss notification" { spawn-sh "makoctl dismiss"; }
     Mod+Space hotkey-overlay-title="Open launcher" { spawn "fuzzel"; }
     Mod+T hotkey-overlay-title="Open terminal" { spawn-sh "kitty"; }
     Mod+N repeat=false hotkey-overlay-title="Open neovim" { spawn-sh "launch-or-focus --tui neovim"; }
