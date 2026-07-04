@@ -7,9 +7,13 @@
 }
 
 window#waybar {
-    background-color: @base;
-    color: @text;
+    background-color: @background_waybar;
+    color: @on_background;
     border-radius: 0;
+}
+
+button {
+    padding: 0 5px;
 }
 
 #idle_inhibitor.activated,
@@ -21,44 +25,42 @@ window#waybar {
 #battery.warning,
 #power-profiles-daemon.power-saver,
 #privacy {
-    color: @warning;
-}
-
-#battery.critical {
     color: @error;
 }
 
-#workspaces button {
-    padding: 0 5px;
+#battery.critical {
+    background-color: @on_error;
+    color: @error;
+    padding: 0 10px;
 }
 
-#workspaces button.empty,
-#workspaces button.hidden,
+#workspaces.idx button.empty,
+#workspaces.idx button.hidden,
 #bluetooth.off {
-    color: @muted;
+    color: @outline_variant;
 }
 
-#workspaces button.active {
-    background-color: @surfaceLow;
-    border: 1px solid @surfaceHigh;
+#workspaces.idx button.active {
+    color: @primary;
+    /* background-color: @surfaceLow; */
+    /* border: 1px solid @surfaceHigh; */
 }
 
-#workspaces .taskbar-window {
-    padding: 0 5px;
+#tray {
+    background-color: @surface_container_high;
+}
+
+#workspaces.taskbar button .niri-taskbar-btn {
+    opacity: 0.3;
+}
+#workspaces.taskbar button .niri-taskbar-btn.focused {
+    opacity: 1;
+    background-color: @surface_container;
+    border: 1px solid @outline_variant;
 }
 
 .modules-center,
 .modules-right,
 .modules-left {
-    padding: 0 5px;
-}
-
-#taskbar button {
-    padding: 0 5px;
-}
-
-#tray {
-    background-color: @surfaceLow;
-    border: 1px solid @surfaceHigh;
-    padding: 0 5px;
+    padding: 0 10px;
 }

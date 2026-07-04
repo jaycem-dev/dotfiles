@@ -1,7 +1,20 @@
-background-color=#191724
-text-color=#e0def4
-border-color=#524f67
-progress-color=over #403d52
+# Material You colors
+
+background-color=#0f1416
+text-color=#dee3e6
+border-color=#88d1ec
+progress-color=over #003543
+# Per-mode settings
+
+[mode=do-not-disturb]
+invisible=1
+on-notify=none
+
+[mode=silent]
+on-notify=none
 
 [urgency=high]
-border-color=#eb6f92
+border-color=#93000a
+
+[category=osd]
+text-color=#dee3e6
