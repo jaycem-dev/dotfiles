@@ -24,13 +24,9 @@ require("base16-colorscheme").setup({
     base0F = "{{colors.error_container.default.hex}}", -- Deprecated, Embedded Tags
 })
 
--- Register a signal handler for SIGUSR1 (matugen updates)
-local signal = vim.uv.new_signal()
-signal:start(
-    "sigusr1",
-    vim.schedule_wrap(function()
-        package.loaded["base16-colorscheme"] = nil
-        package.loaded["plugins.theme"] = nil
-        require("plugins.theme")
-    end)
-)
+vim.uv.new_signal():start("sigusr1", vim.schedule_wrap(function()
+    package.loaded["plugins.theme"] = nil
+    package.loaded["fzf-lua"] = nil
+    package.loaded["base16-colorscheme"] = nil
+    require("plugins.theme")
+end))
