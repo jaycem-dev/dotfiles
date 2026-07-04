@@ -1,6 +1,6 @@
 {
     "include": ["~/.config/waybar/common.jsonc"],
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["hyprland/workspaces#main"],
     "modules-center": ["clock"],
     "modules-right": [
         "hyprland/language",
@@ -19,12 +19,9 @@
         "format-en-colemak_dh_iso": "",
     },
 
-    "hyprland/workspaces": {
+    "hyprland/workspaces#main": {
         "format": "{name} {windows}",
         "show-special": true,
-        "persistent-workspaces": {
-            "*": 5,
-        },
         "workspace-taskbar": {
             "enable": true,
             // If true, the active/focused window will have an 'active' class. Could cause higher CPU usage due to more frequent redraws. Default: false

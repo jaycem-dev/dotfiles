@@ -1,3 +1,4 @@
+pcall(require, "theme")
 require("monitor")
 require("keybinds")
 require("input")

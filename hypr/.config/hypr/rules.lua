@@ -1,10 +1,4 @@
 local webapp_class = require("utils").webapp_class
-local colors = require("colors")
-
-hl.window_rule({
-    match = { fullscreen = true },
-    border_color = colors.error,
-})
 
 -- pip
 hl.window_rule({

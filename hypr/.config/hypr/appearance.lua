@@ -1,6 +1,4 @@
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
-local colors = require("colors")
-
 hl.config({
     general = {
         gaps_in = 5,
@@ -12,10 +10,6 @@ hl.config({
         allow_tearing = false,
 
         layout = "master",
-        col = {
-            active_border = { colors = { colors.primary, colors.secondary }, angle = 45 },
-            inactive_border = colors.outline_variant,
-        },
     },
 
     decoration = {
