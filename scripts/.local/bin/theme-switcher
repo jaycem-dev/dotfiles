@@ -83,7 +83,8 @@ restart_apps() {
         "kill -SIGUSR1 \$KITTY_PID"
         "pkill -USR2 btop"
         "makoctl reload"
-        "pkill -SIGUSR2 waybar"
+        # "pkill -SIGUSR2 waybar"
+        "pkill waybar; nohup waybar &>/dev/null &" # signal is broken on git version
         "pkill -SIGUSR1 nvim"
         "bat cache --build"
     )
