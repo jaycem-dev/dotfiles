@@ -14,7 +14,7 @@ window#waybar {
 }
 
 window#waybar > box.horizontal {
-    padding: 0 5px;
+    padding: 1px 5px;
 }
 
 button {
@@ -38,20 +38,29 @@ button {
     padding: 0 10px;
 }
 
-#workspaces.main button {
+#workspaces.hypr button {
     background-color: @surfaceLow;
     margin: 0 5px;
 }
-#workspaces.main button.empty,
-#workspaces.main button.hidden,
+
+#workspaces button.empty,
+#workspaces button.hidden,
 #bluetooth.off {
     color: @muted;
 }
 
-#workspaces.main button.active {
+#workspaces.hypr button.active,
+#workspaces.niri button.active {
     color: @primary;
     background-color: @surfaceLow;
     border: 1px solid @primary;
+}
+
+#workspaces button .niri-taskbar-btn {
+    -gtk-icon-effect: dim;
+}
+#workspaces button .niri-taskbar-btn.focused {
+    -gtk-icon-effect: highlight;
 }
 
 #tray {

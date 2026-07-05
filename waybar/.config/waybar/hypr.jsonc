@@ -1,6 +1,6 @@
 {
     "include": ["~/.config/waybar/common.jsonc"],
-    "modules-left": ["hyprland/workspaces#main"],
+    "modules-left": ["hyprland/workspaces#hypr"],
     "modules-center": ["clock"],
     "modules-right": [
         "hyprland/language",
@@ -19,7 +19,7 @@
         "format-en-colemak_dh_iso": "",
     },
 
-    "hyprland/workspaces#main": {
+    "hyprland/workspaces#hypr": {
         "format": "{name} {windows}",
         "show-special": true,
         "workspace-taskbar": {

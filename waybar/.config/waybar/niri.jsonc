@@ -1,7 +1,7 @@
 {
     "include": ["~/.config/waybar/common.jsonc"],
 
-    "modules-left": ["niri/workspaces#idx", "niri/workspaces#taskbar"],
+    "modules-left": ["niri/workspaces#niri", "niri/workspaces#taskbar"],
     "modules-center": ["clock"],
     "modules-right": [
         "privacy",
@@ -18,7 +18,7 @@
         "format": "[{col}/{max_col}] {title}",
     },
 
-    "niri/workspaces#idx": {
+    "niri/workspaces#niri": {
         "format": "{index}",
         // "hide-empty": true,
         "format-icons": {
