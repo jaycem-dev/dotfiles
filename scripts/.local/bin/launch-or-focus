@@ -94,7 +94,7 @@ done
 
 # niri's focus-window requires a numeric window ID, not an app_id
 if [ "$DESKTOP_SESSION" = niri ] && [ "$MODE" != website ]; then
-    ID=$(niri msg --json windows | jq -r '.[] | select(.app_id == "'"$ID"'") | .id')
+    ID=$(niri msg --json windows | jq -r '.[] | select(.app_id == "'"$ID"'") | .id' | head -1)
 fi
 
 $FOCUS_CMD "$ID" && exit 0
