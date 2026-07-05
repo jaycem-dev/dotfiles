@@ -11,7 +11,6 @@ declare -A map=(
     [colors.yazi/tmtheme.xml]="$config_dir/yazi/flavors/colors.yazi/tmtheme.xml"
     [fuzzel.ini]="$config_dir/fuzzel/colors.ini"
     [kitty.conf]="$config_dir/kitty/current-theme.conf"
-    [hyprland.lua]="$config_dir/hypr/theme.lua"
     [mako]="$config_dir/mako/colors"
     [niri.kdl]="$config_dir/niri/colors.kdl"
     [nvim.lua]="$config_dir/nvim/lua/plugins/theme.lua"
@@ -81,14 +80,12 @@ set_theme() {
 
 restart_apps() {
     local cmds=(
-        "mmsg dispatch reload_config"
         "kill -SIGUSR1 \$KITTY_PID"
         "pkill -USR2 btop"
         "makoctl reload"
         "pkill -SIGUSR2 waybar"
         "pkill -SIGUSR1 nvim"
         "bat cache --build"
-        "hyprctl reload"
     )
     for cmd in "${cmds[@]}"; do
         eval "$cmd" >/dev/null 2>&1 || echo "failed: $cmd"

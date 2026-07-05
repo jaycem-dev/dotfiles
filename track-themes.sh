@@ -8,23 +8,23 @@ if [ -z "$REPO_ROOT" ]; then
 fi
 cd "$REPO_ROOT" || exit 1
 
-# List of all matugen output files (relative to repo root)
-# Add/remove files according to matugen config
+# List of all theme files (relative to repo root)
 FILES=(
-    "kitty/.config/kitty/themes/Colors.conf"
     "btop/.config/btop/themes/colors.theme"
+    "yazi/.config/yazi/flavors/colors.yazi/flavor.toml"
+    "yazi/.config/yazi/flavors/colors.yazi/tmtheme.xml"
     "fuzzel/.config/fuzzel/colors.ini"
+    "kitty/.config/kitty/current-theme.conf"
     "mako/.config/mako/colors"
-    "gtk/.config/gtk-3.0/colors.css"
-    "gtk/.config/gtk-4.0/colors.css"
-    "waybar/.config/waybar/colors.css"
-    "yazi/.config/yazi/theme.toml"
     "niri/.config/niri/colors.kdl"
     "nvim/.config/nvim/lua/plugins/theme.lua"
     "swaylock/.config/swaylock/config"
-    "hypr/.config/hypr/colors.lua"
-    "qtct/.config/qt5ct/qt5ct.conf"
-    "qtct/.config/qt6ct/qt6ct.conf"
+    "waybar/.config/waybar/colors.css"
+    "bat/.config/bat/config"
+    "bat/.config/bat/themes"
+    "fish/.config/fish/conf.d/theme.fish"
+    "fish/.config/fish/themes"
+    "fish/.config/fish/conf.d/fzf-theme.fish"
 )
 
 skip_updates() {
@@ -48,8 +48,8 @@ track)
     ;;
 *)
     echo "Usage: $0 {skip|track}"
-    echo "  skip:  Ignore local updates to matugen theme files"
-    echo "  track: Resume tracking updates to matugen theme files"
+    echo "  skip:  Ignore local updates to theme files"
+    echo "  track: Resume tracking updates to theme files"
     echo ""
     echo "Managed files (${#FILES[@]} total):"
     for file in "${FILES[@]}"; do

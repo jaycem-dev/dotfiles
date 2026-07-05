@@ -4,6 +4,39 @@
     "position": "top",
     // "margin": "0 5",
 
+    "modules-left": ["niri/workspaces#main", "niri/workspaces#taskbar"],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "privacy",
+        "tray",
+        "idle_inhibitor",
+        "power-profiles-daemon",
+        "network",
+        "bluetooth",
+        "pulseaudio",
+        "battery",
+    ],
+
+    "niri/window": {
+        "format": "[{col}/{max_col}] {title}",
+    },
+
+    "niri/workspaces#main": {
+        "format": "{index}",
+        // "hide-empty": true,
+        "format-icons": {
+            "default": "",
+            "focused": "",
+        },
+    },
+
+    "niri/workspaces#taskbar": {
+        "current-only": true,
+        "workspace-taskbar": {
+            "enable": true,
+        },
+    },
+
     "power-profiles-daemon": {
         "format": "{icon}",
         "tooltip-format": "Power profile: {profile}\nDriver: {driver}",

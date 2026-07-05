@@ -7,14 +7,6 @@ declare -A items=(
     [shutdown]=" Shutdown"
 )
 
-if [[ "$DESKTOP_SESSION" == "hyprland" ]]; then
-    cmd_poweroff=(hyprshutdown --post-cmd "systemctl poweroff")
-    cmd_reboot=(hyprshutdown --post-cmd "systemctl reboot")
-else
-    cmd_poweroff=(shutdown now)
-    cmd_reboot=(shutdown -r now)
-fi
-
 selected=$(printf '%s\n' "${items[@]}" | fuzzel --dmenu)
 
 if [[ -n "$selected" ]]; then
@@ -28,10 +20,10 @@ if [[ -n "$selected" ]]; then
                 systemctl suspend
                 ;;
             reboot)
-                "${cmd_reboot[@]}"
+                shutdown -r now
                 ;;
             shutdown)
-                "${cmd_poweroff[@]}"
+                shutdown now
                 ;;
             esac
             break
