@@ -2,6 +2,7 @@
     "layer": "top",
     "spacing": 15,
     "position": "top",
+    "height": 25,
     // "margin": "0 5",
 
     "modules-left": ["niri/workspaces#main", "niri/workspaces#taskbar"],
@@ -23,7 +24,7 @@
 
     "niri/workspaces#main": {
         "format": "{index}",
-        // "hide-empty": true,
+        "hide-empty": true,
         "format-icons": {
             "default": "",
             "focused": "",
