@@ -1,7 +1,0 @@
-subject_format = '{track}'
-body_format = '{album} - {artist}'
-join_string = ', '
-enable_album_art = true
-album_art_deadline = 1000
-urgency = 1
-category = 'player'

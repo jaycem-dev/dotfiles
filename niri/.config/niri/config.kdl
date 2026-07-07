@@ -1,6 +1,5 @@
 spawn-at-startup "swayidle"
 spawn-at-startup "waybar"
-spawn-at-startup "mpris-notifier"
 // Workaraound for Asahi NixOS issues 
 spawn-sh-at-startup "niri msg action power-off-monitors; niri msg action power-on-monitors"
 
