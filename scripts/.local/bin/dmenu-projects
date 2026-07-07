@@ -2,7 +2,7 @@
 
 id=""
 cmd=""
-search_dir="$HOME/dev"
+search_dir="$HOME/Projects"
 
 while [ $# -gt 0 ]; do
     case "$1" in
@@ -40,4 +40,3 @@ if [[ -n "$selected" ]]; then
         fi
     done
 fi
-

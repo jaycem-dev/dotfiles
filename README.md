@@ -11,7 +11,7 @@ My configuration files for Niri, Neovim, etc.
 - Clone the repo and cd into it:
 
 ```bash
-git clone https://github.com/jaycem-dev/dotfiles.git ~/dev/dotfiles && cd ~/dev/dotfiles
+git clone https://github.com/jaycem-dev/dotfiles.git ~/Projects/dotfiles && cd ~/Projects/dotfiles
 ```
 
 - Symlink modules with stow:
