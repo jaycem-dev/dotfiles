@@ -11,6 +11,4 @@ width=200
 height=50
 padding=5
 default-timeout=1500
-
-[category=player]
-default-timeout=3000
+history=0
