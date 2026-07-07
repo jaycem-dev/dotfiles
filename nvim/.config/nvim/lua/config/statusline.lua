@@ -1,5 +1,10 @@
 vim.opt.statusline = "%!v:lua.statusline()"
 
+local function root_dir()
+    local dir = vim.fn.getcwd()
+    return vim.fn.fnamemodify(dir, ":t")
+end
+
 local function git_branch()
     local head = vim.b.gitsigns_head
     if head and head ~= "" then
@@ -19,7 +24,8 @@ end
 function _G.statusline()
     -- %= separates sections, %* resets hl groups
     return table.concat({
-        "%#TelescopePreviewTitle# " .. vim.api.nvim_get_mode().mode:upper() .. " %*",
+        "%#Cursor# " .. vim.api.nvim_get_mode().mode:upper() .. " %*",
+        "%#Directory#" .. root_dir() .. "%*",
         "%#gitcommitBranch#" .. git_branch() .. "%*",
         macro_status(),
         "%=",
