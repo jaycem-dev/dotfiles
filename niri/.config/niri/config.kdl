@@ -6,7 +6,7 @@ spawn-sh-at-startup "niri msg action power-off-monitors; niri msg action power-o
 
 workspace "browser"
 workspace "dev"
-workspace "media"
+workspace "dev-alt"
 workspace "chat"
 workspace "gaming"
 
@@ -160,17 +160,17 @@ binds {
     Mod+Space hotkey-overlay-title="App Launcher" { spawn "fuzzel"; }
     Mod+T hotkey-overlay-title="Terminal" { spawn-sh "launch-or-focus kitty"; }
     Mod+G hotkey-overlay-title="Steam" { spawn-sh "launch-or-focus steam"; }
-    Mod+N repeat=false hotkey-overlay-title="Neovim" { spawn-sh "launch-or-focus --id nvim 'dmenu-projects nvim'"; }
     Mod+E repeat=false hotkey-overlay-title="Yazi" { spawn-sh "launch-or-focus --tui yazi"; }
     Mod+B repeat=false hotkey-overlay-title="Browser" { spawn-sh "launch-or-focus brave --id brave-browser"; }
     Mod+W repeat=false hotkey-overlay-title="Whatsapp" { spawn-sh "launch-or-focus --webapp web.whatsapp.com"; }
     Mod+Shift+M repeat=false hotkey-overlay-title="ProtonMail" { spawn-sh "launch-or-focus --webapp mail.proton.me"; }
     Mod+M repeat=false hotkey-overlay-title="Spotify" { spawn-sh "launch-or-focus --webapp open.spotify.com"; }
     Mod+Y repeat=false hotkey-overlay-title="YouTube" { spawn-sh "launch-or-focus --webapp www.youtube.com"; }
-    Mod+A repeat=false hotkey-overlay-title="Opencode" { spawn-sh "launch-or-focus --id opencode 'dmenu-projects opencode'"; }
-    Mod+Shift+N repeat=false hotkey-overlay-title="Neovim (new instance)" { spawn-sh "dmenu-projects nvim"; }
-    Mod+Shift+A repeat=false hotkey-overlay-title="Opencode (new instance)" { spawn-sh "dmenu-projects opencode"; }
     Mod+P repeat=false { spawn "dmenu-power"; }
+    Mod+N repeat=false hotkey-overlay-title="Neovim" { spawn-sh "launch-or-focus --id neovim 'dmenu-projects --id neovim nvim '"; }
+    Mod+A repeat=false hotkey-overlay-title="Opencode" { spawn-sh "launch-or-focus --id opencode 'dmenu-projects opencode'"; }
+    Mod+Shift+N repeat=false hotkey-overlay-title="Neovim (new instance)" { spawn-sh "dmenu-projects --id neovim2 nvim"; }
+    Mod+Shift+A repeat=false hotkey-overlay-title="Opencode (new instance)" { spawn-sh "dmenu-projects --id opencode2 opencode"; }
 }
 
 input {
@@ -259,6 +259,8 @@ window-rule {
 window-rule {
     match app-id=r#"brave-browser"#
     match app-id=r#"zen-beta"#
+    match app-id=r#"brave-open.spotify.com__-Default"#
+    match app-id=r#"brave-music.youtube.com__-Default"#
     open-on-workspace "browser"
     open-focused true
 }
@@ -273,11 +275,11 @@ window-rule {
     open-on-workspace "dev"
     open-focused true
 }
-// media workspace apps
+// dev-alt workspace apps
 window-rule {
-    match app-id=r#"brave-music.youtube.com__-Default"#
-    match app-id=r#"brave-open.spotify.com__-Default"#
-    open-on-workspace "media"
+    match app-id=r#"^nvim2$"#
+    match app-id=r#"^opencode2$"#
+    open-on-workspace "dev-alt"
     open-focused true
 }
 // chat workspace apps
