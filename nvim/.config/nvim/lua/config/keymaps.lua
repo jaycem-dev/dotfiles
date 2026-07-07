@@ -5,7 +5,26 @@ vim.g.mapleader = " "
 vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
 vim.keymap.set("n", "<leader>l", ":buffer #<CR>", { desc = "Last buffer" })
+vim.keymap.set("n", "<leader>s", function()
+    local word = vim.fn.expand("<cword>")
+    vim.api.nvim_feedkeys(
+        vim.keycode(":%s/" .. word .. "//g<Left><Left>"),
+        "n",
+        false
+    )
+end, { desc = "Replace word under cursor" })
+vim.keymap.set("v", "<leader>s", function()
+    local srow, scol = vim.fn.getpos("'<")[2], vim.fn.getpos("'<")[3]
+    local ecol = vim.fn.getpos("'>")[3]
+    local text = vim.fn.getline(srow):sub(scol, ecol)
+    vim.api.nvim_feedkeys(
+        vim.keycode("<Esc>:%s/\\V" .. vim.fn.escape(text, "\\/") .. "//g<Left><Left>"),
+        "n",
+        false
+    )
+end, { desc = "Replace visual selection" })
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
+vim.keymap.set("v", "<leader>p", '"_dP', { desc = "Paste without overwriting register" })
 
 -- QoL
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join lines without moving cursor" })
