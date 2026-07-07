@@ -18,7 +18,7 @@ vim.opt.cursorline = true
 vim.opt.laststatus = 3 -- global statusline
 vim.opt.fillchars = { eob = " " } -- remove ~ at end of buffer
 vim.opt.signcolumn = "yes"
-vim.opt.cmdheight = 0 -- hides cmd until used
+-- vim.opt.cmdheight = 0 -- hides cmd until used
 vim.opt.pumheight = 10 -- popup menu items
 -- Search
 vim.opt.ignorecase = true -- Ignore case in search patterns.

@@ -18,6 +18,6 @@ require("blink.cmp").setup({
         ghost_text = {
             enabled = false,
         },
-        signature = { enabled = true },
     },
+    signature = { enabled = true },
 })
