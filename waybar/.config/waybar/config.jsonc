@@ -24,7 +24,7 @@
 
     "niri/workspaces#main": {
         "format": "{index}",
-        "hide-empty": true,
+        // "hide-empty": true,
         "format-icons": {
             "default": "",
             "focused": "",
