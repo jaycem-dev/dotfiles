@@ -256,6 +256,7 @@ window-rule {
     match app-id=r#"brave-browser"#
     match app-id=r#"zen-beta"#
     open-on-workspace "browser"
+    open-focused true
 }
 // dev workspace apps
 window-rule {
@@ -265,12 +266,14 @@ window-rule {
     match app-id=r#"Alacritty"#
     match app-id=r#"com.mitchellh.ghostty"#
     open-on-workspace "dev"
+    open-focused true
 }
 // media workspace apps
 window-rule {
     match app-id=r#"brave-music.youtube.com__-Default"#
     match app-id=r#"brave-open.spotify.com__-Default"#
     open-on-workspace "media"
+    open-focused true
 }
 // chat workspace apps
 window-rule {
@@ -278,12 +281,14 @@ window-rule {
     match app-id=r#"signal"#
     match app-id=r#"brave-mail.proton.me__-Default"#
     open-on-workspace "chat"
+    open-focused true
 }
 // gaming
 window-rule {
     match app-id=r#"steam"#
     match app-id=r#"heroic"#
     open-on-workspace "gaming"
+    open-focused true
 }
 
 include "./colors.kdl"
