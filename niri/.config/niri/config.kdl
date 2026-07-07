@@ -157,15 +157,19 @@ binds {
 
     // application binds
     Mod+D repeat=false hotkey-overlay-title="Dismiss notification" { spawn-sh "makoctl dismiss"; }
-    Mod+Space hotkey-overlay-title="Open launcher" { spawn "fuzzel"; }
-    Mod+T hotkey-overlay-title="Open terminal" { spawn-sh "launch-or-focus kitty"; }
-    Mod+N repeat=false hotkey-overlay-title="Open neovim" { spawn-sh "launch-or-focus --tui neovim"; }
-    Mod+E repeat=false hotkey-overlay-title="Open yazi" { spawn-sh "launch-or-focus --tui yazi"; }
-    Mod+B repeat=false hotkey-overlay-title="Open browser" { spawn-sh "launch-or-focus brave --id brave-browser"; }
-    Mod+W repeat=false hotkey-overlay-title="Open Whatsapp (Webapp)" { spawn-sh "launch-or-focus --webapp web.whatsapp.com"; }
-    Mod+Shift+M repeat=false hotkey-overlay-title="Open ProtonMail (Webapp)" { spawn-sh "launch-or-focus --webapp mail.proton.me"; }
-    Mod+M repeat=false hotkey-overlay-title="Open Spotify (Webapp)" { spawn-sh "launch-or-focus --webapp open.spotify.com"; }
-    Mod+Y repeat=false hotkey-overlay-title="Open YouTube (Webapp)" { spawn-sh "launch-or-focus --webapp www.youtube.com"; }
+    Mod+Space hotkey-overlay-title="App Launcher" { spawn "fuzzel"; }
+    Mod+T hotkey-overlay-title="Terminal" { spawn-sh "launch-or-focus kitty"; }
+    Mod+G hotkey-overlay-title="Steam" { spawn-sh "launch-or-focus steam"; }
+    Mod+N repeat=false hotkey-overlay-title="Neovim" { spawn-sh "launch-or-focus --id nvim 'dmenu-projects nvim'"; }
+    Mod+E repeat=false hotkey-overlay-title="Yazi" { spawn-sh "launch-or-focus --tui yazi"; }
+    Mod+B repeat=false hotkey-overlay-title="Browser" { spawn-sh "launch-or-focus brave --id brave-browser"; }
+    Mod+W repeat=false hotkey-overlay-title="Whatsapp" { spawn-sh "launch-or-focus --webapp web.whatsapp.com"; }
+    Mod+Shift+M repeat=false hotkey-overlay-title="ProtonMail" { spawn-sh "launch-or-focus --webapp mail.proton.me"; }
+    Mod+M repeat=false hotkey-overlay-title="Spotify" { spawn-sh "launch-or-focus --webapp open.spotify.com"; }
+    Mod+Y repeat=false hotkey-overlay-title="YouTube" { spawn-sh "launch-or-focus --webapp www.youtube.com"; }
+    Mod+A repeat=false hotkey-overlay-title="Opencode" { spawn-sh "launch-or-focus --id opencode 'dmenu-projects opencode'"; }
+    Mod+Shift+N repeat=false hotkey-overlay-title="Neovim (new instance)" { spawn-sh "dmenu-projects nvim"; }
+    Mod+Shift+A repeat=false hotkey-overlay-title="Opencode (new instance)" { spawn-sh "dmenu-projects opencode"; }
     Mod+P repeat=false { spawn "dmenu-power"; }
 }
 
@@ -261,6 +265,7 @@ window-rule {
 // dev workspace apps
 window-rule {
     match app-id=r#"neovim"#
+    match app-id=r#"opencode"#
     match app-id=r#"kitty"#
     match app-id=r#"foot"#
     match app-id=r#"Alacritty"#
