@@ -51,7 +51,7 @@ window#waybar {
     color: @muted;
 }
 #workspaces.main button.active {
-    background-color: @primary;
+    background-color: @secondary;
     color: @base;
 }
 
