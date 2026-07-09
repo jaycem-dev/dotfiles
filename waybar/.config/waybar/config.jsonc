@@ -23,7 +23,7 @@
     },
 
     "niri/workspaces#main": {
-        "format": "{index}",
+        // "format": "{index}",
         // "hide-empty": true,
         "format-icons": {
             "default": "",
