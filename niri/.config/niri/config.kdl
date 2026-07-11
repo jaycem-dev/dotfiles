@@ -1,11 +1,12 @@
 spawn-at-startup "hypridle"
 spawn-at-startup "waybar"
+spawn-at-startup "niriusd"
 // Workaraound for Asahi NixOS issues 
 spawn-at-startup "asahi-fixes"
 
 workspace "browser"
 workspace "dev"
-workspace "dev-alt"
+workspace "media"
 workspace "chat"
 workspace "gaming"
 
@@ -73,8 +74,8 @@ binds {
     Mod+Tab repeat=false { focus-workspace-previous; }
     Mod+O repeat=false { toggle-overview; }
     Mod+Q repeat=false { close-window; }
-    Mod+V       repeat=false { toggle-window-floating; }
-    Mod+Shift+V repeat=false { switch-focus-between-floating-and-tiling; }
+    Mod+Shift+V       repeat=false { toggle-window-floating; }
+    Mod+V repeat=false { switch-focus-between-floating-and-tiling; }
     Mod+Shift+T { toggle-column-tabbed-display; }
     Mod+Shift+S { screenshot-screen; }
     Mod+C { center-column; }
@@ -160,7 +161,8 @@ binds {
     Mod+D repeat=false hotkey-overlay-title="Dismiss notification" { spawn "makoctl" "dismiss"; }
     Mod+Space hotkey-overlay-title="App Launcher" { spawn "fuzzel"; }
     Mod+T hotkey-overlay-title="Terminal" { spawn "launch-or-focus" "kitty"; }
-    Mod+G hotkey-overlay-title="Steam" { spawn "launch-or-focus" "steam"; }
+    // temporary fix until niri support is added, causes cpu spikes
+    Mod+G hotkey-overlay-title="Make current window global (pin)" { spawn "nirius" "toggle-follow-mode"; }
     Mod+E repeat=false hotkey-overlay-title="Yazi" { spawn "launch-or-focus" "--tui" "yazi"; }
     Mod+B repeat=false hotkey-overlay-title="Browser" { spawn "launch-or-focus" "brave" "--id" "brave-browser"; }
     Mod+W repeat=false hotkey-overlay-title="Whatsapp" { spawn "launch-or-focus" "--webapp" "web.whatsapp.com"; }
@@ -168,10 +170,8 @@ binds {
     Mod+M repeat=false hotkey-overlay-title="Spotify" { spawn "launch-or-focus" "--webapp" "open.spotify.com"; }
     Mod+Y repeat=false hotkey-overlay-title="YouTube" { spawn "launch-or-focus" "--webapp" "www.youtube.com"; }
     Mod+P repeat=false { spawn "dmenu-power"; }
-    Mod+N repeat=false hotkey-overlay-title="Neovim" { spawn "launch-or-focus" "--id" "neovim" "dmenu-projects --id neovim nvim "; }
-    Mod+A repeat=false hotkey-overlay-title="Opencode" { spawn "launch-or-focus" "--id" "opencode" "dmenu-projects opencode"; }
-    Mod+Shift+N repeat=false hotkey-overlay-title="Neovim (new instance)" { spawn "dmenu-projects" "--id" "neovim-alt" "nvim"; }
-    Mod+Shift+A repeat=false hotkey-overlay-title="Opencode (new instance)" { spawn "dmenu-projects" "--id" "opencode-alt" "opencode"; }
+    Mod+N repeat=false hotkey-overlay-title="Neovim" { spawn "launch-or-focus" "--tui" "neovim"; }
+    Mod+A repeat=false hotkey-overlay-title="Opencode" { spawn "launch-or-focus" "--id" "opencode" "dmenu-opencode"; }
 }
 
 input {
@@ -260,8 +260,6 @@ window-rule {
 window-rule {
     match app-id=r#"brave-browser"#
     match app-id=r#"zen-beta"#
-    match app-id=r#"brave-open.spotify.com__-Default"#
-    match app-id=r#"brave-music.youtube.com__-Default"#
     open-on-workspace "browser"
     open-focused true
 }
@@ -276,11 +274,11 @@ window-rule {
     open-on-workspace "dev"
     open-focused true
 }
-// dev-alt workspace apps
+// media workspace apps
 window-rule {
-    match app-id=r#"^nvim-alt$"#
-    match app-id=r#"^opencode-alt$"#
-    open-on-workspace "dev-alt"
+    match app-id=r#"brave-open.spotify.com__-Default"#
+    match app-id=r#"brave-music.youtube.com__-Default"#
+    open-on-workspace "media"
     open-focused true
 }
 // chat workspace apps

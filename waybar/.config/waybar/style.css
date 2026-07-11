@@ -42,9 +42,8 @@ window#waybar {
     padding: 0 5px;
 }
 #workspaces.main button {
-    padding: 2px 8px;
-    margin: 0 2px;
-    /* background-color: @surfaceLow; */
+    padding: 2px;
+    margin: 0 5px;
 }
 
 #workspaces.main button.empty,
@@ -54,7 +53,8 @@ window#waybar {
 }
 #workspaces.main button.active {
     color: @secondary;
-    /* color: @base; */
+    border-bottom: 2px solid @secondary;
+    border-radius: 0;
 }
 
 #workspaces.taskbar button .niri-taskbar-btn {

@@ -26,7 +26,7 @@
 @define-color crust #11111b;
 
 @define-color base_alpha rgba(30, 30, 46, 0.9);
-@define-color primary @mauve;
+@define-color primary @pink;
 @define-color secondary @sky;
 @define-color tertiary @green;
 @define-color warning @yellow;

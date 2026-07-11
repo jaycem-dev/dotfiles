@@ -17,11 +17,8 @@ usage() {
 
 MODE=""
 ID=""
-CMD=""
+CMD_ARGS=()
 WEBAPP_BROWSER="${WEBAPP_BROWSER:-brave}" # needs to be a Chromium-based browser
-
-FOCUS_CMD="niri msg action focus-window --id"
-LAUNCH_CMD="niri msg action spawn -- sh -c"
 
 while [ $# -gt 0 ]; do
     case "$1" in
@@ -40,7 +37,7 @@ while [ $# -gt 0 ]; do
             exit 1
         }
         MODE=tui
-        CMD="kitty -1 --app-id $2 $2"
+        CMD_ARGS=(kitty -1 --app-id "$2" "$2")
         [ -z "$ID" ] && ID="$2"
         shift 2
         ;;
@@ -51,7 +48,7 @@ while [ $# -gt 0 ]; do
             exit 1
         }
         MODE=webapp
-        CMD="$WEBAPP_BROWSER --app=https://$2"
+        CMD_ARGS=("$WEBAPP_BROWSER" --app="https://$2")
         [ -z "$ID" ] && ID="$WEBAPP_BROWSER-$2__-Default"
         shift 2
         ;;
@@ -62,7 +59,7 @@ while [ $# -gt 0 ]; do
             exit 1
         }
         MODE=website
-        CMD="$WEBAPP_BROWSER --focus='https://$2/*' https://$2"
+        CMD_ARGS=("$WEBAPP_BROWSER" --focus="https://$2/*" "https://$2")
         ID=""
         shift 2
         ;;
@@ -73,18 +70,18 @@ while [ $# -gt 0 ]; do
             exit 1
         }
         MODE=default
-        CMD="$1"
+        CMD_ARGS=("$1")
         shift
         ;;
     esac
 done
 
-[ -z "$ID" ] && ID="$CMD"
+[ -z "$ID" ] && ID="${CMD_ARGS[0]}"
 
 # niri's focus-window requires a numeric window ID, not an app_id
 if [ "$MODE" != website ]; then
     ID=$(niri msg --json windows | jq -r '.[] | select(.app_id == "'"$ID"'") | .id' | head -1)
 fi
 
-$FOCUS_CMD "$ID" && exit 0
-$LAUNCH_CMD "$CMD"
+niri msg action focus-window --id "$ID" && exit 0
+niri msg action spawn -- "${CMD_ARGS[@]}"
