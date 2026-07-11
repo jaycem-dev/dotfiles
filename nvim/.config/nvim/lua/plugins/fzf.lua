@@ -60,7 +60,7 @@ _G.fzf_projects = function(opts)
     local fzf_lua = require("fzf-lua")
     opts = opts or {}
     opts.prompt = "Projects> "
-    opts.cwd = opts.cwd or vim.fn.expand("~/dev")
+    opts.cwd = opts.cwd or vim.fn.expand("~/Projects")
     opts.actions = {
         ["default"] = function(selected)
             vim.cmd("cd " .. selected[1])

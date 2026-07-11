@@ -136,6 +136,7 @@ binds {
     Mod+Equal { set-column-width "+10%"; }
     Mod+Shift+Minus { set-window-height "-10%"; }
     Mod+Shift+Equal { set-window-height "+10%"; }
+    Mod+Shift+0 { reset-window-height; }
 
     // media keys
     XF86AudioRaiseVolume allow-when-locked=true { spawn "volume" "up"; }
@@ -169,8 +170,8 @@ binds {
     Mod+P repeat=false { spawn "dmenu-power"; }
     Mod+N repeat=false hotkey-overlay-title="Neovim" { spawn "launch-or-focus" "--id" "neovim" "dmenu-projects --id neovim nvim "; }
     Mod+A repeat=false hotkey-overlay-title="Opencode" { spawn "launch-or-focus" "--id" "opencode" "dmenu-projects opencode"; }
-    Mod+Shift+N repeat=false hotkey-overlay-title="Neovim (new instance)" { spawn "dmenu-projects" "--id" "neovim2" "nvim"; }
-    Mod+Shift+A repeat=false hotkey-overlay-title="Opencode (new instance)" { spawn "dmenu-projects" "--id" "opencode2" "opencode"; }
+    Mod+Shift+N repeat=false hotkey-overlay-title="Neovim (new instance)" { spawn "dmenu-projects" "--id" "neovim-alt" "nvim"; }
+    Mod+Shift+A repeat=false hotkey-overlay-title="Opencode (new instance)" { spawn "dmenu-projects" "--id" "opencode-alt" "opencode"; }
 }
 
 input {
@@ -277,8 +278,8 @@ window-rule {
 }
 // dev-alt workspace apps
 window-rule {
-    match app-id=r#"^nvim2$"#
-    match app-id=r#"^opencode2$"#
+    match app-id=r#"^nvim-alt$"#
+    match app-id=r#"^opencode-alt$"#
     open-on-workspace "dev-alt"
     open-focused true
 }
