@@ -1,5 +1,8 @@
 # Dotfiles
 
+> [!NOTE]  
+> My current dotfiles are at [jaycem-dev/nix](https://github.com/jaycem-dev/nix). This repo is just a backup.
+
 My configuration files for Niri, Neovim, etc.
 
 ## Screenshot (may be outdated)
