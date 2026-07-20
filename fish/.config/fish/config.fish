@@ -3,7 +3,7 @@ if status is-interactive
     set -U fish_greeting
 end
 
-set -gx EDITOR nvim
+set -gx EDITOR "nvim"
 set -gx TERMINAL "kitty -1"
 set -gx PAGER "nvim +Man!"
 set -gx BROWSER "brave"
