@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ "$(uname -n)" == "asahi" ]]; then
+    nh os switch --impure
+else
+    nh os switch
+fi
