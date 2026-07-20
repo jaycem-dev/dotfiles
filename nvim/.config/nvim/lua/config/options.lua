@@ -1,4 +1,5 @@
 vim.opt.shell = "fish"
+vim.opt.showmode = false
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 10
@@ -16,7 +17,6 @@ vim.opt.pumborder = "rounded"
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
 vim.opt.laststatus = 3 -- global statusline
-vim.opt.fillchars = { eob = " " } -- remove ~ at end of buffer
 vim.opt.signcolumn = "yes"
 -- vim.opt.cmdheight = 0 -- hides cmd until used
 vim.opt.pumheight = 10 -- popup menu items
@@ -29,10 +29,10 @@ vim.opt.completeopt = "menuone,noinsert,noselect,popup"
 vim.diagnostic.config({
     signs = {
         text = {
-            [vim.diagnostic.severity.ERROR] = " ",
-            [vim.diagnostic.severity.WARN] = " ",
-            [vim.diagnostic.severity.INFO] = " ",
-            [vim.diagnostic.severity.HINT] = "󰌵 ",
+            [vim.diagnostic.severity.ERROR] = "",
+            [vim.diagnostic.severity.WARN] = "",
+            [vim.diagnostic.severity.INFO] = "",
+            [vim.diagnostic.severity.HINT] = "󰌵",
         },
     },
 })
