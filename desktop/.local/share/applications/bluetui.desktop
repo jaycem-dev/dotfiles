@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Bluetui (bluetooth settings)
+Exec=kitty --app-id bluetui bluetui
+Icon=preferences-bluetooth

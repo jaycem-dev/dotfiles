@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Impala (wifi settings)
+Exec=kitty --app-id impala impala
+Icon=nm-device-wireless
