@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=YouTube
+Exec=brave --app=https://www.youtube.com
+Icon=youtube

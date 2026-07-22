@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Proton Drive
+Exec=brave --app=https://drive.proton.me
+Icon=proton-drive
