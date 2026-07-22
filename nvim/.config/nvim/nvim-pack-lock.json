@@ -37,7 +37,7 @@
       "src": "https://github.com/NeogitOrg/neogit"
     },
     "nvim": {
-      "rev": "e068ab5f8261f23f6f71ffd8791ae40315b77b9c",
+      "rev": "605b4603797de970e9f3a4238c199c850da03186",
       "src": "https://github.com/catppuccin/nvim",
       "version": ">=0.0.0"
     },

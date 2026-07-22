@@ -5,6 +5,10 @@ vim.pack.add({
 local actions = require("fzf-lua.actions")
 require("fzf-lua").setup({
     ui_select = true,
+    winopts = {
+        -- disable background
+        backdrop = 100,
+    },
     keymap = {
         fzf = {
             ["ctrl-a"] = "toggle-all",
@@ -16,8 +20,16 @@ require("fzf-lua").setup({
             ["ctrl-q"] = actions.file_sel_to_qf,
         },
     },
+    hls = {
+        normal = "Normal",
+        border = "Normal",
+        preview_normal = "Normal",
+        preview_border = "Normal",
+    },
     fzf_colors = {
         true, -- inherit from nvim theme
+        ["bg"] = "-1",
+        ["gutter"] = "-1",
     },
     grep = {
         hidden = true,
