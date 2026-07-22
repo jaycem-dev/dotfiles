@@ -4,7 +4,7 @@ My configuration files for Niri, Neovim, etc.
 
 ## Screenshot (may be outdated)
 
-![screenshot](screenshot.png)
+![screenshot](screenshot.avif)
 
 ## Usage
 

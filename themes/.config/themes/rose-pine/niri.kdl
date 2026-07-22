@@ -1,6 +1,7 @@
-spawn-sh-at-startup "swaybg -i /home/jay/Pictures/Wallpapers/default.jpg -m fill"
+spawn-sh-at-startup "swaybg -i ~/Pictures/wallpaper.jpg -m fill"
 
 layout {
+    background-color "#191724"
     focus-ring {
         active-color   "#c4a7e7"
         inactive-color "#6e6a86"
