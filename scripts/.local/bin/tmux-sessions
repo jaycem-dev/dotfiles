@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-paths="$HOME/dev"
+paths="$HOME/Projects"
 
 selection=$(fd -t d . "$paths" --max-depth 1 | fzf --popup center --border-label '  Session Manager ' --input-label ' Search Project ')
 
