@@ -14,15 +14,19 @@ My configuration files for Niri, Neovim, etc.
 git clone https://github.com/jaycem-dev/dotfiles.git ~/Projects/dotfiles && cd ~/Projects/dotfiles
 ```
 
-- Symlink modules with stow:
+- Symlink with stow:
 
 ```bash
 # All packages
-stow */
+stow .
 
 # Specific package
 stow nvim
 ```
+
+## Requirements
+
+`~/.config/scripts` must be on `PATH` for niri and waybar to find helper scripts (brightness, volume, launch-or-focus, etc.).
 
 ## Theme Switcher
 
