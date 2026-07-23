@@ -1,5 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Proton Mail
-Exec=brave --app=https://mail.proton.me
-Icon=proton-mail

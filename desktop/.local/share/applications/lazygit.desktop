@@ -1,5 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Lazygit
-Exec=kitty --app-id lazygit lazygit
-Icon=git

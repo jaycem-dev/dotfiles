@@ -1,5 +1,5 @@
-kitty/.config/kitty/kitty.conf.bak
-fish/.config/fish/fish_variables
-fish/.config/fish/completions/
-beets/.config/beets/library.db
-beets/.config/beets/state.pickle
+kitty/kitty.conf.bak
+fish/fish_variables
+fish/completions/
+beets/library.db
+beets/state.pickle
