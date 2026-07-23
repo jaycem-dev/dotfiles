@@ -1,5 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Neovim
-Exec=kitty --app-id neovim neovim
-Icon=nvim

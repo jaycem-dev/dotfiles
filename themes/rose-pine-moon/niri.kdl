@@ -1,0 +1,41 @@
+spawn-sh-at-startup "swaybg -i ~/.config/wall/wallpaper.jpg -m fill"
+
+layout {
+    background-color "#232136"
+    focus-ring {
+        active-color   "#c4a7e7"
+        inactive-color "#6e6a86"
+        urgent-color   "#eb6f92"
+    }
+
+    border {
+        active-color   "#c4a7e7"
+        inactive-color "#6e6a86"
+        urgent-color   "#eb6f92"
+    }
+
+    shadow {
+        color "#2a283e70"
+    }
+
+    tab-indicator {
+        active-color   "#c4a7e7"
+        inactive-color "#6e6a86"
+        urgent-color   "#eb6f92"
+    }
+
+    insert-hint {
+        color "#3e8fb080"
+    }
+}
+
+recent-windows {
+    highlight {
+        active-color   "#c4a7e7"
+        urgent-color   "#eb6f92"
+    }
+}
+
+overview {
+    backdrop-color "#232136"
+}
