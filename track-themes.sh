@@ -10,21 +10,21 @@ cd "$REPO_ROOT" || exit 1
 
 # List of all theme files (relative to repo root)
 FILES=(
-    "btop/.config/btop/themes/colors.theme"
-    "yazi/.config/yazi/flavors/colors.yazi/flavor.toml"
-    "yazi/.config/yazi/flavors/colors.yazi/tmtheme.xml"
-    "fuzzel/.config/fuzzel/colors.ini"
-    "kitty/.config/kitty/current-theme.conf"
-    "mako/.config/mako/colors"
-    "niri/.config/niri/colors.kdl"
-    "nvim/.config/nvim/lua/plugins/theme.lua"
-    "swaylock/.config/swaylock/config"
-    "waybar/.config/waybar/colors.css"
-    "bat/.config/bat/config"
-    "bat/.config/bat/themes"
-    "fish/.config/fish/conf.d/theme.fish"
-    "fish/.config/fish/themes"
-    "fish/.config/fish/conf.d/fzf-theme.fish"
+    "btop/themes/colors.theme"
+    "yazi/flavors/colors.yazi/flavor.toml"
+    "yazi/flavors/colors.yazi/tmtheme.xml"
+    "fuzzel/colors.ini"
+    "kitty/current-theme.conf"
+    "mako/colors"
+    "niri/colors.kdl"
+    "nvim/lua/plugins/theme.lua"
+    "swaylock/config"
+    "waybar/colors.css"
+    "bat/config"
+    "bat/themes"
+    "fish/conf.d/theme.fish"
+    "fish/themes"
+    "fish/conf.d/fzf-theme.fish"
 )
 
 skip_updates() {
