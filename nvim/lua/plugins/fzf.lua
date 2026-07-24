@@ -76,6 +76,6 @@ _G.fzf_projects = function(opts)
             vim.cmd("edit .")
         end,
     }
-    fzf.fzf_exec("fd --type d --max-depth 1", opts)
+    fzf.fzf_exec("fd --type d --max-depth 1 --format '{/}'", opts)
 end
 vim.keymap.set("n", "<leader>fp", _G.fzf_projects, { desc = "Find projects" })
