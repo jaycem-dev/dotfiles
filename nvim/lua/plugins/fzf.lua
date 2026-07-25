@@ -66,14 +66,16 @@ vim.keymap.set("n", "<leader>fa", fzf.lsp_code_actions, { desc = "Code actions" 
 vim.keymap.set("n", "<leader>fm", fzf.marks, { desc = "Find marks" })
 
 -- Custom
+local sessions = require("sessions")
+
 _G.fzf_projects = function(opts)
     opts = opts or {}
-    opts.prompt = "Projects> "
+    opts.prompt = "Change Project > "
     opts.cwd = opts.cwd or vim.fn.expand("~/Projects")
     opts.actions = {
         ["default"] = function(selected)
-            vim.cmd("cd " .. vim.fn.expand(opts.cwd) .. "/" .. selected[1])
-            vim.cmd("edit .")
+            local project_path = vim.fn.expand(opts.cwd) .. "/" .. selected[1]
+            sessions.switch_to_project(project_path)
         end,
     }
     fzf.fzf_exec("fd --type d --max-depth 1 --format '{/}'", opts)
