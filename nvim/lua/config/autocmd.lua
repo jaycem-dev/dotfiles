@@ -50,7 +50,7 @@ vim.api.nvim_create_autocmd("VimLeavePre", {
     desc = "Save session on exit",
     callback = function()
         if vim.fn.getcwd() ~= vim.fn.expand("~") then
-            require("sessions").save_session()
+            require("config.sessions").save_session()
         end
     end,
 })

@@ -4,6 +4,7 @@ require("config.autocmd")
 require("config.options")
 require("config.statusline")
 require("config.terminal")
+require("config.sessions")
 
 -- plugins
 require("plugins.misc")
