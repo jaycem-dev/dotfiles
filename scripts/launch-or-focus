@@ -8,7 +8,6 @@ usage() {
     echo "  <command>                        Run command directly (default)"
     echo "  --tui <command>                  Launch command in kitty terminal"
     echo "  --webapp <url>                   Launch webapp for URL (needs a Chromium-based browser, default: brave)"
-    echo "  --website <url>                  Focus existing tab matching URL or open new tab (needs Chromium --focus support)"
     echo ""
     echo "Options:"
     echo "  --id <app_id>                    App ID for window matching (defaults to command/url)"
@@ -52,17 +51,6 @@ while [ $# -gt 0 ]; do
         [ -z "$ID" ] && ID="$WEBAPP_BROWSER-$2__-Default"
         shift 2
         ;;
-    --website)
-        [ -n "$MODE" ] && {
-            echo "Error: conflicting modes"
-            usage
-            exit 1
-        }
-        MODE=website
-        CMD_ARGS=("$WEBAPP_BROWSER" --focus="https://$2/*" "https://$2")
-        ID=""
-        shift 2
-        ;;
     *)
         [ -n "$MODE" ] && {
             echo "Error: conflicting modes"
@@ -76,12 +64,11 @@ while [ $# -gt 0 ]; do
     esac
 done
 
+# if no id is provided, use cmd as the id
 [ -z "$ID" ] && ID="${CMD_ARGS[0]}"
 
 # niri's focus-window requires a numeric window ID, not an app_id
-if [ "$MODE" != website ]; then
-    ID=$(niri msg --json windows | jq -r --arg id "$ID" '[.[] | select(.app_id == $id) | .id][0] // empty')
-fi
+ID=$(niri msg --json windows | jq -r --arg id "$ID" '[.[] | select(.app_id == $id) | .id][0] // empty')
 
 if [ -n "$ID" ]; then
     niri msg action focus-window --id "$ID"
