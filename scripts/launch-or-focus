@@ -80,8 +80,12 @@ done
 
 # niri's focus-window requires a numeric window ID, not an app_id
 if [ "$MODE" != website ]; then
-    ID=$(niri msg --json windows | jq -r '.[] | select(.app_id == "'"$ID"'") | .id' | head -1)
+    ID=$(niri msg --json windows | jq -r --arg id "$ID" '[.[] | select(.app_id == $id) | .id][0] // empty')
 fi
 
-niri msg action focus-window --id "$ID" && exit 0
+if [ -n "$ID" ]; then
+    niri msg action focus-window --id "$ID"
+    exit
+fi
+
 niri msg action spawn -- "${CMD_ARGS[@]}"
