@@ -5,7 +5,7 @@ vim.pack.add({
 local fzf = require("fzf-lua")
 
 fzf.setup({
-    ui_select = true,
+    ui_select = {},
     winopts = {
         -- disable background
         backdrop = 100,

@@ -19,6 +19,15 @@ map("n", "<leader>tq", ":tabclose<CR>", { silent = true, desc = "Close tab" })
 map("n", "<leader>tn", ":tabnext<CR>", { silent = true, desc = "Next tab" })
 map("n", "<leader>tp", ":tabprevious<CR>", { silent = true, desc = "Previous tab" })
 
+-- window navigation
+map("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
+map("n", "<C-j>", "<C-w>j", { desc = "Move to lower window" })
+map("n", "<C-k>", "<C-w>k", { desc = "Move to upper window" })
+map("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
+map("n", "<C-left>", "<C-w>h", { desc = "Move to left window" })
+map("n", "<C-down>", "<C-w>j", { desc = "Move to lower window" })
+map("n", "<C-up>", "<C-w>k", { desc = "Move to upper window" })
+map("n", "<C-right>", "<C-w>l", { desc = "Move to right window" })
 -- move lines
 map("v", "<C-down>", ":m '>+1<CR>gv=gv", { silent = true, desc = "Moves visual selection down" })
 map("v", "<C-j>", ":m '>+1<CR>gv=gv", { silent = true, desc = "Moves visual selection down" })
@@ -78,3 +87,22 @@ end, { desc = "Copy file path" })
 map("v", "<leader>c", function()
     copy_ref({ visual = true })
 end, { desc = "Copy file path with line range" })
+
+-- vim.pack management
+map("n", "<leader>vR", function()
+    local unused = {}
+    for _, p in ipairs(vim.pack.get()) do
+        if not p.active then
+            table.insert(unused, p.spec.name)
+        end
+    end
+    if #unused > 0 then
+        vim.pack.del(unused)
+    else
+        vim.notify("No unused plugins to remove", vim.log.levels.INFO)
+    end
+end, { desc = "Remove unused vim.pack plugins" })
+
+map("n", "<leader>vu", function()
+    vim.pack.update()
+end, { desc = "Update plugins" })
