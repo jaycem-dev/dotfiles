@@ -8,6 +8,11 @@ end
 vim.api.nvim_create_autocmd("BufEnter", {
     callback = function(ev)
         local buf = ev.buf
+        local dir = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(buf), ":p:h")
+        if dir == vim.fn.expand("~") then
+            vim.b[buf].git_branch = ""
+            return
+        end
         vim.system(
             { "git", "branch", "--show-current" },
             { text = true },
@@ -21,9 +26,9 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 local function git_branch()
-    local branch = vim.b.gitsigns_head or vim.b.git_branch or ""
+    local branch = vim.b.git_branch or ""
     if branch ~= "" then
-        return "%#NeogitBranch#󰘬 " .. branch .. "%*"
+        return "%#gitcommitBranch#󰘬 " .. branch .. "%*"
     end
     return ""
 end
@@ -46,7 +51,7 @@ end
 function _G.statusline()
     -- %= separates sections, %* resets hl groups
     return table.concat({
-        "%#MiniStatuslineModeOther# " .. vim.api.nvim_get_mode().mode:upper() .. " %*",
+        "%#MiniStatuslineModeNormal# " .. vim.api.nvim_get_mode().mode:upper() .. " %*",
         root_dir(),
         git_branch(),
         macro_status(),

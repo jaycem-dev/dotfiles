@@ -30,6 +30,7 @@ fzf.setup({
             ["ctrl-d"] = "preview-page-down",
             ["ctrl-u"] = "preview-page-up",
             ["ctrl-q"] = "select-all+accept",
+            ["ctrl-a"] = "select-all",
         },
         builtin = {
             true,
@@ -43,8 +44,6 @@ vim.keymap.set("n", "<leader>fb", fzf.buffers, { desc = "Find buffers" })
 vim.keymap.set("n", "<leader>ff", fzf.files, { desc = "Find files" })
 
 -- search
-vim.keymap.set("n", "<leader>fg", fzf.live_grep_native, { desc = "Grep project" })
-vim.keymap.set("v", "<leader>fg", fzf.grep_visual, { desc = "Find visual selection" })
 vim.keymap.set("n", "<leader>/", fzf.live_grep_native, { desc = "Grep project" })
 vim.keymap.set("v", "<leader>/", fzf.grep_visual, { desc = "Find visual selection" })
 vim.keymap.set("n", "<leader>fw", fzf.grep_cword, { desc = "Find word under cursor" })

@@ -3,9 +3,6 @@ vim.pack.add({
 })
 
 require("flash").setup({
-    jump = {
-        autojump = true,
-    },
     rainbow = {
         enabled = true,
     },
