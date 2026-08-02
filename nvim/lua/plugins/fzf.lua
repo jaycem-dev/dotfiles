@@ -24,6 +24,9 @@ fzf.setup({
     grep = {
         rg_opts = "--hidden --glob=!.git/* --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
     },
+    marks = {
+        marks = "%a",
+    },
     keymap = {
         fzf = {
             true,
@@ -42,7 +45,9 @@ fzf.setup({
 -- buffers and files
 vim.keymap.set("n", "<leader>fb", fzf.buffers, { desc = "Find buffers" })
 vim.keymap.set("n", "<leader>ff", fzf.files, { desc = "Find files" })
-
+vim.keymap.set("n", "<leader>fc", function()
+    fzf.files({ cwd = vim.fn.expand("~/.config/nvim") })
+end, { desc = "Find nvim config" })
 -- search
 vim.keymap.set("n", "<leader>/", fzf.live_grep_native, { desc = "Grep project" })
 vim.keymap.set("v", "<leader>/", fzf.grep_visual, { desc = "Find visual selection" })

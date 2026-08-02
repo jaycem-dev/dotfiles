@@ -24,7 +24,7 @@ output "HDMI-A-1" {
 }
 
 blur {
-    offset 15 // default: 3.0
+    offset 10 // default: 3.0
 }
 
 gestures {
@@ -43,10 +43,10 @@ layout {
     background-color "transparent"
     center-focused-column "never" // never, always, on-overflow
     always-center-single-column
-    default-column-width { proportion 0.9; }
+    default-column-width { proportion 0.8; }
     preset-column-widths {
         proportion 0.5
-        proportion 0.9
+        proportion 0.8
     }
     preset-window-heights {
         proportion 0.2
