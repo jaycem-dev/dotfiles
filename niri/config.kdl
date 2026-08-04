@@ -162,6 +162,7 @@ binds {
     Mod+D repeat=false hotkey-overlay-title="Dismiss notification" { spawn "makoctl" "dismiss"; }
     Mod+Space hotkey-overlay-title="App Launcher" { spawn "fuzzel"; }
     Mod+T hotkey-overlay-title="Terminal" { spawn "launch-or-focus" "kitty"; }
+    Mod+Slash hotkey-overlay-title="Terminal (Quick access)" { spawn "kitten" "quick-access-terminal"; }
     // temporary fix until niri support is added, causes cpu spikes
     Mod+G hotkey-overlay-title="Make current window global (pin)" { spawn "nirius" "toggle-follow-mode"; }
     Mod+E repeat=false hotkey-overlay-title="Yazi" { spawn "launch-or-focus" "--tui" "yazi"; }
