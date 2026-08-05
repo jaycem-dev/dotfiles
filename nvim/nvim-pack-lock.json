@@ -29,7 +29,7 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "28440c741e927592877514fba3db21eb188caec8",
+      "rev": "d0355a7f30bc0f7a81223ad2d88a019edd91f768",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "mini.diff": {
@@ -53,7 +53,7 @@
       "version": ">=0.0.0"
     },
     "neogit": {
-      "rev": "57c9f8ee784bcd07141bf7fa958b5c5bb1420de8",
+      "rev": "37e0f22a2345bad1bffe01b31970885882f46275",
       "src": "https://github.com/NeogitOrg/neogit"
     },
     "nvim": {
@@ -71,7 +71,7 @@
       "version": ">=0.0.0"
     },
     "nvim-treesitter": {
-      "rev": "61df84986b4b4ec469ee745a182e433d49f8c27e",
+      "rev": "3d3321b560a63ff92a8692401f303a5123336b86",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
