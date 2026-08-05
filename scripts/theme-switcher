@@ -10,7 +10,7 @@ declare -A map=(
     [colors.yazi/flavor.toml]="$config_dir/yazi/flavors/colors.yazi/flavor.toml"
     [colors.yazi/tmtheme.xml]="$config_dir/yazi/flavors/colors.yazi/tmtheme.xml"
     [fuzzel.ini]="$config_dir/fuzzel/colors.ini"
-    [kitty.conf]="$config_dir/kitty/current-theme.conf"
+    [kitty.conf]="$config_dir/kitty/colors.conf"
     [mako]="$config_dir/mako/colors"
     [niri.kdl]="$config_dir/niri/colors.kdl"
     [nvim.lua]="$config_dir/nvim/lua/plugins/theme.lua"
@@ -80,11 +80,10 @@ set_theme() {
 
 restart_apps() {
     local cmds=(
-        "kill -SIGUSR1 \$KITTY_PID"
+        "pkill -SIGUSR1 kitty"
         "pkill -USR2 btop"
         "makoctl reload"
-        # "pkill -SIGUSR2 waybar"
-        "pkill waybar; nohup waybar &>/dev/null &" # signal is broken on git version
+        "pkill -SIGUSR2 waybar"
         "pkill -SIGUSR1 nvim"
         "bat cache --build"
     )
