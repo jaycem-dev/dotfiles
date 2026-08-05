@@ -12,33 +12,29 @@
     margin: 0;
 }
 
-/* reset global border radius */
-window#waybar {
-    border-radius: 0;
-}
-
-/* global bg and text */
 window#waybar,
 tooltip label {
     color: @text;
     background-color: @base_alpha;
 }
 
-/* pill bg with border */
 #tray,
 #workspaces.taskbar button.active .niri-taskbar-btn.focused {
-    border: 1px solid @surfaceHigh;
-    background-color: @surfaceLow;
-}
-#workspaces.main button.active {
-    border-bottom: 2px solid @primary;
-    border-radius: 0;
+    background-color: @base2;
 }
 
-/* color accents */
+#workspaces.main button.empty,
+#workspaces.main button.hidden,
+#bluetooth.off {
+    color: @muted;
+}
+#workspaces.main button.active {
+    background-color: @primary;
+    color: @base;
+}
+
 #idle_inhibitor.activated,
 #bluetooth.connected,
-#workspaces.main button.active,
 #power-profiles-daemon.performance {
     color: @primary;
 }
@@ -50,17 +46,11 @@ tooltip label {
 #battery.critical {
     color: @error;
 }
-#workspaces.main button.empty,
-#workspaces.main button.hidden,
-#bluetooth.off {
-    color: @muted;
-}
-
 /* padding */
 .modules-left,
 .modules-center,
 .modules-right {
-    padding: 0 10px;
+    padding: 0 5px;
 }
 #tray {
     padding: 0 10px;

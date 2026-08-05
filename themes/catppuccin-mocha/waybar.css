@@ -26,12 +26,12 @@
 @define-color crust #11111b;
 
 @define-color base_alpha rgba(30, 30, 46, 0.9);
+@define-color base1 @surface0;
+@define-color base2 @surface1;
+@define-color base3 @surface2;
 @define-color primary @pink;
 @define-color secondary @sky;
 @define-color tertiary @green;
 @define-color warning @yellow;
 @define-color error @red;
 @define-color muted @subtext0;
-@define-color surfaceLow @surface0;
-@define-color surfaceMed @surface1;
-@define-color surfaceHigh @surface2;

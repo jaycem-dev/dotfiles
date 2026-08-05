@@ -27,7 +27,7 @@
 @define-color secondary @foam;
 @define-color tertiary @rose;
 @define-color warning @gold;
-@define-color surfaceLow @highlightLow;
-@define-color surfaceMed @highlightMed;
-@define-color surfaceHigh @highlightHigh;
+@define-color base1 @highlightLow;
+@define-color base2 @highlightMed;
+@define-color base3 @highlightHigh;
 @define-color error @love;

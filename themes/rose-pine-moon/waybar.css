@@ -23,11 +23,11 @@
 @define-color highlightHigh   #56526e;
 
 @define-color base_alpha rgba(35, 33, 54, 0.9);
+@define-color base1 @highlightLow;
+@define-color base2 @highlightMed;
+@define-color base3 @highlightHigh;
 @define-color primary @iris;
 @define-color secondary @foam;
 @define-color tertiary @rose;
 @define-color warning @gold;
-@define-color surfaceLow @highlightLow;
-@define-color surfaceMed @highlightMed;
-@define-color surfaceHigh @highlightHigh;
 @define-color error @love;
