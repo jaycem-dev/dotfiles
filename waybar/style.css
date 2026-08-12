@@ -14,7 +14,7 @@
 
 window#waybar,
 tooltip label {
-    color: @base07;
+    color: @base05;
     background-color: @base00;
 }
 
