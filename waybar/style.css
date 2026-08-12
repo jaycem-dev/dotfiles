@@ -14,37 +14,37 @@
 
 window#waybar,
 tooltip label {
-    color: @text;
-    background-color: @base_alpha;
+    color: @base07;
+    background-color: @base00;
 }
 
 #tray,
 #workspaces.taskbar button.active .niri-taskbar-btn.focused {
-    background-color: @base2;
+    background-color: @base02;
 }
 
 #workspaces.main button.empty,
 #workspaces.main button.hidden,
 #bluetooth.off {
-    color: @muted;
+    color: @base04;
 }
 #workspaces.main button.active {
-    background-color: @primary;
-    color: @base;
+    background-color: @base0D;
+    color: @base00;
 }
 
 #idle_inhibitor.activated,
 #bluetooth.connected,
 #power-profiles-daemon.performance {
-    color: @primary;
+    color: @base0D;
 }
 #battery.warning,
 #power-profiles-daemon.power-saver,
 #privacy {
-    color: @warning;
+    color: @base0E;
 }
 #battery.critical {
-    color: @error;
+    color: @base08;
 }
 /* padding */
 .modules-left,

@@ -32,6 +32,11 @@
       "rev": "d0355a7f30bc0f7a81223ad2d88a019edd91f768",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
+    "mini.base16": {
+      "rev": "ecbcb4e363169a663ece476f35fd87870c6d6a8b",
+      "src": "https://github.com/nvim-mini/mini.base16",
+      "version": "'stable'"
+    },
     "mini.diff": {
       "rev": "0743d26bd858ebe32efcf5c86a91a422a000f273",
       "src": "https://github.com/nvim-mini/mini.diff",

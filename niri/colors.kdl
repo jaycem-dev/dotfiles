@@ -1,41 +1,39 @@
-spawn-sh-at-startup "swaybg -i ~/.config/wall/wallpaper.jpg -m fill"
-
 layout {
-    background-color "#1e1e2e"
+    background-color "#202020"
     focus-ring {
-        active-color   "#f5c2e7"
-        inactive-color "#6c7086"
-        urgent-color   "#f38ba8"
+        active-color   "#7daea3"
+        inactive-color "#5a524c"
+        urgent-color   "#ea6962"
     }
 
     border {
-        active-color   "#f5c2e7"
-        inactive-color "#6c7086"
-        urgent-color   "#f38ba8"
+        active-color   "#7daea3"
+        inactive-color "#5a524c"
+        urgent-color   "#ea6962"
     }
 
     shadow {
-        color "#11111b70"
+        color "#20202070"
     }
 
     tab-indicator {
-        active-color   "#f5c2e7"
-        inactive-color "#6c7086"
-        urgent-color   "#f38ba8"
+        active-color   "#7daea3"
+        inactive-color "#5a524c"
+        urgent-color   "#ea6962"
     }
 
     insert-hint {
-        color "#89dceb80"
+        color "#89b48280"
     }
 }
 
 recent-windows {
     highlight {
-        active-color   "#f5c2e7"
-        urgent-color   "#f38ba8"
+        active-color "#7daea3"
+        urgent-color "#ea6962"
     }
 }
 
 overview {
-    backdrop-color "#1e1e2e"
+    backdrop-color "#202020"
 }
