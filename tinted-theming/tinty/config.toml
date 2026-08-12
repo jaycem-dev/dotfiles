@@ -1,0 +1,48 @@
+[[items]]
+name = "tinted-niri"
+path = "https://github.com/jaycem-dev/base16-niri"
+themes-dir = "themes"
+supported-systems = ["base16"]
+hook = "cp -f %f ~/.config/niri/colors.kdl"
+
+[[items]]
+name = "fuzzel"
+path = "https://github.com/jaycem-dev/base16-fuzzel"
+themes-dir = "themes"
+hook = "cp -f %f ~/.config/fuzzel/colors.ini"
+supported-systems = ["base16"]
+
+[[items]]
+name = "tinted-terminal"
+path = "https://github.com/tinted-theming/tinted-terminal"
+themes-dir = "themes/kitty" # Directory name of terminal theme you want to use
+supported-systems = ["base16", "base24"]
+hook = "cp -f %f ~/.config/kitty/colors.conf; pkill -USR1 kitty"
+
+[[items]]
+name = "tinted-waybar"
+path = "https://github.com/tinted-theming/base16-waybar"
+themes-dir = "colors" # Directory name of terminal theme you want to use
+supported-systems = ["base16"]
+hook = "cp -f %f ~/.config/waybar/colors.css; pkill -SIGUSR2 waybar"
+
+[[items]]
+name = "tinted-nvim"
+path = "https://github.com/jaycem-dev/base16-nvim"
+themes-dir = "themes"
+supported-systems = ["base16"]
+hook = "cp -f %f ~/.config/nvim/lua/plugins/theme.lua"
+
+[[items]]
+name = "tinted-mako"
+path = "https://github.com/jaycem-dev/base16-mako"
+themes-dir = "themes"
+supported-systems = ["base16"]
+hook = "cp -f %f ~/.config/mako/colors; makoctl reload"
+
+[[items]]
+name = "tinted-swaylock"
+path = "https://github.com/jaycem-dev/base16-swaylock"
+themes-dir = "themes"
+supported-systems = ["base16"]
+hook = "cp -f %f ~/.config/swaylock/config"
