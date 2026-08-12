@@ -2,10 +2,6 @@
 
 My configuration files for Niri, Neovim, etc.
 
-## Screenshot (may be outdated)
-
-![screenshot](screenshot.avif)
-
 ## Usage
 
 - Clone the repo and cd into it:
