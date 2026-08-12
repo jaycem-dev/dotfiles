@@ -26,19 +26,14 @@ stow nvim
 
 ## Theme Switcher
 
-Switch themes with `theme-switcher` (select via fzf) or `theme-switcher <theme-name>`.
-
-## Tracking Theme Files
-
-**Usage:**
+Themes live in `~/.config/tinted-theming/themes/<theme>/`. Manage them with `set-theme`:
 
 ```bash
-# Ignore local updates to theme files
-./track-themes.sh skip
+# Copy a theme's files into the config dirs (kitty, waybar, mako, niri, etc.) and reload them
+set-theme apply <theme>
 
-# Resume tracking (if you want to commit theme changes)
-./track-themes.sh track
-
-# Show usage and list managed files
-./track-themes.sh
+# Back up current config colors into the theme dir
+set-theme save <theme>
 ```
+
+Use [tinty](https://github.com/tinted-theming/tinty) (config in [`tinted-theming/tinty/config.toml`](tinted-theming/tinty/config.toml)) to apply new themes; its hooks copy the files into the config dirs, then `save` to keep a copy in the repo.

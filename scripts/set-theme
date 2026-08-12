@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+
+set -uo pipefail
+
+themes_dir="$HOME/.config/tinted-theming/themes"
+
+declare -A map=(
+    [niri.kdl]="$HOME/.config/niri/colors.kdl"
+    [fuzzel.ini]="$HOME/.config/fuzzel/colors.ini"
+    [kitty.conf]="$HOME/.config/kitty/colors.conf"
+    [waybar.css]="$HOME/.config/waybar/colors.css"
+    [nvim.lua]="$HOME/.config/nvim/lua/plugins/theme.lua"
+    [mako]="$HOME/.config/mako/colors"
+    [swaylock]="$HOME/.config/swaylock/config"
+)
+
+usage() {
+    echo "usage: $(basename "$0") save|apply <theme>" >&2
+    exit 1
+}
+
+save_theme() {
+    local theme="$1"
+    local dir="$themes_dir/$theme"
+    local file dst
+    mkdir -p "$dir"
+    for file in "${!map[@]}"; do
+        dst="${map[$file]}"
+        if [ -f "$dst" ] || [ -d "$dst" ]; then
+            cp -rv "$dst" "$dir/$file"
+        else
+            echo "skipping: $dst (not found)"
+        fi
+    done
+}
+
+reload_apps() {
+    local cmds=(
+        "pkill -SIGUSR1 kitty"
+        "pkill -SIGUSR2 waybar"
+        "makoctl reload"
+    )
+    for cmd in "${cmds[@]}"; do
+        eval "$cmd" >/dev/null 2>&1 || echo "failed: $cmd"
+    done
+}
+
+apply_theme() {
+    local theme="$1"
+    local dir="$themes_dir/$theme"
+    local file src dst
+    if [ ! -d "$dir" ]; then
+        echo "theme dir not found: $dir" >&2
+        exit 1
+    fi
+    for file in "${!map[@]}"; do
+        src="$dir/$file"
+        dst="${map[$file]}"
+        if [ -f "$src" ] || [ -d "$src" ]; then
+            mkdir -p "$(dirname "$dst")"
+            cp -rv "$src" "$dst"
+        else
+            echo "skipping: $src (not found)"
+        fi
+    done
+    reload_apps
+}
+
+if [ "$#" -ne 2 ]; then
+    usage
+fi
+
+case "$1" in
+    save)  save_theme "$2" ;;
+    apply) apply_theme "$2" ;;
+    *)     usage ;;
+esac
