@@ -11,7 +11,6 @@ map("n", "<C-c>", ":bwipeout<CR>", { silent = true, desc = "Close current buffer
 -- clipboard and registers
 map("v", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 map("n", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
-map("v", "<leader>p", '"_dP', { desc = "Paste without overwriting register" })
 
 -- tab management
 map("n", "<leader>tt", ":tabnew<CR>", { silent = true, desc = "New tab" })
@@ -66,27 +65,12 @@ map("v", "<leader>s", function()
     vim.api.nvim_feedkeys(vim.keycode(":%s/" .. sel .. "//gc<Left><Left>"), "n", false)
 end, { desc = "Replace visual selection" })
 
--- Copy file path / selection reference for pasting into AI chats
-local function copy_ref(opts)
-    local path = vim.fn.expand("%:.")
-    local ref = path
-    if opts.visual then
-        local s = math.min(vim.fn.line("v"), vim.fn.line("."))
-        local e = math.max(vim.fn.line("v"), vim.fn.line("."))
-        ref = "@" .. path .. "#" .. s .. "-" .. e
-    end
-    vim.fn.setreg("+", ref)
-    vim.notify("Copied: " .. ref)
-end
-
--- normal mode: copy just the file path
+-- copy just the file path
 map("n", "<leader>c", function()
-    copy_ref({})
+    local path = vim.fn.expand("%:.")
+    vim.fn.setreg("+", path)
+    vim.notify("Copied: " .. path)
 end, { desc = "Copy file path" })
-
-map("v", "<leader>c", function()
-    copy_ref({ visual = true })
-end, { desc = "Copy file path with line range" })
 
 -- vim.pack management
 map("n", "<leader>vR", function()
