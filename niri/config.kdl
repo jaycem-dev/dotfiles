@@ -1,8 +1,9 @@
 spawn-at-startup "hypridle"
 spawn-at-startup "waybar"
 spawn-at-startup "niriusd"
-spawn-at-startup "udiskie --appindicator"
+spawn-at-startup "udiskie" "--appindicator"
 spawn-at-startup "asahi-fixes"
+spawn-at-startup "awww-daemon"
 
 workspace "browser"
 workspace "dev"
@@ -34,7 +35,6 @@ cursor {
 
 layout {
     gaps 10
-    background-color "transparent"
     center-focused-column "never" // never, always, on-overflow
     always-center-single-column
     default-column-width { proportion 0.8; }
@@ -48,11 +48,11 @@ layout {
     }
     focus-ring {
         on
-        width 2
+        width 3
     }
     border {
         off
-        width 2
+        width 3
     }
     tab-indicator {
         width 10

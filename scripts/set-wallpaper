@@ -7,5 +7,4 @@ if ! file --mime-type "$path" | grep -q image/; then
     exit 1
 fi
 
-pkill swaybg 2>/dev/null
-swaybg -i "$path" -m fill &
+wpaperctl set "$path"
