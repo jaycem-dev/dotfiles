@@ -23,3 +23,5 @@ vim.opt.smartcase = true -- Override the 'ignorecase' option if the search patte
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
+-- sessions
+vim.g.session_dir = vim.fn.stdpath("data") .. "/sessions"
