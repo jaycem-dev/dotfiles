@@ -1,7 +1,7 @@
 spawn-at-startup "hypridle"
 spawn-at-startup "waybar"
 spawn-at-startup "niriusd"
-spawn-at-startup "udiskie --app-indicator"
+spawn-at-startup "udiskie --appindicator"
 spawn-at-startup "asahi-fixes"
 
 workspace "browser"
@@ -21,10 +21,6 @@ output "HDMI-A-1" {
     scale 1
 }
 
-blur {
-    offset 10 // default: 3.0
-}
-
 gestures {
     hot-corners {
         off
@@ -37,7 +33,7 @@ cursor {
 }
 
 layout {
-    gaps 5
+    gaps 10
     background-color "transparent"
     center-focused-column "never" // never, always, on-overflow
     always-center-single-column
@@ -51,11 +47,11 @@ layout {
         proportion 0.5
     }
     focus-ring {
-        off
+        on
         width 2
     }
     border {
-        on
+        off
         width 2
     }
     tab-indicator {
@@ -150,8 +146,6 @@ binds {
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightness" "down"; }
     Ctrl+XF86MonBrightnessUp { spawn "brightness" "up" "2"; }
     Ctrl+XF86MonBrightnessDown { spawn "brightness" "down" "2"; }
-    Shift+XF86MonBrightnessUp { spawn "brightness" "up" "20"; }
-    Shift+XF86MonBrightnessDown { spawn "brightness" "down" "20"; }
     Mod+XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "-q" "-d" "kbd_backlight" "s" "+25%"; }
     Mod+XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "-q" "-d" "kbd_backlight" "s" "25%-"; }
 
@@ -192,29 +186,14 @@ input {
 // manual blur for apps that don't support ext-background-effect-v1
 layer-rule {
     match namespace="^launcher$"
-    geometry-corner-radius 0
-    background-effect {
-        blur true
-        xray false
-    }
     shadow {
         on
     }
 }
 layer-rule {
     match namespace="^kitty-quick-access$"
-    background-effect {
-        blur true
-        xray false
-    }
     shadow {
         on
-    }
-}
-layer-rule {
-    match namespace="^waybar$"
-    background-effect {
-        blur true
     }
 }
 
@@ -227,7 +206,6 @@ window-rule {
 // Make inactive windows semitransparent with blur
 window-rule {
     match is-active=false
-    exclude is-floating=true
     opacity 0.9
      background-effect {
         blur true
@@ -236,11 +214,10 @@ window-rule {
 
 // Open the Firefox and Chromium PIP floating by default.
 window-rule {
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    match app-id=r#"zen-beta$"# title="^Picture-in-Picture$"
-    match title="^Picture in picture$" // brave pip doesn't set app-id
+    match title="^Picture-in-Picture$"
+    match title="^Picture in picture$"
     open-floating true
-    default-floating-position x=5 y=5 relative-to="top-right"
+    default-floating-position x=10 y=10 relative-to="top-right"
     default-column-width { fixed 400; }
     default-window-height { fixed 225; }
     open-focused false
