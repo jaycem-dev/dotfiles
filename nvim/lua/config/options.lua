@@ -1,3 +1,7 @@
+vim.g.mapleader = " "
+vim.g.session_dir = vim.fn.stdpath("data") .. "/sessions"
+
+vim.opt.guifont = "Geist Mono:h12"
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 10
@@ -11,6 +15,7 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 -- UI
 vim.opt.termguicolors = true
+vim.opt.laststatus = 3
 vim.opt.winborder = "single"
 vim.opt.pumborder = "single"
 vim.opt.cursorline = true
@@ -23,5 +28,3 @@ vim.opt.smartcase = true -- Override the 'ignorecase' option if the search patte
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
--- sessions
-vim.g.session_dir = vim.fn.stdpath("data") .. "/sessions"

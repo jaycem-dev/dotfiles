@@ -1,6 +1,5 @@
 -- global keymaps
 -- for plugin keymaps look into each plugin spec in /lua/plugins/*
-vim.g.mapleader = " "
 local map = vim.keymap.set
 
 map("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })

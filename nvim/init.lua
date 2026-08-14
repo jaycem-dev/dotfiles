@@ -1,9 +1,11 @@
 -- modules
+require("config.options")
 require("config.keymaps")
 require("config.autocmd")
-require("config.options")
 require("config.projects")
 require("config.statusline")
+-- https://github.com/justinmk/config/blob/master/.config/nvim/lua/my/ctrl_s_shell.lua
+require("config.ctrl_s_shell")
 
 -- plugins
 require("plugins.misc")
