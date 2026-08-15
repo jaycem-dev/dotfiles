@@ -5,11 +5,17 @@ vim.pack.add({
 
 require("mini.pick").setup({
     mappings = {
-        mark = "<C-x>",
-        mark_all = "<C-a>",
         choose_marked = "<C-q>",
     },
+    window = {
+        config = function()
+            return {
+                width = vim.o.columns,
+            }
+        end,
+    },
 })
+
 require("mini.extra").setup()
 
 local pickers = require("mini.extra").pickers
