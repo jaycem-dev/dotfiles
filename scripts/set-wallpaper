@@ -7,4 +7,4 @@ if ! file --mime-type "$path" | grep -q image/; then
     exit 1
 fi
 
-wpaperctl set "$path"
+awww img "$path"
