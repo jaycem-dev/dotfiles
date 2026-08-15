@@ -1,5 +1,9 @@
 {
     "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 15,
+
     "modules-center": ["clock"],
     "modules-left": ["niri/workspaces#main", "niri/workspaces#taskbar"],
     "modules-right": [
@@ -13,6 +17,17 @@
         "battery",
     ],
 
+    "niri/workspaces#main": {
+        "format": "{index}",
+    },
+
+    "niri/workspaces#taskbar": {
+        "current-only": true,
+        "workspace-taskbar": {
+            "enable": true,
+        },
+    },
+
     "battery": {
         "format": "{icon} {capacity}%",
         "format-charging": "󱐋 {capacity}%",
@@ -21,44 +36,23 @@
             "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
             "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         },
-        "interval": 1,
         "states": {
             "critical": 20,
             "warning": 30,
         },
-        "tooltip": true,
     },
+
     "bluetooth": {
         "format": "󰂯",
         "format-connected": "󰂰",
-        "format-no-controller": "",
         "format-off": "󰂲",
         "on-click": "launch-or-focus --tui bluetui",
-        "tooltip-format": "{controller_alias}\n\n{num_connections} connected",
-        "tooltip-format-connected": "{controller_alias}\n\n{num_connections} connected\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%",
     },
+
     "clock": {
-        "actions": {
-            "on-click-right": "shift_reset",
-            "on-scroll-down": "shift_down",
-            "on-scroll-up": "shift_up",
-        },
-        "calendar": {
-            "format": {
-                "days": "<span color='#ecc6d9'><b>{}</b></span>",
-                "months": "<span color='#ffead3'><b>{}</b></span>",
-                "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
-                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
-            },
-        },
         "format": "{:%A, %b %d  %H:%M}",
-        "interval": 1,
-        "tooltip-format": "<tt>{calendar}</tt>",
     },
-    "height": 25,
+
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -66,72 +60,34 @@
             "deactivated": "󰛊",
         },
     },
+
     "network": {
         "format-disconnected": "󰀦",
         "format-ethernet": "󰈀",
         "format-linked": "󱎔",
         "format-wifi": "󰖩",
-        "interval": 3,
         "on-click": "launch-or-focus --tui impala",
         "tooltip-format": "Connected to {essid}",
     },
-    "niri/workspaces#main": {
-        "format": "{index}",
-    },
-    "niri/workspaces#taskbar": {
-        "current-only": true,
-        "workspace-taskbar": {
-            "enable": true,
-        },
-    },
-    "position": "top",
+
     "power-profiles-daemon": {
-        "format": "{icon}",
         "format-icons": {
             "balanced": "󰾅",
             "default": "󰾅",
             "performance": "󰓅",
             "power-saver": "󰾆",
         },
-        "tooltip": true,
-        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
     },
-    "privacy": {
-        "icon-spacing": 10,
-        "ignore": [
-            {
-                "name": "cava",
-                "type": "audio-in",
-            },
-        ],
-        "ignore-monitor": true,
-        "modules": [
-            {
-                "tooltip": true,
-                "type": "screenshare",
-            },
-            {
-                "tooltip": true,
-                "type": "audio-in",
-            },
-        ],
-        "transition-duration": 250,
-    },
+
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-icons": {
             "default": ["󰕿", "󰖀", "󰕾"],
-            "hands-free": "󰋋",
             "headphone": "󰋋",
             "headset": "󰋋",
         },
         "format-muted": "󰝟",
         "on-click": "pavucontrol -t 3",
         "on-click-right": "pactl --set-sink-mute 0 toggle",
-    },
-    "spacing": 15,
-    "tray": {
-        "show-passive-items": true,
-        "spacing": 10,
     },
 }
