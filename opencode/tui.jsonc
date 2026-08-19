@@ -3,6 +3,6 @@
     "theme": "system",
     "attention": {
         "enabled": true,
-        "sound": false,
-    },
+        "sound": false
+    }
 }

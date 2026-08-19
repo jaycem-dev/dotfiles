@@ -1,4 +1,5 @@
 {
-    "ignorePatterns": [],
-    "tabWidth": 4
+  "ignorePatterns": [],
+  "tabWidth": 4,
+  "trailingComma": "none"
 }

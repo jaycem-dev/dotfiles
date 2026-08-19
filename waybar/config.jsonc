@@ -14,18 +14,22 @@
         "network",
         "bluetooth",
         "pulseaudio",
-        "battery",
+        "battery"
     ],
 
     "niri/workspaces#main": {
-        "format": "{index}",
+        "format": "{index}"
     },
 
     "niri/workspaces#taskbar": {
         "current-only": true,
         "workspace-taskbar": {
-            "enable": true,
-        },
+            "enable": true
+        }
+    },
+
+    "tray": {
+        "spacing": 10
     },
 
     "battery": {
@@ -34,31 +38,32 @@
         "format-critical": "LOW BATTERY {icon} {capacity}%",
         "format-icons": {
             "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
-            "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+            "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
         },
         "states": {
             "critical": 20,
-            "warning": 30,
-        },
+            "warning": 30
+        }
     },
 
     "bluetooth": {
         "format": "󰂯",
+        "format-no-controller": "",
         "format-connected": "󰂰",
         "format-off": "󰂲",
-        "on-click": "launch-or-focus --tui bluetui",
+        "on-click": "launch-or-focus --tui bluetui"
     },
 
     "clock": {
-        "format": "{:%A, %b %d  %H:%M}",
+        "format": "{:%A, %b %d  %H:%M}"
     },
 
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
             "activated": "󰅶",
-            "deactivated": "󰛊",
-        },
+            "deactivated": "󰛊"
+        }
     },
 
     "network": {
@@ -67,7 +72,7 @@
         "format-linked": "󱎔",
         "format-wifi": "󰖩",
         "on-click": "launch-or-focus --tui impala",
-        "tooltip-format": "Connected to {essid}",
+        "tooltip-format": "Connected to {essid}"
     },
 
     "power-profiles-daemon": {
@@ -75,8 +80,8 @@
             "balanced": "󰾅",
             "default": "󰾅",
             "performance": "󰓅",
-            "power-saver": "󰾆",
-        },
+            "power-saver": "󰾆"
+        }
     },
 
     "pulseaudio": {
@@ -84,10 +89,10 @@
         "format-icons": {
             "default": ["󰕿", "󰖀", "󰕾"],
             "headphone": "󰋋",
-            "headset": "󰋋",
+            "headset": "󰋋"
         },
         "format-muted": "󰝟",
         "on-click": "pavucontrol -t 3",
-        "on-click-right": "pactl --set-sink-mute 0 toggle",
-    },
+        "on-click-right": "pactl --set-sink-mute 0 toggle"
+    }
 }
