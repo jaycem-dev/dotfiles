@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 vim.g.session_dir = vim.fn.stdpath("data") .. "/sessions"
 
-vim.opt.guifont = "Geist Mono:h12"
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 10
@@ -20,7 +19,7 @@ vim.opt.winborder = "single"
 vim.opt.pumborder = "single"
 vim.opt.cursorline = true
 vim.opt.signcolumn = "yes"
-vim.opt.cmdheight = 0 -- hides cmd until used
+vim.opt.cmdheight = 0
 -- Search
 vim.opt.ignorecase = true -- Ignore case in search patterns.
 vim.opt.smartcase = true -- Override the 'ignorecase' option if the search pattern contains upper case characters.
