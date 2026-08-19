@@ -41,10 +41,6 @@ map("n", "<C-u>", "<C-u>zz", { silent = true, desc = "Move up in buffer with cur
 map("n", "n", "nzzzv", { silent = true, desc = "Next search result cursor centered" })
 map("n", "N", "Nzzzv", { silent = true, desc = "Previous search result cursor centered" })
 
--- remap macro to Q
-map("n", "q", "<Nop>", { noremap = true })
-map("n", "Q", "q", { noremap = true, desc = "Record macro" })
-
 map("n", "<leader>q", function()
     local is_open = vim.iter(vim.fn.getwininfo()):any(function(win)
         return win.quickfix == 1

@@ -1,6 +1,7 @@
 -- small plugins with small or no config
 vim.pack.add({
     "https://github.com/catgoose/nvim-colorizer.lua",
+    "https://github.com/akinsho/toggleterm.nvim",
     { src = "https://github.com/github/copilot.vim", version = vim.version.range("*") },
     { src = "https://github.com/folke/which-key.nvim", version = vim.version.range("*") },
     { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim", version = vim.version.range("*") },
@@ -22,7 +23,12 @@ require("mini.pairs").setup()
 require("mini.surround").setup()
 require("mini.diff").setup()
 require("mini.icons").setup()
+require("mini.icons").mock_nvim_web_devicons()
+
 require("which-key").setup({
     preset = "helix",
     delay = 500,
 })
+
+require("toggleterm").setup()
+vim.keymap.set({ "n", "t" }, "<c-/>", "<cmd>ToggleTerm<cr>", { desc = "Toggle terminal" })

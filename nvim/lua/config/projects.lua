@@ -1,5 +1,6 @@
 -- Switch Neovim root working dir to a different project, saving/restoring sessions
 -- It will use whatever picker registers itself with vim.ui.select
+-- TODO: change to plugin for session
 local dirs = { "~/Projects" }
 
 local function session_path(project_path)
