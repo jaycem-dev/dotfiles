@@ -66,6 +66,26 @@ apply_theme() {
     reload_apps
 }
 
+select_theme() {
+    local themes=()
+    while IFS= read -r -d '' dir; do
+        themes+=("$(basename "$dir")")
+    done < <(find "$themes_dir" -mindepth 1 -maxdepth 1 -type d -print0 2>/dev/null)
+
+    if [ ${#themes[@]} -eq 0 ]; then
+        echo "no themes found in $themes_dir" >&2
+        exit 1
+    fi
+
+    printf '%s\n' "${themes[@]}" | fzf --prompt="select theme: " --height=20 --reverse
+}
+
+if [ "$#" -eq 0 ]; then
+    theme=$(select_theme)
+    [ -n "$theme" ] && apply_theme "$theme"
+    exit 0
+fi
+
 if [ "$#" -ne 2 ]; then
     usage
 fi
