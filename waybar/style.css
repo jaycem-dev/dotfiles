@@ -1,7 +1,7 @@
 @import "colors.css";
 
 * {
-    font-family: "geist mono", "symbols nerd font mono";
+    font-family: "jetbrains mono", "symbols nerd font mono";
     font-size: 10pt;
     font-weight: bold;
     border-radius: 0;
