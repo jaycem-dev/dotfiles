@@ -11,6 +11,7 @@ map("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 map("n", "<Esc>", "<cmd>nohlsearch<cr>", { desc = "Clear search highlights" })
 map("n", "<leader>l", ":buffer #<cr>", { silent = true, desc = "Last buffer" })
 map("n", "<C-c>", ":bwipeout<cr>", { silent = true, desc = "Close current buffer" })
+map("n", "<leader>vs", "<cmd>mksession<cr>", { desc = "Create session" })
 
 -- clipboard and registers
 map("v", "<leader>y", '"+y', { desc = "Yank to system clipboard" })

@@ -63,7 +63,7 @@ end, { desc = "Find workspace symbols (LSP)" })
 
 -- neovim
 vim.keymap.set("n", "<leader>fm", "<cmd>Pick marks<cr>", { desc = "Find marks" })
-vim.keymap.set("n", "<leader>vs", "<cmd>Pick spellsuggest<cr>", { desc = "Spell suggestions" })
+vim.keymap.set("n", "<leader>vS", "<cmd>Pick spellsuggest<cr>", { desc = "Spell suggestions" })
 
 -- custom
 vim.keymap.set("n", "<leader>fc", function()

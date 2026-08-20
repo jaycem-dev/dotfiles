@@ -3,3 +3,4 @@ fish/fish_variables
 fish/completions/
 beets/library.db
 beets/state.pickle
+Session.vim
