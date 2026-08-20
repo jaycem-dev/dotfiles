@@ -4,7 +4,6 @@ vim.pack.add({
 })
 
 require("blink.cmp").setup({
-    keymap = { preset = "default" },
     completion = {
         menu = {
             draw = {
@@ -12,12 +11,10 @@ require("blink.cmp").setup({
             },
         },
         documentation = {
-            auto_show = true, -- show function signature/docs
+            auto_show = true,
             auto_show_delay_ms = 300,
         },
-        ghost_text = {
-            enabled = false,
-        },
+        ghost_text = { enabled = false },
     },
     signature = { enabled = true },
 })

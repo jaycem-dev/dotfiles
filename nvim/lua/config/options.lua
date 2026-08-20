@@ -1,3 +1,6 @@
+-- ui2 (experimental)
+require("vim._core.ui2").enable({ enable = true, msg = { target = "msg" } })
+
 vim.g.mapleader = " "
 vim.g.session_dir = vim.fn.stdpath("data") .. "/sessions"
 
@@ -14,6 +17,7 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 -- UI
 vim.opt.termguicolors = true
+vim.opt.showmode = false
 vim.opt.laststatus = 3
 vim.opt.winborder = "single"
 vim.opt.pumborder = "single"

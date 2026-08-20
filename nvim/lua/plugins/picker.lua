@@ -3,46 +3,42 @@ vim.pack.add({
     { src = "https://github.com/nvim-mini/mini.extra", version = "stable" },
 })
 
+require("mini.extra").setup()
 require("mini.pick").setup({
-    mappings = {
-        choose_marked = "<C-q>",
-    },
+    mappings = { choose_marked = "<C-q>" },
     window = {
         config = function()
-            return {
-                width = vim.o.columns,
-            }
+            return { width = vim.o.columns }
         end,
     },
 })
 
-require("mini.extra").setup()
-
 local pickers = require("mini.extra").pickers
-local mp = require("mini.pick").builtin
 
 -- git
 vim.keymap.set("n", "<leader>gb", "<cmd>Pick git_branches<cr>", { desc = "Git branches" })
 vim.keymap.set("n", "<leader>gc", "<cmd>Pick git_commits<cr>", { desc = "Git commits" })
 
+-- files & buffers
+vim.keymap.set("n", "<leader>fb", "<cmd>Pick buffers<cr>", { desc = "Find buffers" })
+vim.keymap.set("n", "<leader>ff", "<cmd>Pick files<cr>", { desc = "Find files" })
+
+-- search
+vim.keymap.set("n", "<leader>fg", "<cmd>Pick grep<cr>", { desc = "Live grep" })
+vim.keymap.set("n", "<leader>/", "<cmd>Pick grep_live<cr>", { desc = "Grep project" })
+
+-- misc
+vim.keymap.set("n", "<leader><leader>", "<cmd>Pick resume<cr>", { desc = "Resume" })
+vim.keymap.set("n", "<leader>fo", "<cmd>Pick oldfiles<cr>", { desc = "Old files" })
+vim.keymap.set("n", "<leader>fk", "<cmd>Pick keymaps<cr>", { desc = "Find keymaps" })
+vim.keymap.set("n", "<leader>fh", "<cmd>Pick help<cr>", { desc = "Find help" })
+
+-- LSP
 -- TODO: set
 -- vim.keymap.set("n", "<leader>gd", function()
 --     pickers.lsp({ scope = "definition" })
 -- end, { desc = "Definition" })
-
--- files & buffers
-vim.keymap.set("n", "<leader>fb", "<cmd>Pick buffers<cr>", { desc = "Find buffers" })
-vim.keymap.set("n", "<leader>ff", "<cmd>Pick files<cr>", { desc = "Find files" })
--- search
-vim.keymap.set("n", "<leader>fg", "<cmd>Pick grep<cr>", { desc = "Grep" })
-vim.keymap.set("n", "<leader>/", "<cmd>Pick grep_live<cr>", { desc = "Grep project" })
--- misc
-vim.keymap.set("n", "<leader>fk", "<cmd>Pick keymaps<cr>", { desc = "Find keymaps" })
-vim.keymap.set("n", "<leader>fh", "<cmd>Pick help<cr>", { desc = "Find help" })
-vim.keymap.set("n", "<leader><leader>", "<cmd>Pick resume<cr>", { desc = "Resume" })
-vim.keymap.set("n", "<leader>fo", "<cmd>Pick oldfiles<cr>", { desc = "Old files" })
-
--- LSP
+vim.keymap.set("n", "<leader>fa", vim.lsp.buf.code_action, { desc = "Code actions" })
 vim.keymap.set("n", "<leader>fr", function()
     pickers.lsp({ scope = "references" })
 end, { desc = "Find references (LSP)" })
@@ -64,13 +60,12 @@ end, { desc = "Find document symbols (LSP)" })
 vim.keymap.set("n", "<leader>fS", function()
     pickers.lsp({ scope = "workspace_symbol" })
 end, { desc = "Find workspace symbols (LSP)" })
--- Neovim
+
+-- neovim
 vim.keymap.set("n", "<leader>fm", "<cmd>Pick marks<cr>", { desc = "Find marks" })
 vim.keymap.set("n", "<leader>vs", "<cmd>Pick spellsuggest<cr>", { desc = "Spell suggestions" })
 
 -- custom
 vim.keymap.set("n", "<leader>fc", function()
-    mp.files({}, { source = { cwd = vim.fn.expand("~/.config/nvim") } })
+    require("mini.pick").builtin.files({}, { source = { cwd = vim.fn.expand("~/.config/nvim") } })
 end, { desc = "Find nvim config" })
-
-vim.keymap.set("n", "<leader>fa", vim.lsp.buf.code_action, { desc = "Code actions" })

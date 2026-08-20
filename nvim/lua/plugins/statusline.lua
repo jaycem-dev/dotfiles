@@ -1,4 +1,6 @@
-vim.pack.add({ "https://github.com/nvim-lualine/lualine.nvim" })
+vim.pack.add({
+    { src = "https://github.com/nvim-lualine/lualine.nvim" },
+})
 
 local function root_dir()
     return "󰉋 " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t")

@@ -37,9 +37,6 @@ local ts_parsers = {
     "yaml",
 }
 
-require("nvim-treesitter").setup({
-    -- fix for nixos, otherwise it uses /store which is read only
-    install_dir = vim.fn.stdpath("data") .. "/site",
-})
+require("nvim-treesitter").setup()
 
 require("nvim-treesitter").install(ts_parsers)

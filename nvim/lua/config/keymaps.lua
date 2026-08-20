@@ -2,6 +2,10 @@
 -- for plugin keymaps look into each plugin spec in /lua/plugins/*
 local map = vim.keymap.set
 
+-- builtin plugins
+vim.cmd("packadd nvim.undotree")
+vim.keymap.set("n", "<leader>u", require("undotree").open, { desc = "Toggle undotree" })
+
 map("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
 map("n", "<leader>l", ":buffer #<CR>", { silent = true, desc = "Last buffer" })
