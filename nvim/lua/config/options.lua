@@ -1,9 +1,6 @@
 -- ui2 (experimental)
 require("vim._core.ui2").enable({ enable = true, msg = { target = "msg" } })
 
-vim.g.mapleader = " "
-vim.g.session_dir = vim.fn.stdpath("data") .. "/sessions"
-
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 10

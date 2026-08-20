@@ -1,5 +1,6 @@
--- global keymaps
 -- for plugin keymaps look into each plugin spec in /lua/plugins/*
+vim.g.mapleader = " "
+
 local map = vim.keymap.set
 
 -- builtin plugins
@@ -7,19 +8,19 @@ vim.cmd("packadd nvim.undotree")
 vim.keymap.set("n", "<leader>u", require("undotree").open, { desc = "Toggle undotree" })
 
 map("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
-map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
-map("n", "<leader>l", ":buffer #<CR>", { silent = true, desc = "Last buffer" })
-map("n", "<C-c>", ":bwipeout<CR>", { silent = true, desc = "Close current buffer" })
+map("n", "<Esc>", "<cmd>nohlsearch<cr>", { desc = "Clear search highlights" })
+map("n", "<leader>l", ":buffer #<cr>", { silent = true, desc = "Last buffer" })
+map("n", "<C-c>", ":bwipeout<cr>", { silent = true, desc = "Close current buffer" })
 
 -- clipboard and registers
 map("v", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 map("n", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 
 -- tab management
-map("n", "<leader>tt", ":tabnew<CR>", { silent = true, desc = "New tab" })
-map("n", "<leader>tq", ":tabclose<CR>", { silent = true, desc = "Close tab" })
-map("n", "<leader>tn", ":tabnext<CR>", { silent = true, desc = "Next tab" })
-map("n", "<leader>tp", ":tabprevious<CR>", { silent = true, desc = "Previous tab" })
+map("n", "<leader>tt", ":tabnew<cr>", { silent = true, desc = "New tab" })
+map("n", "<leader>tq", ":tabclose<cr>", { silent = true, desc = "Close tab" })
+map("n", "<leader>tn", ":tabnext<cr>", { silent = true, desc = "Next tab" })
+map("n", "<leader>tp", ":tabprevious<cr>", { silent = true, desc = "Previous tab" })
 
 -- window navigation
 map("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
@@ -31,10 +32,10 @@ map("n", "<C-down>", "<C-w>j", { desc = "Move to lower window" })
 map("n", "<C-up>", "<C-w>k", { desc = "Move to upper window" })
 map("n", "<C-right>", "<C-w>l", { desc = "Move to right window" })
 -- move lines
-map("v", "<C-down>", ":m '>+1<CR>gv=gv", { silent = true, desc = "Moves visual selection down" })
-map("v", "<C-j>", ":m '>+1<CR>gv=gv", { silent = true, desc = "Moves visual selection down" })
-map("v", "<C-up>", ":m '<-2<CR>gv=gv", { silent = true, desc = "Moves visual selection up" })
-map("v", "<C-k>", ":m '<-2<CR>gv=gv", { silent = true, desc = "Moves visual selection up" })
+map("v", "<C-down>", ":m '>+1<cr>gv=gv", { silent = true, desc = "Moves visual selection down" })
+map("v", "<C-j>", ":m '>+1<cr>gv=gv", { silent = true, desc = "Moves visual selection down" })
+map("v", "<C-up>", ":m '<-2<cr>gv=gv", { silent = true, desc = "Moves visual selection up" })
+map("v", "<C-k>", ":m '<-2<cr>gv=gv", { silent = true, desc = "Moves visual selection up" })
 
 -- center after actions and QoL
 map("n", "J", "mzJ`z", { silent = true, desc = "Join lines without moving cursor" })

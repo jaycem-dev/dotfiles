@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-
-nvim -c Projects
+dmenu-projects nvim

@@ -2,9 +2,9 @@
 require("config.options")
 require("config.keymaps")
 require("config.autocmd")
-require("config.projects")
 
 -- plugins
+-- TODO: better file org
 require("plugins.misc")
 require("plugins.treesitter")
 require("plugins.lsp")

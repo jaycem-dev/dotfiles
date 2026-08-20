@@ -162,8 +162,10 @@ binds {
     Mod+Shift+M repeat=false hotkey-overlay-title="ProtonMail" { spawn "launch-or-focus" "--webapp" "mail.proton.me"; }
     Mod+Y repeat=false hotkey-overlay-title="YouTube" { spawn "launch-or-focus" "--webapp" "www.youtube.com"; }
     Mod+P repeat=false { spawn "dmenu-power"; }
-    Mod+N repeat=false hotkey-overlay-title="Neovim" { spawn "launch-or-focus" "--tui" "neovim"; }
+    Mod+N repeat=false hotkey-overlay-title="Neovim" { spawn "launch-or-focus" "--id" "nvim" "dmenu-nvim"; }
     Mod+A repeat=false hotkey-overlay-title="Opencode" { spawn "launch-or-focus" "--id" "opencode" "dmenu-opencode"; }
+    Mod+Shift+N repeat=false hotkey-overlay-title="Neovim (new instance)" { spawn "dmenu-nvim"; }
+    Mod+Shift+A repeat=false hotkey-overlay-title="Opencode (new instance)" { spawn "dmenu-opencode"; }
 }
 
 input {

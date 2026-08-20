@@ -24,8 +24,8 @@ vim.keymap.set("n", "<leader>fb", "<cmd>Pick buffers<cr>", { desc = "Find buffer
 vim.keymap.set("n", "<leader>ff", "<cmd>Pick files<cr>", { desc = "Find files" })
 
 -- search
-vim.keymap.set("n", "<leader>fg", "<cmd>Pick grep<cr>", { desc = "Live grep" })
-vim.keymap.set("n", "<leader>/", "<cmd>Pick grep_live<cr>", { desc = "Grep project" })
+vim.keymap.set("n", "<leader>fg", "<cmd>Pick grep<cr>", { desc = "Grep" })
+vim.keymap.set("n", "<leader>/", "<cmd>Pick grep_live<cr>", { desc = "Live grep" })
 
 -- misc
 vim.keymap.set("n", "<leader><leader>", "<cmd>Pick resume<cr>", { desc = "Resume" })
