@@ -1,0 +1,92 @@
+// manual blur for apps that don't support ext-background-effect-v1
+layer-rule {
+    match namespace="^launcher$"
+    shadow {
+        on
+    }
+}
+layer-rule {
+    match namespace="^kitty-quick-access$"
+    shadow {
+        on
+    }
+}
+
+// rounded corners
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
+}
+
+// Make inactive windows semitransparent with blur
+window-rule {
+    match is-active=false
+    opacity 0.9
+     background-effect {
+        blur true
+    }
+}
+
+// Open the Firefox and Chromium PIP floating by default.
+window-rule {
+    match title="^Picture-in-Picture$"
+    match title="^Picture in picture$"
+    open-floating true
+    default-floating-position x=10 y=10 relative-to="top-right"
+    default-column-width { fixed 400; }
+    default-window-height { fixed 225; }
+    open-focused false
+}
+
+// Block out apps from screen capture.
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    match app-id=r#"^org\.gnome\.seahorse\.Application$"#
+    match app-id=r#"^Proton Pass$"#
+    block-out-from "screen-capture"
+}
+
+// browser workspace apps
+window-rule {
+    match app-id=r#"brave-browser"#
+    match app-id=r#"brave-origin"#
+    match app-id=r#"zen-beta"#
+    open-on-workspace "browser"
+    open-focused true
+}
+// dev workspace apps
+window-rule {
+    match app-id=r#"neovim"#
+    match app-id=r#"opencode"#
+    match app-id=r#"kitty"#
+    match app-id=r#"foot"#
+    match app-id=r#"Alacritty"#
+    match app-id=r#"com.mitchellh.ghostty"#
+    open-on-workspace "dev"
+    open-focused true
+}
+// media workspace apps
+window-rule {
+    match app-id=r#"kopuz"#
+    match app-id=r#"brave-open.spotify.com__-Default"#
+    match app-id=r#"brave-music.youtube.com__-Default"#
+    open-on-workspace "media"
+    open-focused true
+}
+// chat workspace apps
+window-rule {
+    match app-id=r#"brave-web.whatsapp.com__-Default"#
+    match app-id=r#"signal"#
+    match app-id=r#"brave-mail.proton.me__-Default"#
+    open-on-workspace "chat"
+    open-focused true
+}
+// gaming
+window-rule {
+    match app-id=r#"steam"#
+    match app-id=r#"heroic"#
+    open-on-workspace "gaming"
+    open-focused true
+}
+
