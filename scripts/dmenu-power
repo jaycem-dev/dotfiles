@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 declare -A items=(
+    [display]="󰍹 Power off monitors"
     [lock]=" Lock"
     [suspend]=" Suspend"
     [reboot]=" Reboot"
@@ -24,6 +25,10 @@ if [[ -n "$selected" ]]; then
                 ;;
             shutdown)
                 shutdown now
+                ;;
+            display)
+                # TODO: check by env var for compositors
+                niri msg action power-off-monitors
                 ;;
             esac
             break
