@@ -1,7 +1,7 @@
-background-color=#191724
-text-color=#e0def4
-border-color=#c4a7e7
-progress-color=over #26233a
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#f5c2e7
+progress-color=over #313244
 
 [urgency=high]
-border-color=#c4a7e7
+border-color=#f5c2e7
