@@ -7,7 +7,7 @@ set -g fish_transient_prompt 1
 set -g fish_key_bindings fish_vi_key_bindings
 
 set -gx EDITOR "nvim"
-set -gx TERMINAL "kitty"
+set -gx TERMINAL "kitty -1"
 set -gx PAGER "nvim +Man!"
 set -gx BROWSER "brave-origin"
 set -gx npm_config_userconfig "$HOME/.config/npm/.npmrc"

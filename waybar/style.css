@@ -1,7 +1,7 @@
 @import "colors.css";
 
 * {
-    font-family: "jetbrains mono", "symbols nerd font mono";
+    font-family: "geist mono", "symbols nerd font mono";
     font-size: 10pt;
     font-weight: bold;
     border-radius: 0;
@@ -36,7 +36,7 @@ tooltip label {
 #battery.warning,
 #power-profiles-daemon.power-saver,
 #privacy {
-    color: @base0E;
+    color: @base09;
 }
 #battery.critical {
     color: @base08;
