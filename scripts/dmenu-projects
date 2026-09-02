@@ -35,7 +35,7 @@ selected=$(printf '%s\n' "${names[@]}" | fuzzel --dmenu -p "Select project (${cm
 if [[ -n "$selected" ]]; then
     for dir in "${dirs[@]}"; do
         if [[ "$(basename "$dir")" == "$selected" ]]; then
-            kitty --app-id "$id" --working-directory "$dir" "$cmd"
+            kitty -1 --app-id "$id" --working-directory "$dir" "$cmd"
             break
         fi
     done

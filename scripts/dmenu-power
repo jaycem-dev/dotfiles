@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 declare -A items=(
-    [display]="󰍹 Power off monitors"
     [lock]=" Lock"
     [suspend]=" Suspend"
     [reboot]=" Reboot"
     [shutdown]=" Shutdown"
+    [display]="󰍹 Power off monitors"
 )
 
 selected=$(printf '%s\n' "${items[@]}" | fuzzel --dmenu)
@@ -14,6 +14,9 @@ if [[ -n "$selected" ]]; then
     for key in "${!items[@]}"; do
         if [[ "${items[$key]}" == "$selected" ]]; then
             case $key in
+            display)
+                niri msg action power-off-monitors
+                ;;
             lock)
                 swaylock
                 ;;
@@ -25,10 +28,6 @@ if [[ -n "$selected" ]]; then
                 ;;
             shutdown)
                 shutdown now
-                ;;
-            display)
-                # TODO: check by env var for compositors
-                niri msg action power-off-monitors
                 ;;
             esac
             break
