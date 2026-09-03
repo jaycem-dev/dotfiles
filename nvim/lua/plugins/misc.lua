@@ -11,17 +11,18 @@ vim.pack.add({
     { src = "https://github.com/nvim-mini/mini.sessions", version = vim.version.range("*") },
     { src = "https://github.com/nvim-mini/mini.icons", version = vim.version.range("*") },
     { src = "https://github.com/nvim-mini/mini.diff", version = vim.version.range("*") },
+    { src = "https://github.com/nvim-mini/mini.ai", version = vim.version.range("*") },
     { src = "https://github.com/stevearc/oil.nvim", version = vim.version.range("*") },
 })
 
 require("colorizer").setup()
 require("mini.pairs").setup()
 require("mini.surround").setup()
+require("mini.ai").setup()
 require("mini.diff").setup()
 require("mini.sessions").setup({ autoread = true })
 require("mini.icons").setup()
 require("mini.icons").mock_nvim_web_devicons()
-
 require("which-key").setup({ preset = "helix", delay = 500 })
 
 vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit UI" })

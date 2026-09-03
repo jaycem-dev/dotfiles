@@ -4,7 +4,6 @@ require("config.keymaps")
 require("config.autocmd")
 
 -- plugins
--- TODO: better file org
 require("plugins.misc")
 require("plugins.treesitter")
 require("plugins.lsp")
