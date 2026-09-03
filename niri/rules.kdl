@@ -57,7 +57,7 @@ window-rule {
 }
 // dev workspace apps
 window-rule {
-    match app-id=r#"neovim"#
+    match app-id=r#"nvim"#
     match app-id=r#"opencode"#
     match app-id=r#"kitty"#
     match app-id=r#"foot"#

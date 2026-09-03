@@ -4,6 +4,7 @@ spawn-at-startup "niriusd"
 spawn-at-startup "udiskie" "--appindicator"
 spawn-at-startup "asahi-fixes"
 spawn-at-startup "awww-daemon"
+spawn-at-startup "kitty" "--start-as=hidden"
 
 workspace "browser"
 workspace "dev"
