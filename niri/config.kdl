@@ -58,13 +58,6 @@ layout {
         on
         width 2
     }
-    tab-indicator {
-        width 10
-        length total-proportion=1.0
-        corner-radius 0
-        position "left"
-        place-within-column
-    }
 }
 
 input {
