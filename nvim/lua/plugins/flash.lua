@@ -1,6 +1,4 @@
-vim.pack.add({
-    { src = "https://github.com/folke/flash.nvim", version = "main" },
-})
+vim.pack.add({ "https://github.com/folke/flash.nvim" })
 
 require("flash").setup({ rainbow = { enabled = true } })
 

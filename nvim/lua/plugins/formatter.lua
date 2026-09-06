@@ -1,21 +1,7 @@
-vim.pack.add({
-    { src = "https://github.com/stevearc/conform.nvim", version = vim.version.range("*") },
-})
+-- TODO: use release tag when there's a new release
+vim.pack.add({ "https://github.com/stevearc/conform.nvim" })
 
 require("conform").setup({
-    formatters = {
-        -- Manual conf for oxfmt since it's not on v9.1.0
-        oxfmt = {
-            command = "oxfmt",
-            args = { "--stdin-filepath", "$FILENAME" },
-            stdin = true,
-            cwd = require("conform.util").root_file({
-                ".oxfmtrc.json",
-                ".oxfmtrc.jsonc",
-                "oxfmt.config.ts",
-            }),
-        },
-    },
     formatters_by_ft = {
         lua = { "stylua" },
         javascript = { "oxfmt" },
@@ -30,7 +16,7 @@ require("conform").setup({
         css = { "oxfmt" },
         scss = { "oxfmt" },
         markdown = { "oxfmt" },
-        nix = { "alejandra" },
+        nix = { "nixfmt" },
     },
     format_on_save = {
         -- These options will be passed to conform.format()
