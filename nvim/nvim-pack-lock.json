@@ -69,9 +69,9 @@
       "rev": "5adc81b26232954cd7a90f158aa7844c18fc3165",
       "src": "https://github.com/NeogitOrg/neogit"
     },
-    "nvim": {
-      "rev": "edefef779ab08ce1a4a404713e3012b0d202bd35",
-      "src": "https://github.com/catppuccin/nvim"
+    "neovim": {
+      "rev": "ff483051a47e27d84bdef47703538df1ed9f4a47",
+      "src": "https://github.com/rose-pine/neovim"
     },
     "nvim-colorizer.lua": {
       "rev": "72a05f62c52241bc7441c820eb53946f92b2e6a4",

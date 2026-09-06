@@ -1,9 +1,7 @@
-spawn-at-startup "hypridle"
-spawn-at-startup "waybar"
 spawn-at-startup "niriusd"
 spawn-at-startup "udiskie" "--appindicator"
 spawn-at-startup "asahi-fixes"
-spawn-at-startup "awww-daemon"
+spawn-at-startup "noctalia"
 spawn-at-startup "kitty" "--start-as=hidden"
 
 workspace "browser"
@@ -71,6 +69,6 @@ input {
     }
 }
 
-include "./binds.kdl"
-include "./rules.kdl"
-include optional=true "./colors.kdl"
+include "binds.kdl"
+include "rules.kdl"
+include "noctalia.kdl"

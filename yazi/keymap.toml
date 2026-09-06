@@ -42,8 +42,3 @@ desc = "Find file/directory (fzf)"
 on = ["<Space>", "h"]
 run = "help"
 desc = "Help"
-
-[[mgr.prepend_keymap]]
-on = ["<Space>", "w"]
-run = "shell --orphan -- set-wallpaper %H"
-desc = "Set wallpaper"
