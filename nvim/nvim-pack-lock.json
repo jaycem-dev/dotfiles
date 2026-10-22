@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "base16-nvim": {
+      "rev": "7183774e90841f4bd27a47cb6e75cf532fd1192d",
+      "src": "https://github.com/RRethy/base16-nvim"
+    },
     "blink.cmp": {
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "https://github.com/saghen/blink.cmp",
@@ -68,10 +72,6 @@
     "neogit": {
       "rev": "5adc81b26232954cd7a90f158aa7844c18fc3165",
       "src": "https://github.com/NeogitOrg/neogit"
-    },
-    "neovim": {
-      "rev": "ff483051a47e27d84bdef47703538df1ed9f4a47",
-      "src": "https://github.com/rose-pine/neovim"
     },
     "nvim-colorizer.lua": {
       "rev": "72a05f62c52241bc7441c820eb53946f92b2e6a4",

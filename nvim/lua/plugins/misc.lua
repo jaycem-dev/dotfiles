@@ -1,5 +1,6 @@
 -- small plugins with small or no config
 vim.pack.add({
+    "https://github.com/RRethy/base16-nvim",
     { src = "https://github.com/catgoose/nvim-colorizer.lua" },
     { src = "https://github.com/NeogitOrg/neogit" },
     { src = "https://github.com/sindrets/diffview.nvim" },
