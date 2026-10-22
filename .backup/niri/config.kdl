@@ -1,14 +1,11 @@
-spawn-at-startup "niriusd"
-spawn-at-startup "udiskie" "--appindicator"
-spawn-at-startup "asahi-fixes"
-spawn-at-startup "noctalia"
 spawn-at-startup "kitty" "--start-as=hidden"
+spawn-at-startup "niriusd"
 
-workspace "browser"
-workspace "dev"
-workspace "media"
-workspace "chat"
-workspace "gaming"
+workspace "1"
+workspace "2"
+workspace "3"
+workspace "4"
+workspace "5"
 
 prefer-no-csd 
 
@@ -31,7 +28,7 @@ cursor {
 }
 
 layout {
-    gaps 10
+    gaps 5
     center-focused-column "never" // never, always, on-overflow
     always-center-single-column
     default-column-width { proportion 0.5; }
@@ -44,11 +41,11 @@ layout {
         proportion 0.66667
     }
     focus-ring {
-        on
+        off
         width 2
     }
     border {
-        off
+        on
         width 2
     }
 }
@@ -69,6 +66,10 @@ input {
     }
 }
 
-include "binds.kdl"
-include "rules.kdl"
-include "noctalia.kdl"
+blur {
+    offset 10
+}
+
+include "./binds.kdl"
+include "./rules.kdl"
+include optional=true "./noctalia.kdl"

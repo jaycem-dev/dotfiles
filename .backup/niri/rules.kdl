@@ -1,9 +1,3 @@
-// rounded corners
-window-rule {
-    geometry-corner-radius 0
-    clip-to-geometry true
-}
-
 // Make inactive windows semitransparent with blur
 window-rule {
     match is-active=false
@@ -33,7 +27,7 @@ window-rule {
 // browser workspace apps
 window-rule {
     match app-id=r#"brave-origin"#
-    open-on-workspace "browser"
+    open-on-workspace "1"
     open-focused true
 }
 // dev workspace apps
@@ -43,7 +37,7 @@ window-rule {
     match app-id=r#"kitty"#
     match app-id=r#"foot"#
     match app-id=r#"com.mitchellh.ghostty"#
-    open-on-workspace "dev"
+    open-on-workspace "2"
     open-focused true
 }
 // media workspace apps
@@ -51,22 +45,21 @@ window-rule {
     match app-id=r#"kopuz"#
     match app-id=r#"brave-open.spotify.com__-Default"#
     match app-id=r#"brave-music.youtube.com__-Default"#
-    open-on-workspace "media"
+    open-on-workspace "3"
     open-focused true
 }
 // chat workspace apps
 window-rule {
-    match app-id=r#"brave-web.whatsapp.com__-Default"#
+    match app-id=r#"zapfast"#
     match app-id=r#"brave-mail.proton.me__-Default"#
     match app-id=r#"signal"#
-    open-on-workspace "chat"
+    open-on-workspace "4"
     open-focused true
 }
 // gaming
 window-rule {
     match app-id=r#"steam"#
     match app-id=r#"heroic"#
-    open-on-workspace "gaming"
+    open-on-workspace "5"
     open-focused true
 }
-
