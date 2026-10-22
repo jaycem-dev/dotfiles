@@ -1,7 +1,5 @@
 --target=~/.config
 --ignore=.stowrc
+--ignore=\.backup
 --ignore=\.luarc\.json
---ignore=\.oxfmtrc\.json
---ignore=\.stylua\.toml
---ignore=screenshot\.avif
---ignore=track-themes\.sh
+--ignore=\.editorconfig
