@@ -1,6 +1,6 @@
 # Dotfiles
 
-My configuration files for Niri, Neovim, etc.
+My configuration files for Hyprland, Neovim, etc.
 
 ## Usage
 
@@ -22,18 +22,4 @@ stow nvim
 
 ## Requirements
 
-`~/.config/scripts` must be on `PATH` for niri and waybar to find helper scripts (brightness, volume, launch-or-focus, etc.).
-
-## Theme Switcher
-
-Themes live in `~/.config/tinted-theming/themes/<theme>/`. Manage them with `set-theme`:
-
-```bash
-# Copy a theme's files into the config dirs (kitty, waybar, mako, niri, etc.) and reload them
-set-theme apply <theme>
-
-# Back up current config colors into the theme dir
-set-theme save <theme>
-```
-
-Use [tinty](https://github.com/tinted-theming/tinty) (config in [`tinted-theming/tinty/config.toml`](tinted-theming/tinty/config.toml)) to apply new themes; its hooks copy the files into the config dirs, then `save` to keep a copy in the repo.
+`~/.config/scripts` must be on `PATH`.
