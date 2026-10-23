@@ -72,5 +72,8 @@ hl.config({
     },
 })
 
+hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
+hl.env("XCURSOR_SIZE", "24")
+
 -- For Noctalia Color templates
 require("noctalia").apply_theme()
