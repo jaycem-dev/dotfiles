@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 paths="$HOME/Projects"
 
 selection=$(fd -t d . "$paths" --max-depth 1 --format '{/}' | fzf --popup center --border-label ' Session Manager ')
